@@ -1,0 +1,106 @@
+:root{
+    --darkBackGround:#011B2A;
+    --lightBackGround:#E5E5E5;
+    --lightFont:#224957;
+    --darkFont:#FFFFFF;
+
+
+}
+body{
+    margin: 0;
+    
+}
+.App{
+    width: 100vw;
+    display: flex;
+    height: 100vh;
+    
+}
+.Login-Parent{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    /* justify-content:center ; */
+    align-items: center;
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    
+}
+.Login-Form{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ 
+}
+
+.dark{
+    
+    background-color: var(--darkBackGround);
+    color:var(--darkFont) 
+
+}
+.sign-In{
+   font-weight: 400;
+   margin-bottom: 10px;
+    
+}
+.form-class{
+    display:flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+  
+}
+.input{
+background: rgb(0, 0, 0,0.3);
+border-radius: 10px;
+width: 300px;
+height: 35px;
+border: none;
+margin-bottom: 10px;
+padding: 7px;
+color: #FFFFFF;
+}
+
+::placeholder { 
+    color: var(--darkFont);
+   
+  }
+  .input:focus {
+  outline: none;
+  }
+  .checkbox{
+    margin-right: 2%;
+    opacity: 0.3;
+    color: #E5E5E5;
+  }
+.check-box-div{
+    width: 100%;
+   
+}
+.login-button{
+    margin-top: 20px;
+    margin-bottom: 14px;
+    width: 100%;
+    background-color: #20DF7F;
+    color: white;
+    border-radius: 10px;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    
+}
+
+.login-button:hover{
+    opacity: 0.9;
+}
+.create-signUp{
+    margin-right: 10px;
+}
+.sign-up:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color:#FFFFFF ;
+
+}

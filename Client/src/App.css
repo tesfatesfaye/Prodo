@@ -36,7 +36,7 @@ body{
 
 .dark{
     
-    background-color: var(--darkBackGround);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(12,12,42,1) 35%, rgba(17,73,84,1) 100%);
     color:var(--darkFont) 
 
 }
@@ -53,14 +53,18 @@ body{
   
 }
 .input{
-background: rgb(0, 0, 0,0.3);
+
 border-radius: 10px;
 width: 300px;
 height: 35px;
 border: none;
 margin-bottom: 10px;
 padding: 7px;
-color: #FFFFFF;
+
+}
+.darkInput{
+    background: rgb(0, 0, 0,0.3);
+    color: #FFFFFF;
 }
 
 ::placeholder { 
@@ -74,11 +78,18 @@ color: #FFFFFF;
     margin-right: 2%;
     opacity: 0.3;
     color: #E5E5E5;
-  }
+     }
 .check-box-div{
     width: 100%;
    
 }
+.remember-me{
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+
 .login-button{
     margin-top: 20px;
     margin-bottom: 14px;
@@ -103,4 +114,24 @@ color: #FFFFFF;
     text-decoration: underline;
     text-decoration-color:#FFFFFF ;
 
+}
+
+.signUp-Parent{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    /* justify-content:center ; */
+    align-items: center;
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    
+}
+.nameDiv{
+    display: flex;
+    gap:15px;
+}
+
+.sign-Up-title{
+    font-weight: 400;
+    margin-bottom: 20px;
 }

@@ -1,24 +1,26 @@
 import React, {useState} from "react";
+import useLogin from "../Hooks/useAuth";
 import'../App.css'
 const Login=()=>{
-  
+  const{emailIsClicked,passwordIsClicked,toggleEmail,togglePassword,changePage}=useLogin()
+ 
 
     return(
-        <div className="Login-Parent dark">
+        <div className="Login-Parent ">
             <div className="Login-Form">
                 <h1 className="sign-In">Login</h1>
-                <h4>Welcome</h4>
+                <h4>Welcome to Take-Note</h4>
                 <form className="form-class">
-                    <input id="login" className="input" type="email" placeholder="Login" ></input>
-                    <input id="password"className="input"type='password' placeholder="Password"></input>
+                    <input id="login" className="input darkInput" type="email" onFocus={toggleEmail} onBlur={toggleEmail} placeholder={emailIsClicked} ></input>
+                    <input id="password"className="input darkInput"type='password' onFocus={togglePassword} onBlur={togglePassword}placeholder={passwordIsClicked}></input>
                     <div className="check-box-div">
                     <input id="checkBox"className="checkbox"type="checkbox"></input>
-                    <label for="checkBox"> Remember me </label>
+                    <label for="checkBox" className="remember-me"> Remember me </label>
                     </div>
                      <div className="login-button"> Login</div>  
                     <div>
                     <small className="create-signUp"> Need an account?</small>
-                    <small className="sign-up">SIGN UP</small>
+                  <small onClick={()=>{changePage('/signup')}} className="sign-up">SIGN UP</small> 
                     </div>
                    
                              

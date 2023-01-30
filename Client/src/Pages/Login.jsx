@@ -6,7 +6,7 @@ const Login=()=>{
     return(
         <div className="Login-Parent dark">
             <div className="Login-Form">
-                <h1 className="sign-In">Sign In</h1>
+                <h1 className="sign-In">Login</h1>
                 <h4>Welcome</h4>
                 <form className="form-class">
                     <input id="login" className="input" type="email" placeholder="Login" ></input>

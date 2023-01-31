@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import useLogin from "../Hooks/useAuth";
 import'../App.css'
 const Login=()=>{
-  const{emailIsClicked,passwordIsClicked,toggleEmail,togglePassword,changePage}=useLogin()
+  const{changePage,toggleSelected,selected}=useLogin()
  
 
     return(
@@ -11,8 +11,8 @@ const Login=()=>{
                 <h1 className="sign-In">Login</h1>
                 <h4>Welcome to Take-Note</h4>
                 <form className="form-class">
-                    <input id="login" className="input darkInput" type="email" onFocus={toggleEmail} onBlur={toggleEmail} placeholder={emailIsClicked} ></input>
-                    <input id="password"className="input darkInput"type='password' onFocus={togglePassword} onBlur={togglePassword}placeholder={passwordIsClicked}></input>
+                    <input id="login" className="input darkInput" type="email" onFocus={()=>toggleSelected('Email')} onBlur={()=>toggleSelected('')} placeholder={selected==='Email' ? '' : "Email"} ></input>
+                    <input id="password"className="input darkInput"type='password' onFocus={()=>toggleSelected('Password')} onBlur={()=>toggleSelected('')}placeholder={selected==='Password' ? '' : "Password"}></input>
                     <div className="check-box-div">
                     <input id="checkBox"className="checkbox"type="checkbox"></input>
                     <label for="checkBox" className="remember-me"> Remember me </label>

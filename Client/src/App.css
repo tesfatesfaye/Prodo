@@ -8,7 +8,7 @@
 }
 body{
     margin: 0;
-    
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(12,12,42,1) 35%, rgba(17,73,84,1) 100%);
 }
 .App{
     width: 100vw;
@@ -50,6 +50,7 @@ body{
     flex-direction: column; 
     justify-content: center;
     align-items: center;
+    gap: 4px;
   
 }
 .input{
@@ -60,6 +61,7 @@ height: 35px;
 border: none;
 margin-bottom: 10px;
 padding: 7px;
+pointer-events: all;
 
 }
 .darkInput{
@@ -134,4 +136,36 @@ padding: 7px;
 .sign-Up-title{
     font-weight: 400;
     margin-bottom: 20px;
+}
+
+.form-class > section{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: auto;
+}
+
+section > span{
+    display:flex;
+    position: absolute; 
+    font-size: 9px;
+    top: -3px;
+    background-color: transparent;
+    left: 23px;
+        
+}
+
+.show-icon{
+    display: flex; 
+     cursor: pointer;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    right: 5px;
+    top: -3px;
+    padding: 3px;
+    padding-top: 0px;
+   
+  
 }

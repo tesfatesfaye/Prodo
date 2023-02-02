@@ -12,9 +12,9 @@ const SignUp=()=>{
         const {formState,updateForm,changePage}=useContext(Context)
         
     return(
-        <div id='signUpParent'className="signUp-Parent dark">
+        <div id='signUpParent'className="signUp-Parent  dark">
                <h3 className="sign-Up-title">Sign up for Take Note</h3>
-            <form className="form-class" autocomplete="off">
+            <form className="form-class " autoComplete="off">
                 <section>
                 <span style={{display: selected==='FirstName'||formState.firstName ? 'flex' : 'none'}}>FirstName</span>
                 <input id="firstName" name="firstName"className="input darkInput" type="text" 
@@ -52,8 +52,8 @@ const SignUp=()=>{
                
                </section>
                <div className="check-box-div">
-                    <input name="staySignedIn"id="checkBox"className="checkbox"type="checkbox" onChange={(e)=>updateForm(e)}value={formState.staySignedIn}></input>
-                    <label for="checkBox" className="remember-me"> Remember me </label>
+                    <input name="staySignedIn"id="checkBoxSignUP"className="checkbox"type="checkbox" onChange={(e)=>updateForm(e)}value={formState.staySignedIn}></input>
+                    <label for="checkBoxSignUP" className="remember-me"> Remember me </label>
                     </div>
                      <div tabIndex='0' className="login-button"> Sign up</div>  
                     <div>

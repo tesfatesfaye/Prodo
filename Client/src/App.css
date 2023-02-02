@@ -34,7 +34,16 @@ body{
  align-items: center;
  
 }
-
+.glassMorphism{
+    
+   
+        backdrop-filter: blur(4px) saturate(78%);
+        -webkit-backdrop-filter: blur(4px) saturate(78%);
+        background-color: rgba(17, 25, 40,0.1);
+        border-radius: 12px;
+        
+    
+}
 .dark{
     
     background: linear-gradient(109.6deg, rgb(4, 18, 32) 10%, rgb(0, 0, 0) 100%);
@@ -52,6 +61,7 @@ body{
     justify-content: center;
     align-items: center;
     gap: 4px;
+    padding: 40px;
   
 }
 .input{
@@ -62,7 +72,7 @@ height: 35px;
 border: none;
 margin-bottom: 10px;
 padding: 7px;
-pointer-events: all;
+
 }
 
 input:hover{
@@ -137,6 +147,7 @@ input:focus{
     justify-self: start;
     align-self: center;
     
+    
 }
 .nameDiv{
     display: flex;
@@ -150,7 +161,7 @@ input:focus{
 
 .form-class > section{
     display: flex;
-    flex-direction: column;
+     flex-direction: column;
     position: relative;
     height: auto;
 }

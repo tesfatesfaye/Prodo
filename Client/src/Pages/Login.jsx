@@ -14,7 +14,7 @@ const Login=()=>{
             <div className="Login-Form">
                 <h1 className="sign-In">Login</h1>
                 <h4>Welcome to Take-Note</h4>
-                <form className="form-class" autocomplete="off">
+                <form className="form-class" autoComplete                                                                                                                           ="off">
                     
                 <section>
                <span style={{display: selected==='Email' || formState.email ? 'flex' : 'none'}}>Email</span>
@@ -41,7 +41,7 @@ const Login=()=>{
               
                      <div className="check-box-div">
                     <input name="staySignedIn"id="checkBoxLogin"className="checkbox"type="checkbox" onChange={(e)=>updateForm(e)}value={formState.staySignedIn}></input>
-                    <label for="checkBox" className="remember-me"> Remember me </label>
+                    <label for="checkBoxLogin" className="remember-me"> Remember me </label>
                     </div>
                      <div className="login-button"> Login</div>  
                     <div>

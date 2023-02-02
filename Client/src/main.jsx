@@ -1,13 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import {BrowserRouter} from "react-router-dom"
+import {BrowserRouter as Router} from "react-router-dom"
+import { ContextFunction } from './Context/Context'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <BrowserRouter>
+    <Router>
+    <ContextFunction>
+        <App />
+    </ContextFunction>
     
-    <App />
-    </BrowserRouter>
+    </Router>
     
   
 )

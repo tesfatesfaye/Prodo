@@ -1,33 +1,46 @@
-import React, {useState} from "react";
-import useLogin from "../Hooks/useAuth";
+import React, {useContext} from "react";
+import {ReactComponent as HidePassword} from '../assets/visible_icon.svg'
+import {ReactComponent as ShowPassword} from '../assets/hidden_icon.svg'
+import { Context } from "../Context/Context";
 import'../App.css'
+import useAuth from "../Hooks/useAuth";
 const Login=()=>{
-  const{changePage,toggleSelected,selected,email,toggleEmail,togglePassword,password,togglePasswordShow}=useLogin()
- 
+  const {formState,updateForm,changePage}=useContext(Context)
+    const {toggleSelected,selected,passwordShow,
+      togglePasswordShow,passWordRef,toggleHoverIcon,hoverIcon}=useAuth()
 
     return(
         <div className="Login-Parent ">
             <div className="Login-Form">
                 <h1 className="sign-In">Login</h1>
                 <h4>Welcome to Take-Note</h4>
-                <form className="form-class">
+                <form className="form-class" autocomplete="off">
                     
                 <section>
-               <span style={{display: selected==='Email' ? 'flex' : 'none'}}>Email</span>
-                <input id="signUpEmail" className="input darkInput" type='email' 
-                onFocus={()=>toggleSelected('Email')} onBlur={()=>toggleSelected('')}
-                placeholder={selected==='Email' ? '' : "Email"}  onChange={(e)=>toggleEmail(e.target.value)} value={email}/>
+               <span style={{display: selected==='Email' || formState.email ? 'flex' : 'none'}}>Email</span>
+                <input id="emailLogin"  name="email" className="input darkInput" type='email'  onFocus={()=>toggleSelected('Email')} onBlur={()=>toggleSelected('')}
+                placeholder={selected==='Email' ? '' : "Email"}  onChange={(e)=>{updateForm(e)}} value={formState.email}/>
                </section>
-               
                <section>
-               <span style={{display: selected==='Password' ? 'flex' : 'none'}}>Password</span>
-               <input id='emailPassword' className="input darkInput" type='password' 
-               onFocus={()=>toggleSelected('Password')}onBlur={()=>toggleSelected('')}
-               placeholder={selected==='Password'? '' : "Password"}  onChange={(e)=>togglePassword(e.target.value)} value={password}/>
-               </section>
+               <span style={{display: selected==='Password' || formState.password ? 'flex' : 'none'}}>Password</span>
+               <input id='passwordLogin' name="password" ref={passWordRef}className="input darkInput" type={passwordShow ? 'text':'password'} 
+               onFocus={()=>toggleSelected('Password')} onBlur={()=>{
+                hoverIcon===false ? toggleSelected('') : toggleSelected('Password')}}
+                
+               placeholder={selected==='Password' ? '' : "Password"}  onChange={(e)=>{updateForm(e)}}
+               value={formState.password}/>
 
-                    <div className="check-box-div">
-                    <input id="checkBox"className="checkbox"type="checkbox"></input>
+
+               <small onClick={togglePasswordShow} onMouseEnter={()=>toggleHoverIcon(true)}  
+               onMouseLeave={()=>toggleHoverIcon(false)}       
+            style={{}}className="show-icon">{passwordShow ? 
+               <ShowPassword height={20} width={30}fillOpacity="0.5"/>
+               : <HidePassword height={30} width={30} fillOpacity="0.5"/>}</small>
+                            
+               </section>
+              
+                     <div className="check-box-div">
+                    <input name="staySignedIn"id="checkBoxLogin"className="checkbox"type="checkbox" onChange={(e)=>updateForm(e)}value={formState.staySignedIn}></input>
                     <label for="checkBox" className="remember-me"> Remember me </label>
                     </div>
                      <div className="login-button"> Login</div>  

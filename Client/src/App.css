@@ -8,7 +8,8 @@
 }
 body{
     margin: 0;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(12,12,42,1) 35%, rgba(17,73,84,1) 100%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(12,12,42,1) 35%, rgb(8, 8, 61) 100%);
+    font-family: 'Raleway', sans-serif;
 }
 .App{
     width: 100vw;
@@ -23,7 +24,7 @@ body{
     /* justify-content:center ; */
     align-items: center;
     height: 100vh;
-    font-family: 'Raleway', sans-serif;
+
     
 }
 .Login-Form{
@@ -36,7 +37,7 @@ body{
 
 .dark{
     
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(12,12,42,1) 35%, rgba(17,73,84,1) 100%);
+    background: linear-gradient(109.6deg, rgb(4, 18, 32) 10%, rgb(0, 0, 0) 100%);
     color:var(--darkFont) 
 
 }
@@ -62,8 +63,15 @@ border: none;
 margin-bottom: 10px;
 padding: 7px;
 pointer-events: all;
-
 }
+
+input:hover{
+    opacity: 0.6;
+}
+input:focus{
+    opacity: 1;
+}
+
 .darkInput{
     background: rgb(0, 0, 0,0.3);
     color: #FFFFFF;
@@ -78,7 +86,7 @@ pointer-events: all;
   }
   .checkbox{
     margin-right: 2%;
-    opacity: 0.3;
+    opacity: 0.4;
     color: #E5E5E5;
      }
 .check-box-div{
@@ -96,7 +104,7 @@ pointer-events: all;
     margin-top: 20px;
     margin-bottom: 14px;
     width: 100%;
-    background-color: #20DF7F;
+    background-color: #1dac64;
     color: white;
     border-radius: 10px;
     padding: 8px;
@@ -118,7 +126,7 @@ pointer-events: all;
 
 }
 
-.signUp-Parent{
+#signUpParent{
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -126,6 +134,8 @@ pointer-events: all;
     align-items: center;
     height: 100vh;
     font-family: 'Raleway', sans-serif;
+    justify-self: start;
+    align-self: center;
     
 }
 .nameDiv{
@@ -168,4 +178,7 @@ section > span{
     padding-top: 0px;
    
   
+}
+small:hover{
+    opacity: 0.9;
 }

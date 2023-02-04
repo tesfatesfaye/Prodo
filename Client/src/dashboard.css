@@ -1,0 +1,80 @@
+.dashboard-parent{
+  display: flex;
+  width: 100vw;
+  height: 100vh;  
+
+}
+
+.nav-parent{
+    display: flex;
+    flex-direction: row;
+    overflow: none;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    padding-left: 10px;
+    width: 100%;
+    height: 55px;
+    background: rgb(0, 0, 0,0.3);
+    color: #FFFFFF;
+    margin: 0;
+    gap: 20px;
+    box-sizing: border-box;
+   
+    
+
+}
+
+
+.profile-menu{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border: 1px solid #ff0706;
+    color: #ff0706;
+    background-color: rgba(4, 18, 32,0.9);
+    margin-right: 10px;
+
+    
+}
+
+.side-bar{
+
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 270px;
+    padding-top: 60px;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: 98;
+    height: calc(100%);
+    background: rgb(10, 10, 10,0.3);
+    gap: 25px;
+
+}
+
+.side-bar > div{
+    display: flex;
+    justify-content: start;
+    margin-left: 10px;
+    gap: 8px;
+    box-sizing: border-box;
+    width: 100%;
+    align-items: center;
+
+    
+}
+
+.side-bar >div>span{
+    font-weight: 300;
+}
+
+.nav-parent > *{
+cursor: pointer;
+}

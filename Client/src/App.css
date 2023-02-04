@@ -8,8 +8,9 @@
 }
 body{
     margin: 0;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(12,12,42,1) 35%, rgb(8, 8, 61) 100%);
-    font-family: 'Raleway', sans-serif;
+    /* background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(12,12,42,1) 35%, rgb(8, 8, 61) 100%); */
+    font-family: 'Noto Sans','Raleway', 'sans-serif';
+    
 }
 .App{
     width: 100vw;
@@ -46,7 +47,7 @@ body{
 }
 .dark{
     
-    background: linear-gradient(109.6deg, rgb(4, 18, 32) 10%, rgb(0, 0, 0) 100%);
+    background: linear-gradient(109.6deg, rgb(4, 14, 22) 10%, rgb(0, 0, 0) 100%);
     color:var(--darkFont) 
 
 }

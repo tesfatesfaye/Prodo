@@ -6,12 +6,9 @@ const Context=createContext()
     function ContextFunction({children}){
         const [formState,setFormState]=useState(()=>({firstName:'',lastName:'',
         email:'',password:'', staySignedIn:false}))
-        
+        const [theme,setTheme]=useState(()=>'dark')
         const navigate=useNavigate()
-        useEffect(()=>{
-         console.log(formState.staySignedIn)   
-        },[formState])
-        
+              
         const updateForm=(event)=>{
             const{name,value,type,checked}=event.target
             setFormState(prev=>{
@@ -26,7 +23,7 @@ const Context=createContext()
             navigate(page)
         }
        return(
-        <Context.Provider value={{formState,updateForm,changePage}}>
+        <Context.Provider value={{formState,updateForm,changePage,theme}}>
             {children}
         </Context.Provider>
     )}

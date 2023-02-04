@@ -6,9 +6,12 @@
 
 
 }
+html{
+    background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(12,12,42,1) 35%, rgb(8, 8, 61) 100%) 
+}
 body{
     margin: 0;
-    /* background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(12,12,42,1) 35%, rgb(8, 8, 61) 100%); */
+    background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(12,12,42,1) 35%, rgb(8, 8, 61) 100%);
     font-family: 'Noto Sans','Raleway', 'sans-serif';
     
 }
@@ -35,19 +38,10 @@ body{
  align-items: center;
  
 }
-.glassMorphism{
-    
-   
-        backdrop-filter: blur(4px) saturate(78%);
-        -webkit-backdrop-filter: blur(4px) saturate(78%);
-        background-color: rgba(17, 25, 40,0.1);
-        border-radius: 12px;
-        
-    
-}
+
 .dark{
     
-    background: linear-gradient(109.6deg, rgb(4, 14, 22) 10%, rgb(0, 0, 0) 100%);
+    background: linear-gradient(109.6deg, rgb(4, 19, 24) 10%, rgb(0, 0, 0) 100%);
     color:var(--darkFont) 
 
 }
@@ -146,8 +140,8 @@ input:focus{
     height: 100vh;
     font-family: 'Raleway', sans-serif;
     justify-self: start;
-    align-self: center;
-    
+    padding-top: 30px;
+    box-sizing: border-box;
     
 }
 .nameDiv{

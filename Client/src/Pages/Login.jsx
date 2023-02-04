@@ -2,8 +2,9 @@ import React, {useContext} from "react";
 import {ReactComponent as HidePassword} from '../assets/visible_icon.svg'
 import {ReactComponent as ShowPassword} from '../assets/hidden_icon.svg'
 import { Context } from "../Context/Context";
+import { FaCheckDouble } from "react-icons/fa";
 import'../App.css'
-import useAuth from "../Hooks/useAuth";
+import useAuth from "../Hooks/useEntry";
 const Login=()=>{
   const {formState,updateForm,changePage}=useContext(Context)
     const {toggleSelected,selected,passwordShow,
@@ -12,8 +13,9 @@ const Login=()=>{
     return(
         <div className="Login-Parent ">
             <div className="Login-Form">
-                <h1 className="sign-In">Login</h1>
-                <h4>Welcome to Take-Note</h4>
+                <h1 className="sign-In" style={{color:'lightblue'}}>Login</h1>
+                <FaCheckDouble color="lightblue" size='1.5em'/>
+                <h4 style={{color:'lightblue'}}>Welcome to Take-Note</h4>
                 <form className="form-class" autoComplete                                                                                                                           ="off">
                     
                 <section>

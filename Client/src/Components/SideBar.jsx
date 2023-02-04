@@ -9,8 +9,10 @@ import {BsAlarm} from 'react-icons/bs'
     const SideBar=()=>{
 
         return(
-            <nav className="side-bar">
-                <div className="general-tasks"> 
+         <div className="side-bar-parent">
+    
+           <nav className="side-bar">
+                <div className="general-tasks"  > 
                     <FaTasks color="yellow"/>
                     <span>General</span>
                 </div>
@@ -28,10 +30,11 @@ import {BsAlarm} from 'react-icons/bs'
                 </div>  
 
             <div className="Over-due">
-                <BsAlarm color="lightblue"/>
+                <BsAlarm id="overdue"color="lightblue"/>
                <span>Overdue</span>
                 </div> 
             </nav>
+            </div>
         )
     }
 

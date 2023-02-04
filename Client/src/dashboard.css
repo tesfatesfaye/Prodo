@@ -3,6 +3,7 @@
   width: 100vw;
   height: 100vh;  
 
+
 }
 
 .nav-parent{
@@ -21,8 +22,7 @@
     margin: 0;
     gap: 20px;
     box-sizing: border-box;
-   
-    
+     
 
 }
 
@@ -41,7 +41,16 @@
 
     
 }
+.side-bar-parent{
+    margin-top: 55px;
+    width: auto;
+    padding: 135px;
+    height: auto;
+    /* margin-top: 50px; */
+    box-sizing: border-box;
+    background: rgb(10, 10, 10,0.3);
 
+}
 .side-bar{
 
     display: flex;
@@ -52,10 +61,10 @@
     position: fixed;
     top: 50px;
     left: 0;
-    z-index: 98;
-    height: calc(100%);
+     height:100%;
+     gap: 25px;
+    overflow: hidden;
     background: rgb(10, 10, 10,0.3);
-    gap: 25px;
 
 }
 
@@ -67,14 +76,43 @@
     box-sizing: border-box;
     width: 100%;
     align-items: center;
-
-    
 }
 
 .side-bar >div>span{
     font-weight: 300;
 }
 
-.nav-parent > *{
-cursor: pointer;
+nav > *{
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
+
+nav > div :hover{
+    opacity: 0.4;
+}
+
+.tasks-div{
+    margin-top: 110px;
+    margin-left: 300px;
+    display: flex;
+    height: auto;
+    
+}
+.split{
+    display: flex;
+    width: 100%;
+    margin-top: 55px;
+}
+.gutter {
+    background-color: black;
+    background-repeat: no-repeat;
+    
+  }
+  
+  .gutter.gutter-horizontal {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+    cursor: col-resize;
+  }
+  

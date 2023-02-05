@@ -1,7 +1,7 @@
 import {useEffect, useState,useRef} from "react";
 import {useNavigate} from "react-router-dom";
 
-function useAuth(){
+const useEntry=() =>{
    const[selected,setSelected]=useState('')
    const[hoverIcon, setHoverIcon]=useState(false)
     const[passwordShow,setPasswordShow]=useState(false)
@@ -12,27 +12,22 @@ function useAuth(){
      }
    },[selected,passwordShow])
 
-   
-    const navigate=useNavigate()
-    const changePage=(page)=>{
-        navigate(page)
-    }
- 
-    const toggleHoverIcon=(value)=>{
-         setHoverIcon(value)
-    }
-    const togglePasswordShow=()=>{
-      
-    setPasswordShow(prev=>!prev)
-      
-     }
-     const toggleSelected=(value)=>{
-       setSelected(value)
-    }
+   const toggleStyle=(e,value)=>{
 
-   return{changePage,toggleSelected,selected,passwordShow,togglePasswordShow,passWordRef,hoverIcon,toggleHoverIcon}
+      if(e.type==='blur' || e.type==='focus'){
+         setSelected(value)
+      }
+      else if(e.type==='click'){
+         setPasswordShow(prev=>!prev)
+      }
+      else{
+         setHoverIcon(value)
+      }
+   }
+  
+   return{selected,passwordShow,passWordRef,hoverIcon,toggleStyle}
    
 
 }
 
-export default useAuth
+export default useEntry

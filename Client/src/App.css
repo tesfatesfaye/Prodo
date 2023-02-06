@@ -6,12 +6,10 @@
     background: linear-gradient(109.6deg, rgb(4, 19, 24) 10%, rgb(0, 0, 0) 100%);
 
 }
-html{
-    background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(12,12,42,1) 35%, rgb(8, 8, 61) 100%) 
-}
+
 body{
     margin: 0;
-    background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(12,12,42,1) 35%, rgb(8, 8, 61) 100%);
+    /* background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(12,12,42,1) 35%, rgb(8, 8, 61) 100%); */
     font-family: 'Noto Sans','Raleway', 'sans-serif';
     
 }

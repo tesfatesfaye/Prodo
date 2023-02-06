@@ -5,13 +5,14 @@ import {BsCheck2All} from'react-icons/bs'
 import {BsFilterLeft} from 'react-icons/bs'
 import {AiTwotoneCalendar} from 'react-icons/ai'
 import {BsAlarm} from 'react-icons/bs'
+import {BsFillTrash2Fill} from 'react-icons/bs'
 
-    const SideBar=()=>{
+    const SideBar=(props)=>{
 
         return(
-         <div className="side-bar-parent">
-    
-           <nav className="side-bar">
+         
+            
+           <nav className="side-bar"   style={{display:props.sideBar ? 'flex' : 'none' }}>
                 <div className="general-tasks"  > 
                     <FaTasks color="yellow"/>
                     <span>General</span>
@@ -29,12 +30,17 @@ import {BsAlarm} from 'react-icons/bs'
                 <span>Today</span>
                 </div>  
 
-            <div className="Over-due">
-                <BsAlarm id="overdue"color="lightblue"/>
+            <div className="over-due">
+                <BsAlarm color="lightblue"/>
                <span>Overdue</span>
                 </div> 
-            </nav>
+
+            <div className="recycling-bin" >
+                <BsFillTrash2Fill color="brown"/>
+                <span> Deleted</span>
             </div>
+            </nav>
+            
         )
     }
 

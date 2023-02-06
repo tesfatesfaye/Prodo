@@ -1,12 +1,14 @@
 import React,{useState,useEffect,createContext} from "react";
 import {useNavigate} from "react-router-dom";
-
+import {u}
 const Context=createContext()
     
     function ContextFunction({children}){
         const [formState,setFormState]=useState(()=>({firstName:'',lastName:'',
         email:'',password:'', staySignedIn:false}))
         const [theme,setTheme]=useState(()=>'dark')
+        const [notes,setNotes]=useState([{}])
+    
         const navigate=useNavigate()
               
         const updateForm=(event)=>{

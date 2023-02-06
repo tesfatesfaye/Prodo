@@ -1,5 +1,5 @@
 import {useEffect, useState,useRef} from "react";
-import {useNavigate} from "react-router-dom";
+
 
 const useEntry=() =>{
    const[selected,setSelected]=useState('')
@@ -15,13 +15,13 @@ const useEntry=() =>{
    const toggleStyle=(e,value)=>{
 
       if(e.type==='blur' || e.type==='focus'){
-         setSelected(value)
+        return  setSelected(value)
       }
       else if(e.type==='click'){
-         setPasswordShow(prev=>!prev)
+         return setPasswordShow(prev=>!prev)
       }
       else{
-         setHoverIcon(value)
+        return setHoverIcon(value)
       }
    }
   

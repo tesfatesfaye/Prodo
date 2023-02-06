@@ -1,11 +1,20 @@
 .dashboard-parent{
   display: flex;
   width: 100vw;
-  height: 100vh;  
+  height: 100vh; 
+  flex-direction: column;
+ 
 
 
 }
+.nav-wrapper{
+    display: flex;
+    margin-bottom: 90px;
+    width: auto;
+     padding: 0;
+    justify-content: center;
 
+}
 .nav-parent{
     display: flex;
     flex-direction: row;
@@ -19,7 +28,6 @@
     height: 55px;
     background: rgb(0, 0, 0,0.3);
     color: #FFFFFF;
-    margin: 0;
     gap: 20px;
     box-sizing: border-box;
      
@@ -41,16 +49,7 @@
 
     
 }
-.side-bar-parent{
-    margin-top: 55px;
-    width: auto;
-    padding: 135px;
-    height: auto;
-    /* margin-top: 50px; */
-    box-sizing: border-box;
-    background: rgb(10, 10, 10,0.3);
 
-}
 .side-bar{
 
     display: flex;
@@ -65,7 +64,7 @@
      gap: 25px;
     overflow: hidden;
     background: rgb(10, 10, 10,0.3);
-
+    
 }
 
 .side-bar > div{
@@ -93,13 +92,7 @@ nav > div :hover{
     opacity: 0.4;
 }
 
-.tasks-div{
-    margin-top: 110px;
-    margin-left: 300px;
-    display: flex;
-    height: auto;
-    
-}
+
 .split{
     display: flex;
     width: 100%;
@@ -115,4 +108,68 @@ nav > div :hover{
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
     cursor: col-resize;
   }
-  
+
+
+  .task-Title{
+    display: flex;
+    position: fixed;
+    font-weight: 300;
+    top:110px;
+    left: 480px;
+    font-size: large;
+    font-weight: 700;
+    color: lightcyan;
+
+    
+  }
+  .tasks-wrapper{
+    display: flex;
+    width: 50%;
+    align-items: start;
+    justify-content: center;
+     /* justify-content: center;
+    align-items: center; */
+    margin-left: 480px;
+    
+  }
+
+  .tasks-div{
+    display: flex;
+    flex-direction: column;
+     margin-top: 60px;
+     gap: 8px;
+     height: auto;
+     padding: 0;
+     width: 100%;
+     
+    }
+
+    .tasks{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+     border-bottom: 1px solid rgb(255, 255, 255,0.3);
+     width: 100%;
+     font-weight: 300;
+     padding-bottom: 0.5px;
+     color: lightcyan;
+     position: relative;
+    }
+    .task-completed{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid white ;
+        
+    }
+
+    .add-task-button{
+        font-weight: 300;
+        font-size: small;
+     }
+
+     .add-task-button:hover{
+        cursor: pointer;
+        opacity:1 ;
+        color: #ff0706;
+     }

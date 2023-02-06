@@ -5,6 +5,7 @@ import {ReactComponent as HidePassword} from '../assets/visible_icon.svg'
 import {ReactComponent as ShowPassword} from '../assets/hidden_icon.svg'
 import { Context } from "../Context/Context";
 import { FaCheckDouble } from "react-icons/fa";
+
 const SignUp=()=>{
 
     const {selected,passwordShow,passWordRef,hoverIcon,toggleStyle}=useEntry()
@@ -59,7 +60,7 @@ const SignUp=()=>{
                      <div tabIndex='0' className="login-button"> Sign up</div>  
                     <div>
                     <small className="create-signUp"> Already have an account?</small>
-                    <small tabIndex='0' onClick={(e)=>changePage('/login')}className="sign-up">Login</small>
+                    <small tabIndex='0' onClick={()=>changePage('/login')}className="sign-up">Login</small>
                     </div>
             </form>
             

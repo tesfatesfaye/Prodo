@@ -1,18 +1,15 @@
-import React from "react";
+import React ,{useContext}from "react";
 import '../dashboard.css'
 import {FaTasks} from 'react-icons/fa'
-import {BsCheck2All} from'react-icons/bs'
-import {BsFilterLeft} from 'react-icons/bs'
+import {BsCheck2All,BsAlarm,BsFilterLeft,BsFillTrash2Fill} from'react-icons/bs'
 import {AiTwotoneCalendar} from 'react-icons/ai'
-import {BsAlarm} from 'react-icons/bs'
-import {BsFillTrash2Fill} from 'react-icons/bs'
-
-    const SideBar=(props)=>{
-
+import { Context } from "../Context/Context";
+    const SideBar=()=>{
+        const {sideBar}=useContext(Context)
         return(
          
             
-           <nav className="side-bar"   style={{display:props.sideBar ? 'flex' : 'none' }}>
+           <nav className="side-bar"   style={{display:sideBar ? 'flex' : 'none' }}>
                 <div className="general-tasks"  > 
                     <FaTasks color="yellow"/>
                     <span>General</span>

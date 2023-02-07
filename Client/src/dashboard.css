@@ -30,9 +30,7 @@
     color: #FFFFFF;
     gap: 20px;
     box-sizing: border-box;
-     
-
-}
+     }
 
 
 .profile-menu{
@@ -46,8 +44,7 @@
     color: #ff0706;
     background-color: rgba(4, 18, 32,0.9);
     margin-right: 10px;
-
-    
+  
 }
 
 .side-bar{
@@ -145,9 +142,8 @@ nav > div :hover{
 
     .tasks{
     display: flex;
-    
+    cursor: pointer;
     gap: 10px;
-     
      width: 100%;
      font-weight: 300;
      color: lightcyan;
@@ -183,6 +179,4 @@ nav > div :hover{
         align-items: center;
         gap:10px;
         width: 100%;
-        
-
-     }
+    }

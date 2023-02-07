@@ -20,7 +20,8 @@ const Login=()=>{
                     
                 <section>
                <span style={{display: selected==='Email' || formState.email ? 'flex' : 'none'}}>Email</span>
-                <input id="email"  name="email" className="input darkInput" type='email'  onFocus={(e)=>toggleStyle(e,'Email')} onBlur={(e)=>toggleStyle(e,'')}
+                <input id="email"  name="email" className="input darkInput" type='email'  onFocus={(e)=>toggleStyle(e,'Email')}
+                 onBlur={(e)=>toggleStyle(e,'')}
                 placeholder={selected==='Email' ? '' : "Email"}  onChange={(e)=>{updateForm(e)}} value={formState.email}/>
                </section>
                <section>

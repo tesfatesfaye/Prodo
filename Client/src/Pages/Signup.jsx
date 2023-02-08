@@ -39,7 +39,7 @@ const SignUp=()=>{
                <span style={{display: selected==='Password' || formState.password ? 'flex' : 'none'}}>Password</span>
                <input id='password' name="password" ref={passWordRef}className="input darkInput" type={passwordShow ? 'text':'password'} 
                onFocus={(e)=>toggleStyle(e,'Password')} onBlur={(e)=>{
-                hoverIcon===false ? toggleStyle(e,'') : toggleStyle(e,'Password')}}
+              toggleStyle(e,'') }}
                 
                placeholder={selected==='Password' ? '' : "Password"}  onChange={(e)=>{updateForm(e)}}
                value={formState.password}/>

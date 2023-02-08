@@ -180,3 +180,80 @@ nav > div :hover{
         gap:10px;
         width: 100%;
     }
+
+    .modal-styles{
+        position: fixed;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        background: linear-gradient(109.6deg, rgb(7, 29, 30) 10%, rgb(6, 14, 17) 100%);
+        border-radius: 2%;
+        z-index:1000;
+        width: 35%;
+        height: 95%;
+        display: flex;
+        flex-direction: column;
+        
+       
+    
+    }
+
+    .over-lay-styles{
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+         background: rgb(0, 0, 0,0.8);
+        z-index:1000;
+       
+
+    }
+
+.modal-header{
+  display: flex; 
+ width: 100%; 
+ background: rgb(0, 0, 0,0.3);
+height: 50px;
+color: #FFFFFF;
+align-items: center;
+box-sizing: border-box;
+padding-left: 10px;
+padding-right: 10px;
+margin-bottom: 20px;
+}
+.modal-title{
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color:white;
+    width: 200px;
+}
+.modal-complete{
+ 
+   margin-left: 20px;
+    width:15px;
+    height: 15px;
+    border-radius: 50%;
+    border: #FFFFFF 1px solid;
+}
+.modal-description{
+    margin-top: 10px;
+   display: flex;
+   justify-content: start;
+   margin-left: 20px;
+}
+
+    @media (max-width: 980px){
+        .task-Title{
+            left: 50%;
+        }
+        .tasks-wrapper{
+            margin-left: 50%;
+        }
+    }
+
+    
+
+    

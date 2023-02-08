@@ -7,13 +7,22 @@ const Context=createContext()
         const [formState,setFormState]=useState(()=>({firstName:'Tesfa',lastName:'Tesfaye',
         email:'',password:'', staySignedIn:false}))
         const [theme,setTheme]=useState(()=>'dark')
+        const[taskModal,setTaskModal]=useState(true)
         const [sideBar,setSideBar]=useState(true)
-        const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[]},
-        {id:uuid4(), title:"Test 2", subtasks:[],comments:'This is the second'},
-        {id:uuid4(), title:"Test 3", subtasks:[],comments:'This is the third'},
-        {id:uuid4(), title:"Test 4", subtasks:[],comments:'This is the fourth'}
+        const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[],comments:"This is the first",description:'none',duedate:"",Tags:[]},
+        {id:uuid4(), title:"Test 2", subtasks:[],comments:'This is the second',description:'none',duedate:"",Tags:[]},
+        {id:uuid4(), title:"Test 3", subtasks:[],comments:'This is the third',description:'none',duedate:"",Tags:[]},
+        {id:uuid4(), title:"Test 4", subtasks:[],comments:'This is the fourth',description:'none',Duedate:"",Tags:[]}
         
     ])
+
+
+
+
+        const toggleTaskModal=(value)=>{
+
+            setTaskModal(value)
+        }
         const modifyTaskOrder=(value)=>{
             if(!value.destination) return'';
             const items=Array.from(tasks)
@@ -46,7 +55,8 @@ const Context=createContext()
     
         }
        return(
-        <Context.Provider value={{formState,updateForm,changePage,theme,sideBar,toggleSideBar,tasks,modifyTaskOrder}}>
+        <Context.Provider value={{formState,updateForm,changePage,
+        theme,sideBar,toggleSideBar,tasks,modifyTaskOrder,taskModal,toggleTaskModal}}>
             {children}
         </Context.Provider>
     )}

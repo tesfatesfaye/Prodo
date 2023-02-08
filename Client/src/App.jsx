@@ -3,10 +3,12 @@ import {Routes,Route,Link} from "react-router-dom"
 import Login from './Pages/Login'
 import SignUp from './Pages/Signup'
 import DashBoard from './Pages/Dashboard'
-
+import TaskModal from './Modals/TaskModal'
+import { IconContext } from "react-icons/lib";
 function App() {
  
   return (
+    <IconContext.Provider value={{size:'1.2em',margin:'0'}}>
     <div className="App dark">
 
       <Routes>
@@ -14,8 +16,11 @@ function App() {
       <Route path='/signup' element={<SignUp/>}/>
       <Route path='/' element={<DashBoard/>} />
       </Routes>
+      <TaskModal/>
+    
     
     </div>
+      </IconContext.Provider>
   )
 }
 

@@ -1,4 +1,4 @@
-import {useEffect, useState,useRef} from "react";
+import {useLayoutEffect, useState,useRef} from "react";
 
 
 const useEntry=() =>{
@@ -6,7 +6,7 @@ const useEntry=() =>{
    const[hoverIcon, setHoverIcon]=useState(false)
     const[passwordShow,setPasswordShow]=useState(false)
    const passWordRef=useRef(null)
-   useEffect(()=>{
+   useLayoutEffect(()=>{
       if(hoverIcon){
       passWordRef.current.focus()
      }

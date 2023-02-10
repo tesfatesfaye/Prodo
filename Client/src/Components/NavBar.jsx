@@ -1,4 +1,5 @@
 import React,{useState,useContext} from "react";
+import ProfileHolder from "./ProfileHolder";
 import '../dashboard.css'
 import { FaCheckDouble } from "react-icons/fa";
 import {VscAdd} from 'react-icons/vsc'
@@ -21,9 +22,7 @@ const NavBar=()=>{
       <DarkToggle height={15} width={30} fill="white" onClick={toggle}/>}
        
        <VscAdd color="lightblue"/>
-        <div className="profile-menu">
-          <span>{`${formState.firstName[0]}${formState.lastName[0]}`}</span> 
-       </div>
+      <ProfileHolder/>
        </nav>
    
             </div>)

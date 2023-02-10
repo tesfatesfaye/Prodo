@@ -194,8 +194,7 @@ nav > div :hover{
         display: flex;
         flex-direction: column;
         
-       
-    
+           
     }
 
     .over-lay-styles{
@@ -220,7 +219,7 @@ align-items: center;
 box-sizing: border-box;
 padding-left: 10px;
 padding-right: 10px;
-margin-bottom: 20px;
+
 }
 .modal-title{
     margin-right: auto;
@@ -252,7 +251,6 @@ margin-bottom: 20px;
     gap: 3px;
     align-items: center;
     margin-left: 20px;
-    
     color: #FFFFFF;
     cursor: pointer;
     
@@ -265,6 +263,26 @@ align-items: center;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 68%;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+.modalParent{
+    display: flex;
+    width: 100%;
+   height: 100%;
+  
+
+}
+.modal-sidebar{
+display: flex;
+flex-direction: column;
+width: 32%;
+height: 100%;
+box-sizing: border-box;
+background-color:  rgb(0, 0, 0,0.3);
+margin: 0;
+color: #FFFFFF;
 }
 
 .comments-div{
@@ -283,7 +301,40 @@ align-items: center;
     border: 1px solid rgb(255, 255, 255,0.3) ;
     border-radius: 15px;
 }
+.modal-type{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap:15px;
+    height: auto;
+    padding-left: 20px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    padding-right: 20px;
+        
+}
 
+.modal-type > span{
+color: grey
+}
+.modal-holder > span{
+    font-weight: 300;
+}
+
+
+.modal-holder{
+    display: flex;
+    gap: 10px;
+    margin-left: 5px;
+    font-weight: 400;
+    align-items: center;
+    
+}
+
+.modal-type > span:last-of-type{
+
+    border-bottom: 1px solid rgba(255, 255, 255,0.3);
+}
     @media (max-width: 980px){
         .task-Title{
             left: 50%;

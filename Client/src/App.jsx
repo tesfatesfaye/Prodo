@@ -16,8 +16,7 @@ function App() {
       <Route path='/signup' element={<SignUp/>}/>
       <Route path='/' element={<DashBoard/>} />
       </Routes>
-      <TaskModal/>
-    
+     
     
     </div>
       </IconContext.Provider>

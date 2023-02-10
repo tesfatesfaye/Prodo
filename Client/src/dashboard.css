@@ -189,7 +189,7 @@ nav > div :hover{
         background: linear-gradient(109.6deg, rgb(7, 29, 30) 10%, rgb(6, 14, 17) 100%);
         border-radius: 2%;
         z-index:1000;
-        width: 35%;
+        width: 45%;
         height: 95%;
         display: flex;
         flex-direction: column;
@@ -229,20 +229,59 @@ margin-bottom: 20px;
     gap: 10px;
     color:white;
     width: 200px;
+    margin-bottom: 0;
 }
 .modal-complete{
- 
+
+
    margin-left: 20px;
     width:15px;
     height: 15px;
     border-radius: 50%;
     border: #FFFFFF 1px solid;
+    margin-bottom: 0;
 }
 .modal-description{
-    margin-top: 10px;
+    
    display: flex;
    justify-content: start;
    margin-left: 20px;
+}
+.modal-add{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    margin-left: 20px;
+    
+    color: #FFFFFF;
+    cursor: pointer;
+    
+}
+.modal-comments{
+display: flex;
+align-items: center;
+}
+.modal-main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comments-div{
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: small;
+    width: 494px;
+    height: 32px;
+    font-size: small;
+    font-weight: 300;
+    box-sizing: border-box;
+    padding-top: 0px;
+     padding-left: 8px;
+    border: 1px solid rgb(255, 255, 255,0.3) ;
+    border-radius: 15px;
 }
 
     @media (max-width: 980px){

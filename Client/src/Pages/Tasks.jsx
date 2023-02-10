@@ -1,6 +1,7 @@
 import React ,{useContext}from "react";
 import '../dashboard.css'
 import {RxHamburgerMenu} from 'react-icons/rx'
+import TaskModal from "../Modals/TaskModal";
 import {BsTrash} from 'react-icons/bs'
 import {VscAdd} from 'react-icons/vsc'
 import { DragDropContext,Droppable ,Draggable} from 'react-beautiful-dnd'
@@ -14,7 +15,8 @@ const Tasks=()=>{
     const{taskHoverId,toggleTaskHoverId,draggable,toggleDraggable}=useDashboardHook()
     return(
         <div className="tasks-wrapper">
-
+            
+    
     <span className="task-Title">General</span>
     <DragDropContext onDragEnd={modifyTaskOrder}>
         <Droppable droppableId="tasks-div">
@@ -65,7 +67,7 @@ const Tasks=()=>{
         </Droppable>
         </DragDropContext>
                
-        
+        <TaskModal/>
         </div>
     )
 }

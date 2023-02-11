@@ -16,20 +16,16 @@ const Context=createContext()
         
     ])
 
-
+        const toggleTasksList=(value)=>{
+            setTasks(value)
+        }
 
 
         const toggleTaskModal=(value)=>{
 
             setTaskModal(value)
         }
-        const modifyTaskOrder=(value)=>{
-            if(!value.destination) return'';
-            const items=Array.from(tasks)
-            const [holder]=items.splice(value.source.index,1)
-            items.splice(value.destination.index,0,holder)
-            setTasks(items)
-        }
+       
     
         const navigate=useNavigate()
               
@@ -56,7 +52,7 @@ const Context=createContext()
         }
        return(
         <Context.Provider value={{formState,updateForm,changePage,
-        theme,sideBar,toggleSideBar,tasks,modifyTaskOrder,taskModal,toggleTaskModal}}>
+        theme,sideBar,toggleSideBar,tasks,taskModal,toggleTaskModal,toggleTasksList}}>
             {children}
         </Context.Provider>
     )}

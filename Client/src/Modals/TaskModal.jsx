@@ -6,8 +6,11 @@ import {FaTasks as General} from 'react-icons/fa'
 import {VscChromeClose,VscAdd} from 'react-icons/vsc'
 import ProfileHolder from "../Components/ProfileHolder";
 import {MdSort} from "react-icons/md"
+import useModal from "../Hooks/useModal";
 
  const TaskModal=()=>{
+   const {selectedValue}=useModal()
+      
     const{taskModal,toggleTaskModal,formState}=useContext(Context)
     if(taskModal===false) return null
        return(
@@ -25,16 +28,21 @@ import {MdSort} from "react-icons/md"
                 </div>
                 <div className="modalParent">
                 <div className="modal-main">
+                  <div className="title-description">
                <div className="modal-title">
-                <div className="modal-complete">
-                            </div>
-                <h4 style={{marginBottom:'0',marginTop:'0'}}>Test-1</h4>
+                {!selectedValue && <div className="modal-complete"> </div>}
+                <input type='text' id="modal-title"className="modal-input-title"
+                 placeholder="Title" maxLength={150}/>
+
                 </div> 
-            <div className="modal-description">
+            <div className="modal-description" style={{display:'flex',gap:'10px'}}>
                     <MdSort color="white"/>
-                    <span style={{color:"white", marginLeft:'3px',fontWeight:"300",marginBottom:'2px'}}>Description</span>
+                    <textarea type='text' id="modal-title"className="modal-input-title" 
+                    style={{color:"white", fontSize:"medium",marginBottom:'2px',overflow:'visible'}}
+                    placeholder="Description"/>
+                   
             </div>
-                
+            </div>
                 <div className="modal-add">
                 <VscAdd color="white" size={'1em'}style={{}}/>
                 <span style={{fontWeight:'300',fontSize:'13px'}}>Add sub-task</span>
@@ -64,7 +72,7 @@ import {MdSort} from "react-icons/md"
                      <span></span>
                   </div>
                   <div className="modal-type">
-                     <span>Tag</span>
+                     <span>Tags</span>
                      <div className="modal-holder">
                      
                      </div>

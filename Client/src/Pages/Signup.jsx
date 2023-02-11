@@ -8,7 +8,7 @@ import { FaCheckDouble } from "react-icons/fa";
 
 const SignUp=()=>{
 
-    const {selected,passwordShow,passWordRef,hoverIcon,toggleStyle}=useEntry()
+    const {selected,passwordShow,passWordRef,emailRef,toggleStyle,}=useEntry()
     const {formState,updateForm,changePage}=useContext(Context)
         
     return(
@@ -33,7 +33,7 @@ const SignUp=()=>{
                <section>
                <span style={{display: selected==='Email' || formState.email ? 'flex' : 'none'}}>Email</span>
                 <input id="email"  name="email" className="input darkInput" type='email'  onFocus={(e)=>toggleStyle(e,'Email')} onBlur={(e)=>toggleStyle(e,'')}
-                placeholder={selected==='Email' ? '' : "Email"}  onChange={(e)=>{updateForm(e)}} value={formState.email}/>
+                placeholder={selected==='Email' ? '' : "Email"} ref={emailRef}  onChange={(e)=>{updateForm(e)}} value={formState.email}/>
                </section>
                <section>
                <span style={{display: selected==='Password' || formState.password ? 'flex' : 'none'}}>Password</span>

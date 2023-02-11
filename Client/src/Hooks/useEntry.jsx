@@ -1,16 +1,23 @@
-import {useLayoutEffect, useState,useRef} from "react";
-
+import {useLayoutEffect, useState,useRef,useContext,useEffect} from "react";
+import { Context } from "../Context/Context";
 
 const useEntry=() =>{
    const[selected,setSelected]=useState('')
    const[hoverIcon, setHoverIcon]=useState(false)
     const[passwordShow,setPasswordShow]=useState(false)
    const passWordRef=useRef(null)
+   const emailRef=useRef(null)
+   const {formState}=useContext(Context)
    useLayoutEffect(()=>{
       if(hoverIcon){
       passWordRef.current.focus()
      }
    },[selected,passwordShow])
+   useEffect(()=>{
+      emailRef.current.style.color='white'
+
+      
+   },[formState])
 
    const toggleStyle=(e,value)=>{
 
@@ -25,7 +32,7 @@ const useEntry=() =>{
       }
    }
   
-   return{selected,passwordShow,passWordRef,hoverIcon,toggleStyle}
+   return{selected,passwordShow,passWordRef,hoverIcon,toggleStyle,emailRef}
    
 
 }

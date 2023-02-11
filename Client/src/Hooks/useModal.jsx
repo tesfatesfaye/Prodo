@@ -1,13 +1,19 @@
 import React,{useContext,useState,useLayoutEffect} from "react";
 import { Context } from "../Context/Context";
 
-const [modalHover,setModalHover]=useState(false)
-const {toggleTaskModal}=useContext(Context)
+const useModal=()=>{
+const[tempHolder,setTemHolder]=useState(()=>({title:"",description:"",subtasks:"",comments:[],
+tags:[],setTemHolder:""}))
+const [selectedValue,setSelectedValue]=useState('')
+const toggleSelected=(value)=>{
+    selectedValue(value)
+}
+const tempTasks=(value)=>{
 
-toggleHover=(value)=>{
-    setModalHover(value)
 }
 useLayoutEffect(()=>{
 
-},[modalHover])
-
+},[tempHolder])
+        return{tempHolder,selectedValue,toggleSelected}
+}
+ export default useModal

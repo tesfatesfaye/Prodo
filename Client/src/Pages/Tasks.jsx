@@ -11,8 +11,8 @@ import {MdTitle} from 'react-icons/md'
 import useDashboardHook from "../Hooks/useDashboardHook"
 
 const Tasks=()=>{
-    const{tasks,modifyTaskOrder,toggleTaskModal}=useContext(Context)
-    const{taskHoverId,toggleTaskHoverId,draggable,toggleDraggable}=useDashboardHook()
+    const{tasks,toggleTaskModal}=useContext(Context)
+    const{taskHoverId,toggleTaskHoverId,draggable,toggleDraggable,modifyTaskOrder}=useDashboardHook()
     return(
         <div className="tasks-wrapper">
             

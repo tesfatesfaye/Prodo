@@ -13,11 +13,7 @@ const useEntry=() =>{
       passWordRef.current.focus()
      }
    },[selected,passwordShow])
-   useEffect(()=>{
-      emailRef.current.style.color='white'
-
-      
-   },[formState])
+   
 
    const toggleStyle=(e,value)=>{
 
@@ -32,7 +28,8 @@ const useEntry=() =>{
       }
    }
   
-   return{selected,passwordShow,passWordRef,hoverIcon,toggleStyle,emailRef}
+   return{selected,passwordShow,passWordRef,hoverIcon,toggleStyle,
+      emailRef}
    
 
 }

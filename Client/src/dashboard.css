@@ -187,7 +187,7 @@ nav > div :hover{
         background: linear-gradient(109.6deg, rgb(7, 29, 30) 10%, rgb(6, 14, 17) 100%);
         border-radius: 2%;
         z-index:1000;
-        width: 45%;
+        width: 950px;
         height: 95%;
         display: flex;
         flex-direction: column;
@@ -373,6 +373,30 @@ color: grey
         }
     }
 
+@media(max-width:1200px){
+    .modalParent{
+        flex-direction: column;
+        gap: 20px;
+        margin-left: 0;
+        
+    }
+    .modal-main{
+        width: 100%;
+    }
+    .modal-sidebar{
+        background-color: transparent;
+        width: 50%;
+    }
+}
+
+@media(max-width:900px){
+    .modal-styles{
+        width: 80%;
+    }
+    .comments-div{
+        width: 50%;
+    }
+}
     
 
     

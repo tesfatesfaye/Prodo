@@ -54,7 +54,8 @@ const SignUp=()=>{
                
                </section>
                <div className="check-box-div">
-                    <input name="staySignedIn"id="checkBoxSignUP"className="checkbox"type="checkbox" onChange={(e)=>updateForm(e)}value={formState.staySignedIn}></input>
+                    <input name="staySignedIn"id="checkBoxSignUP"className="checkbox"type="checkbox"
+                    onChange={(e)=>updateForm(e)}value={formState.staySignedIn}></input>
                     <label for="checkBoxSignUP" className="remember-me"> Remember me </label>
                     </div>
                      <div tabIndex='0' className="login-button"> Sign up</div>  

@@ -1,7 +1,7 @@
 import React ,{useContext}from "react";
 import '../dashboard.css'
 import {FaTasks as General} from 'react-icons/fa'
-import { sidBarData } from "../utils/navTasksData";
+
 import {BsCheck2All as Completed,BsAlarm as Overdue,
 BsFilterLeft as Tags,BsFillTrash2Fill as Deleted} from'react-icons/bs'
 import {AiTwotoneCalendar as Today} from 'react-icons/ai'

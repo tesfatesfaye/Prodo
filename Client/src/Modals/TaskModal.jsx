@@ -78,6 +78,13 @@ import useModal from "../Hooks/useModal";
                      </div>
                      <span></span>
                   </div>
+                  <div className="modal-type">
+                     <span>Date-created</span>
+                     <div className="modal-holder">
+                     
+                     </div>
+                     <span></span>
+                  </div>
                 </div>
                 </div>       
             </div>

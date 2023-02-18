@@ -1,4 +1,4 @@
-import {useLayoutEffect, useState,useRef,useContext,useEffect} from "react";
+import {useLayoutEffect, useState,useRef,useContext} from "react";
 import { Context } from "../Context/Context";
 
 const useEntry=() =>{
@@ -23,9 +23,9 @@ const useEntry=() =>{
       else if(e.type==='click'){
          return setPasswordShow(prev=>!prev)
       }
-      else{
+
         return setHoverIcon(value)
-      }
+      
    }
   
    return{selected,passwordShow,passWordRef,hoverIcon,toggleStyle,

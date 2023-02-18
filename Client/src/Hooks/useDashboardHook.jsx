@@ -14,7 +14,7 @@ const useDashboardHook=()=>{
 
     const modifyTaskOrder=(value)=>{
         if(!value.destination) return'';
-        const items=Array.from(tasks)
+        const items=structuredClone(tasks)
         const [holder]=items.splice(value.source.index,1)
         items.splice(value.destination.index,0,holder)
         toggleTasksList(items)

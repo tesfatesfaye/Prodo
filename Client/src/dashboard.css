@@ -1,3 +1,6 @@
+
+
+
 .dashboard-parent{
   display: flex;
   width: 100vw;
@@ -28,6 +31,7 @@
     color: #FFFFFF;
     gap: 20px;
     box-sizing: border-box;
+   
      }
 
 
@@ -59,9 +63,15 @@
      gap: 25px;
     overflow: hidden;
     background: rgb(10, 10, 10,0.3);
-    
+   
+
+
+
 }
 
+.side-bar-off{
+    display: none;
+}
 .side-bar > div{
     display: flex;
     justify-content: start;

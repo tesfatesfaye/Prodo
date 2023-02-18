@@ -12,7 +12,7 @@ import { Context } from "../Context/Context";
         return(
          
             
-           <nav className="side-bar"   style={{display:sideBar ? 'flex' : 'none' }}>
+           <nav className={`side-bar ${sideBar ? '' : 'side-bar-off'}`} >
                 <div className="general-tasks"  > 
                     
                     <General color="yellow"/>

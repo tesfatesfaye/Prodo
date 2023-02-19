@@ -8,10 +8,10 @@ import Split from 'react-split'
 import Tasks from "./Tasks";
 import useDashboardHook from "../Hooks/useDashboardHook";
 const DashBoard=()=>{
-    const{sideBar,toggleDash}=useDashboardHook()
+    const{sideBar,toggleDash,dashRef}=useDashboardHook()
 
     return(
-        <div className="dashboard-parent">
+        <div className="dashboard-parent" ref={dashRef}>
           
            <NavBar
           toggleDash={toggleDash}

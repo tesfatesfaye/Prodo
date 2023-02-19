@@ -1,10 +1,11 @@
-import { useState,useEffect,useContext } from "react";
+import { useState,useEffect,useContext,useRef } from "react";
 import { Context } from "../Context/Context";
 
 const useDashboardHook=()=>{
-    const{toggleTasksList,tasks}=useContext(Context)
+    const{toggleTasksList,tasks,sideBar}=useContext(Context)
     const[taskHoverId,setTaskHoverId]=useState("")
     const [draggable,setDraggable]=useState('')
+   
     const toggleTaskHoverId=(value)=>{
         setTaskHoverId(value)
     }

@@ -14,8 +14,10 @@
     width: auto;
      padding: 0;
     justify-content: center;
+   
 
 }
+
 .nav-parent{
     display: flex;
     flex-direction: row;
@@ -63,8 +65,8 @@
      gap: 25px;
     overflow: hidden;
     background: rgb(10, 10, 10,0.3);
-   
-
+    transition-duration: 300ms;
+    transition-delay: 1s;
 
 
 }

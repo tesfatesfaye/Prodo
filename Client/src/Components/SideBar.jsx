@@ -1,18 +1,18 @@
 import React ,{useContext}from "react";
 import '../dashboard.css'
 import {FaTasks as General} from 'react-icons/fa'
-
+import useSideBar from "../Hooks/useSidebar";
 import {BsCheck2All as Completed,BsAlarm as Overdue,
 BsFilterLeft as Tags,BsFillTrash2Fill as Deleted} from'react-icons/bs'
 import {AiTwotoneCalendar as Today} from 'react-icons/ai'
 import { Context } from "../Context/Context";
     const SideBar=()=>{
         const {sideBar}=useContext(Context)
-        
+        const {sideBarRef}=useSideBar()     
         return(
          
             
-           <nav className={`side-bar ${sideBar ? '' : 'side-bar-off'}`} >
+           <nav ref={sideBarRef} id="sideBar"className='side-bar '>
                 <div className="general-tasks"  > 
                     
                     <General color="yellow"/>

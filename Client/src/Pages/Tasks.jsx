@@ -20,12 +20,13 @@ const Tasks=()=>{
     <span className="task-Title">General</span>
     <DragDropContext onDragEnd={modifyTaskOrder}>
         <Droppable droppableId="tasks-div">
-            {(provided)=>( <div className="tasks-div"  {...provided.droppableProps} ref={provided.innerRef}>
+            {(provided)=>( <ul className="tasks-div"  {...provided.droppableProps} ref={provided.innerRef}>
        
         {tasks.map((task,index)=>(
             <Draggable key={task.id} draggableId={task.id} index={index} isDragDisabled={draggable ? false : true}>
                {(prov)=>( 
-               <div className="tasks" id={task.id} onMouseEnter={()=>toggleTaskHoverId(task.id) } onClick={()=>toggleTaskModal(true)}
+               <li className="tasks" id={task.id} onMouseEnter={()=>toggleTaskHoverId(task.id) } 
+               onClick={()=>toggleTaskModal(true)}
             onMouseLeave={()=>toggleTaskHoverId('')} {...prov.draggableProps} {...prov.dragHandleProps} ref={prov.innerRef} >
             <RxHamburgerMenu color="white" size="0.9em"style={{visibility: taskHoverId=== task.id ? 'visible' : 'hidden'}}
             onMouseEnter={()=>toggleDraggable(true)} onMouseLeave={()=>toggleDraggable(false)}/>
@@ -50,7 +51,7 @@ const Tasks=()=>{
                 </div>
                 
         
-            </div>)}
+            </li>)}
             </Draggable>
         ))}
         
@@ -62,7 +63,7 @@ const Tasks=()=>{
             <small className="add-task-button">Add task</small>
 
         </span>
-        </div>
+        </ul>
             )}
         </Droppable>
         </DragDropContext>

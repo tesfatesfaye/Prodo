@@ -3,7 +3,6 @@ import {Routes,Route,Link} from "react-router-dom"
 import Login from './Pages/Login'
 import SignUp from './Pages/Signup'
 import DashBoard from './Pages/Dashboard'
-import TaskModal from './Modals/TaskModal'
 import { IconContext } from "react-icons/lib";
 function App() {
  

@@ -71,9 +71,7 @@
 
 }
 
-.side-bar-off{
-    display: none;
-}
+
 .side-bar > div{
     display: flex;
     justify-content: start;

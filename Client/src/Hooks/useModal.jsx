@@ -6,6 +6,16 @@ const[tempHolder,setTemHolder]=useState(()=>({modalTitle:"",modalDescription:""
 ,subtask:'',subtasks:[],comment:'',comments:[],tag:'',tags:[]}))
 const commentRef=useRef(null)
 const [selectedValue,setSelectedValue]=useState('')
+const focusStyle=(value)=>{
+    if(value===selectedValue){
+        return ({border:'1px solid grey'})
+    }
+    
+    return({border:''})
+    
+}
+
+
 const toggleSelected=(value)=>{
     setSelectedValue(value)
 }
@@ -22,6 +32,6 @@ useLayoutEffect(()=>{
     
 },[tempHolder])
         return{tempHolder,selectedValue,toggleSelected,
-            updateTemp,toggleShift}
+            updateTemp,toggleShift,focusStyle}
 }
  export default useModal

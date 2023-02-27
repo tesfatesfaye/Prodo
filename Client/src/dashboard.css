@@ -1,6 +1,3 @@
-
-
-
 .dashboard-parent{
   display: flex;
   width: 100vw;
@@ -14,9 +11,7 @@
     width: auto;
      padding: 0;
     justify-content: center;
-   
-
-}
+   }
 
 .nav-parent{
     display: flex;
@@ -33,7 +28,6 @@
     color: #FFFFFF;
     gap: 20px;
     box-sizing: border-box;
-   
      }
 
 
@@ -65,8 +59,6 @@
      gap: 25px;
     overflow: hidden;
     background: rgb(10, 10, 10,0.3);
-    transition-duration: 300ms;
-    transition-delay: 1s;
 
 
 }
@@ -122,9 +114,7 @@ nav > div :hover{
     width: 50%;
     align-items: start;
     justify-content: center;
-     /* justify-content: center;
-    align-items: center; */
-    margin-left: 480px;
+     margin-left: 480px;
     
   }
 
@@ -262,9 +252,44 @@ padding-right: 10px;
     
 
 }
-
-.modal-input-description{
-
+.subtasks-parent{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+    color: #FFFFFF;
+    justify-content: center;
+    gap: 10px;
+    box-sizing: border-box;
+    margin-left: 5px;
+    margin-top: 0;
+    border-radius: 5px;
+    padding:10px 10px 5px 15px ;
+   
+}
+.subtasks{
+    display: flex;
+    width: 100%;
+    gap:10px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+.modal-buttons{
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    margin-top: 15px;
+   
+}
+.modal-buttons > button{
+    all:unset;
+    height: 40px;
+    min-width: 68px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
 }
 .modal-input-title:focus{
     outline: none;
@@ -273,7 +298,6 @@ padding-right: 10px;
     display: flex;
     gap: 3px;
     align-items: center;
-    margin-left: 20px;
     color: #FFFFFF;
     cursor: pointer;
     
@@ -298,7 +322,9 @@ align-items: center;
     display: flex;
     width: 100%;
    height: 100%;
-  
+   box-sizing: border-box;
+   
+
 
 }
 .modal-sidebar{

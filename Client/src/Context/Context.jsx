@@ -9,10 +9,14 @@ const Context=createContext()
         const [theme,setTheme]=useState(()=>'dark')
         const[taskModal,setTaskModal]=useState(true)
         const [sideBar,setSideBar]=useState(true)
-        const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[],comments:"This is the first",description:'none',duedate:"",Tags:[]},
-        {id:uuid4(), title:"Test 2", subtasks:[],comments:'This is the second',description:'none',duedate:"",Tags:[]},
-        {id:uuid4(), title:"Test 3", subtasks:[],comments:'This is the third',description:'none',duedate:"",Tags:[]},
-        {id:uuid4(), title:"Test 4", subtasks:[],comments:'This is the fourth',description:'none',Duedate:"",Tags:[]}
+        const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[],comments:"This is the first",
+        description:'none',duedate:"",Tags:[]},
+        {id:uuid4(), title:"Test 2", subtasks:[],
+        comments:'This is the second',description:'none',duedate:"",Tags:[]},
+        {id:uuid4(), title:"Test 3", 
+        subtasks:[],comments:'This is the third',description:'none',duedate:"",Tags:[]},
+        {id:uuid4(), title:"Test 4", 
+        subtasks:[],comments:'This is the fourth',description:'none',Duedate:"",Tags:[]}
         
     ])
 

@@ -1,12 +1,11 @@
 import { useState,useEffect,useContext,useRef } from "react";
-import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { Context } from "../Context/Context";
 
 const useDashboardHook=()=>{
     const{toggleTasksList,tasks,sideBar}=useContext(Context)
     const[taskHoverId,setTaskHoverId]=useState("")
     const [draggable,setDraggable]=useState('')
-    const [dashRef,enableAnimations]=useAutoAnimate()
+
     const toggleTaskHoverId=(value)=>{
         setTaskHoverId(value)
     }
@@ -24,7 +23,7 @@ const useDashboardHook=()=>{
 
 
     return{taskHoverId,toggleTaskHoverId,draggable,
-        toggleDraggable,modifyTaskOrder,dashRef,enableAnimations}
+        toggleDraggable,modifyTaskOrder}
 
 
     

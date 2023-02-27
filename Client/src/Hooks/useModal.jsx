@@ -1,19 +1,27 @@
-import React,{useContext,useState,useLayoutEffect} from "react";
+import React,{useContext,useState,useLayoutEffect, useRef} from "react";
 import { Context } from "../Context/Context";
 
 const useModal=()=>{
-const[tempHolder,setTemHolder]=useState(()=>({title:"",description:"",subtasks:"",comments:[],
-tags:[],setTemHolder:""}))
+const[tempHolder,setTemHolder]=useState(()=>({modalTitle:"",modalDescription:""
+,subtask:'',subtasks:[],comment:'',comments:[],tag:'',tags:[]}))
+const commentRef=useRef(null)
 const [selectedValue,setSelectedValue]=useState('')
 const toggleSelected=(value)=>{
-    selectedValue(value)
+    setSelectedValue(value)
 }
-const tempTasks=(value)=>{
-
+const toggleShift=(value)=>{
+    setSelectedValue(value)
+}
+const updateTemp=(event)=>{
+    const{name,value}=event.target
+    setTemHolder(prev=>{
+        return {...prev, [name]:value}
+    })
 }
 useLayoutEffect(()=>{
-
+    
 },[tempHolder])
-        return{tempHolder,selectedValue,toggleSelected}
+        return{tempHolder,selectedValue,toggleSelected,
+            updateTemp,toggleShift}
 }
  export default useModal

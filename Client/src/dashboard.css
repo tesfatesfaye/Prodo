@@ -103,16 +103,6 @@ nav > div :hover{
     width: 100%;
     margin-top: 55px;
 }
-.gutter {
-    background-color: black;
-    background-repeat: no-repeat;
-    
-  }
-  
-  .gutter.gutter-horizontal {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
-    cursor: col-resize;
-  }
 
 
   .task-Title{
@@ -292,6 +282,10 @@ padding-right: 10px;
 display: flex;
 align-items: center;
 }
+.modal-comments:focus{
+   
+    outline: none;
+}
 .modal-main{
     display: flex;
     flex-direction: column;
@@ -333,6 +327,7 @@ color: #FFFFFF;
      padding-left: 8px;
     border: 1px solid rgb(255, 255, 255,0.3) ;
     border-radius: 15px;
+    box-sizing: border-box;
 }
 .modal-type{
     display: flex;
@@ -368,6 +363,17 @@ color: grey
     gap: 20px;
     flex-direction: column;
     margin-left: 20px;;
+}
+.modal-mini-input{
+    padding-top:0px;
+    background:transparent;
+    border:none;
+    width: 100%;
+    height: 100%;
+    color: #FFFFFF;
+}
+.modal-mini-input:focus{
+   outline: none;
 }
 .modal-type > span:last-of-type{
 

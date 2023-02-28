@@ -5,8 +5,8 @@ const ModalButtons=(props)=>{
 
     return(
         <div className="modal-buttons">
-          <button style={{background:"#1dac64"}}>Save</button>
-          <button style={{background:"#dd0706"}}>Cancel</button>
+          <button className="save-cancel"style={{background:"rgba(40, 60, 80,0.9)"}}>Save</button>
+          <button className="save-cancel"style={{background:"rgba(200, 60, 80,0.9)"}}>Cancel</button>
       </div>
     )
 }

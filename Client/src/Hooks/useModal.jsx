@@ -6,8 +6,8 @@ const[tempHolder,setTemHolder]=useState(()=>({modalTitle:"",modalDescription:""
 ,subtask:'',subtasks:[],comment:'',comments:[],tag:'',tags:[]}))
 const commentRef=useRef(null)
 const [selectedValue,setSelectedValue]=useState('')
-const focusStyle=(value)=>{
-    if(value===selectedValue){
+const focusStyle=(value,valueTwo="EmptyValue")=>{
+    if(value===selectedValue || valueTwo===selectedValue){
         return ({border:'1px solid grey'})
     }
     

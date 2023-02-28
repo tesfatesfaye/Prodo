@@ -278,18 +278,21 @@ padding-right: 10px;
 }
 .modal-buttons{
     display: flex;
-    gap: 10px;
+    gap: 7px;
     justify-content: end;
     margin-top: 15px;
    
 }
 .modal-buttons > button{
     all:unset;
-    height: 40px;
-    min-width: 68px;
+    height: 35px;
+    min-width: 60px;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
+}
+.modal-buttons> button:hover{
+    opacity: 0.8;
 }
 .modal-input-title:focus{
     outline: none;
@@ -384,11 +387,14 @@ color: grey
     align-items: center;
     
 }
-.title-description{
+.title-description-parent{
     display: flex;
     gap: 20px;
     flex-direction: column;
-    margin-left: 20px;;
+    margin-left: 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding:10px 10px 5px 15px ;
 }
 .modal-mini-input{
     padding-top:0px;

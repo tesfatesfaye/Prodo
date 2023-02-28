@@ -6,15 +6,16 @@ import ModalButtons from "./ModalButtons";
 import {MdSort} from "react-icons/md"
 import {VscAdd} from 'react-icons/vsc'
 const ModalMain=()=>{
-    const {selectedValue,tempHolder,updateTemp,toggleSelected,focusStyle}=useModal()
+    const {selectedValue,tempHolder,updateTemp,
+      toggleSelected,focusStyle}=useModal()
     
     return(
         <div className="modal-main">
-        <div className="title-description">
+        <div className="title-description-parent" style={focusStyle('Title',"Description")}>
      <div className="modal-title">
       {!selectedValue && <div className="modal-complete"> </div>}
       <input type='text' id="modal-title" className="modal-input-title"
-       placeholder="Title" maxLength={150} name="modalTitle"  
+       placeholder="Title"  name="modalTitle"  
        value={tempHolder.modalTitle}
        onFocus={()=>toggleSelected('Title')}
        onBlur={()=>toggleSelected('')}
@@ -28,10 +29,11 @@ const ModalMain=()=>{
           placeholder="Description" 
           value={tempHolder.modalDescription}
           onChange={(event)=>updateTemp(event)}
-          onFocus={()=>toggleSelected('description')}
+          onFocus={()=>toggleSelected('Description')}
           onBlur={()=>toggleSelected('')}/>
          
   </div>
+  {(selectedValue==="Title" ||selectedValue==="Description") && <ModalButtons/>}
   </div>
        <div className="subtasks-parent" style={(focusStyle('subtask'))}>
        

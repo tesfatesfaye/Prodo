@@ -45,9 +45,7 @@ const ModalMain=()=>{
          </div>
             : ''
           }
-
-       
-       
+             
       <div className="modal-add" >
             <VscAdd color="white" size={'1em'}/>
       <input placeholder="Add sub-task" 
@@ -59,18 +57,19 @@ const ModalMain=()=>{
       {selectedValue==="subtask" && <ModalButtons/>}
       </div>
       <div className="modal-comments" >
-        <ProfileHolder backgroundColor='rgba(0,0,0,0.1)' 
-        marginLeft='20px'/>
+        {selectedValue!=="Comment" && <ProfileHolder backgroundColor='rgba(0,0,0,0.1)' 
+        marginLeft='20px'/>}
 
-   <div className="comments-div" >
+   <div className={`comments-div ${selectedValue==="Comment" ? "comments-div-focused" : ''}`} >
       <input className="modal-mini-input" placeholder="comments"
       name="comment" style={{opacity: tempHolder.comment ? "1" : "0.6"}}
       value={tempHolder.comment} onChange={(event)=>updateTemp(event)}
       onFocus={()=>toggleSelected('Comment')}
       onBlur={()=>toggleSelected('')}
       />
-     
+       {selectedValue==="Comment" && <ModalButtons/>}
    </div>
+  
       </div>
       </div>
     )

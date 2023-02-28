@@ -290,6 +290,8 @@ padding-right: 10px;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
+    color: #FFFFFF;
+    font-weight: 300;
 }
 .modal-buttons> button:hover{
     opacity: 0.8;
@@ -308,6 +310,7 @@ padding-right: 10px;
 .modal-comments{
 display: flex;
 align-items: center;
+min-width: 600px;
 }
 .modal-comments:focus{
    
@@ -336,27 +339,42 @@ flex-direction: column;
 width: 32%;
 height: 100%;
 box-sizing: border-box;
-background-color:  rgb(0, 0, 0,0.3);
+background-color: rgb(0, 0, 0,0.3);
 margin: 0;
 color: #FFFFFF;
 }
 
 .comments-div{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     color: #FFFFFF;
     font-weight: 300;
     font-size: small;
     width: 494px;
-    height: 32px;
+    height: auto;
     font-size: small;
     font-weight: 300;
     box-sizing: border-box;
-    padding-top: 0px;
-     padding-left: 8px;
+    padding: 8px 8px 8px 8px;
     border: 1px solid rgb(255, 255, 255,0.3) ;
     border-radius: 15px;
     box-sizing: border-box;
+}
+.modal-mini-input{
+    padding-top:0px;
+    background:transparent;
+    border:none;
+    width: 100%;
+    height: auto;
+    color: #FFFFFF;
+}
+.modal-mini-input:focus{
+   outline: none;
+   
+}
+.modal-type > span:last-of-type{
+
+    border-bottom: 1px solid rgba(255, 255, 255,0.3);
 }
 .modal-type{
     display: flex;
@@ -396,20 +414,9 @@ color: grey
     box-sizing: border-box;
     padding:10px 10px 5px 15px ;
 }
-.modal-mini-input{
-    padding-top:0px;
-    background:transparent;
-    border:none;
-    width: 100%;
-    height: 100%;
-    color: #FFFFFF;
-}
-.modal-mini-input:focus{
-   outline: none;
-}
-.modal-type > span:last-of-type{
-
-    border-bottom: 1px solid rgba(255, 255, 255,0.3);
+.comments-div-focused{
+    margin-left: 20px;
+    width: 550px;
 }
 
     @media (max-width: 980px){
@@ -443,6 +450,21 @@ color: grey
     }
     .comments-div{
         width: 50%;
+        
+    }
+}
+@media (max-width:470px) {
+    .comments-div{
+        margin: 0;
+     
+        
+    }
+    .comments-div-focused{
+        width: 50%;
+    }
+
+    .profile-menu{
+       margin-right: 0px;
     }
 }
     

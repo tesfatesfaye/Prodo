@@ -3,9 +3,7 @@ import { Context } from "../Context/Context";
 import '../dashboard.css'
 const ProfileHolder=(props)=>{
     const {formState}=useContext(Context)
-
-  
-    return(
+   return(
         <div className="profile-menu" style={props}>
         <span>{formState.firstName[0] ?? ''}
          {formState.lastName[0] ?? ''}</span> 

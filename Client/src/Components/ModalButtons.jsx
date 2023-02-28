@@ -1,12 +1,22 @@
-import React from "react";
+import React ,{useContext}from "react";
+import { Context } from "../Context/Context";
 import '../dashboard.css'
 const ModalButtons=(props)=>{
-
+  const {toggleModal}=useContext(Context)
 
     return(
         <div className="modal-buttons">
-          <button className="save-cancel"style={{background:"rgba(40, 60, 80,0.9)"}}>Save</button>
-          <button className="save-cancel"style={{background:"rgba(200, 60, 80,0.9)"}}>Cancel</button>
+          <button className="save-cancel"style={{background:"rgba(0, 106, 78,0.9)"}} 
+        >
+            {props.textOne? props.textOne : 'Save'}
+            </button>
+          <button className="save-cancel"style={{background:"rgba(128, 0, 32,0.9)"}}
+            onClick={()=>
+              toggleModal('')
+              }
+          >
+            {props.textTwo ? props.textTwo : 'Cancel'}
+            </button>
       </div>
     )
 }

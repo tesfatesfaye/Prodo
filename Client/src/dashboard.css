@@ -181,7 +181,7 @@ nav > div :hover{
         height: 95%;
         display: flex;
         flex-direction: column;
-        
+        box-shadow: 0px 0px 2px grey;
            
     }
 
@@ -191,7 +191,7 @@ nav > div :hover{
         left:0;
         right:0;
         bottom:0;
-         background: rgb(0, 0, 0,0.8);
+         background: rgb(0, 0, 0,0.7);
         z-index:1000;
        
 
@@ -244,7 +244,8 @@ padding-right: 10px;
     border: none;
     margin-left: 0;
     padding-left: 0;
-    font-size: x-large;
+    font-size: large;
+    font-weight: 300;
     flex-wrap: wrap;
     height: max-content;
     resize: vertical;
@@ -285,10 +286,12 @@ padding-right: 10px;
 }
 .modal-buttons > button{
     all:unset;
-    height: 35px;
-    min-width: 60px;
+    display: flex;
+    height: 30px;
+    min-width: 55px;
     border-radius: 5px;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     color: #FFFFFF;
     font-weight: 300;
@@ -414,11 +417,113 @@ color: grey
     box-sizing: border-box;
     padding:10px 10px 5px 15px ;
 }
+.title-description-add-task{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding-top: 10px;
+
+}
+.title-description-add-task >*{
+    margin-left: 15px;
+}
+.title-description-add-task > span{
+    margin-left: 0;
+    border-bottom: 1px rgba(230, 230, 230,0.1) solid;
+    width:100%;
+}
 .comments-div-focused{
     margin-left: 20px;
     width: 550px;
 }
 
+
+.add-task-modal{
+    display: flex;
+    width: 550px;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 190px;
+    position: fixed;
+    top: 15%;
+    bottom:75%;
+    left: 30%;
+    right: 55%;
+    background: linear-gradient(109.6deg, rgb(5, 12, 20) 10%, rgb(0, 0, 0) 100%);
+    border-radius: 9px;
+    z-index:1000;
+    box-sizing: border-box;
+    padding-top: 5px;
+    box-shadow: 0px 0px 1.5px gray;
+
+}
+
+
+#add-task-modal-title{
+    font-size: small;
+    opacity: 0.5;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+#add-task-modal-description{
+    font-size: small;
+    font-weight: 300;
+    opacity: 0.7;
+    margin-top: 0;
+}
+
+#add-task-modal-title:hover {
+    opacity: 0.4;
+}
+#add-task-modal-description:hover{
+    opacity: 0.4;
+}
+
+.tag-holder{
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+
+}
+.due-date-add-modal{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 20px;
+    width: 18%;
+    gap: 5px;
+    padding-right: 2px;
+   color: green;
+    font-weight: 400;
+    font-size: small;
+}
+
+.tag-holder >*{
+    border: 1px rgba(230,230,230,0.2) solid;
+    border-radius: 3px;
+    padding: 2px;
+
+}
+
+.add-holder-button-area{
+    display: flex;
+    height: 100%;
+    align-items:center ;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+.add-general{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: auto;
+}
     @media (max-width: 980px){
         .task-Title{
             left: 50%;

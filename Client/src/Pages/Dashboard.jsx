@@ -4,7 +4,7 @@ import NavBar from "../Components/NavBar";
 import SideBar from "../Components/SideBar";
 import { Route,Routes } from "react-router";
 import Split from 'react-split'
-
+import AddTaskModal from "../Modals/AddTaskModal";
 import Tasks from "./Tasks";
 import useDashboardHook from "../Hooks/useDashboardHook";
 const DashBoard=()=>{
@@ -23,7 +23,7 @@ const DashBoard=()=>{
             />
           
             <Tasks/>
-           
+           <AddTaskModal/>
           
            
           

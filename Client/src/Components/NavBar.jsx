@@ -7,7 +7,7 @@ import {ReactComponent as LightToggle} from '../assets/light-mode-toggle-icon.sv
 import {ReactComponent as DarkToggle} from '../assets/dark-mode-toggle-icon.svg'
 import { Context } from "../Context/Context";
 const NavBar=()=>{
-  const {toggleSideBar,formState}=useContext(Context)
+  const {toggleSideBar,formState,toggleModal}=useContext(Context)
     const[on,setOn]=useState(true)
     const toggle=()=>{
         setOn(prev=>!prev)
@@ -21,7 +21,7 @@ const NavBar=()=>{
       { on ? <LightToggle height={30} width={30} fill="yellow" onClick={toggle}/> : 
       <DarkToggle height={15} width={30} fill="white" onClick={toggle}/>}
        
-       <VscAdd color="lightblue"/>
+       <VscAdd onClick={()=>toggleModal('AddTaskModal')}  color="lightblue"/>
       <ProfileHolder/>
        </nav>
    

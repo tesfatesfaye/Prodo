@@ -9,12 +9,12 @@ import ModalMain from "../Components/ModalMain";
  const TaskModal=()=>{
 
       
-    const{taskModal,toggleTaskModal,formState}=useContext(Context)
-    if(taskModal===false) return null
+    const{modal,toggleModal,formState}=useContext(Context)
+    if(modal!=="TaskModal") return null
        return(
         <ReactPortal wrapperId="portal">
        <> 
-        <div className='over-lay-styles' onClick={()=>toggleTaskModal(false)}></div>
+        <div className='over-lay-styles'></div>
        <div className="modal-styles">
                    <div className="modal-header">     
             <div style={{display:'flex',gap:'5px',alignItems:'center'}} > 
@@ -22,7 +22,7 @@ import ModalMain from "../Components/ModalMain";
                     <span style={{fontWeight:'300',fontSize:'13px'}}>General</span>
                 </div>
                 <VscChromeClose style={{marginLeft:'auto',cursor:'pointer'}}size={'0.9em'} 
-                color="white" onClick={()=>toggleTaskModal(false)}/>
+                color="white" onClick={()=>toggleModal('')}/>
                 </div>
                 <div className="modalParent">
                  <ModalMain/>

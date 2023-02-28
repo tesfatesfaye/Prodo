@@ -7,7 +7,7 @@ const Context=createContext()
         const [formState,setFormState]=useState(()=>({firstName:'Tesfa',lastName:'Tesfaye',
         email:'',password:'', staySignedIn:false}))
         const [theme,setTheme]=useState(()=>'dark')
-        const[taskModal,setTaskModal]=useState(true)
+        const[modal,setModal]=useState('AddTaskModal')
         const [sideBar,setSideBar]=useState(true)
         const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[],comments:"This is the first",
         description:'none',duedate:"",Tags:[]},
@@ -25,9 +25,9 @@ const Context=createContext()
         }
 
 
-        const toggleTaskModal=(value)=>{
+        const toggleModal=(value)=>{
 
-            setTaskModal(value)
+            setModal(value)
         }
        
     
@@ -56,7 +56,7 @@ const Context=createContext()
         }
        return(
         <Context.Provider value={{formState,updateForm,changePage,
-        theme,sideBar,toggleSideBar,tasks,taskModal,toggleTaskModal,toggleTasksList}}>
+        theme,sideBar,toggleSideBar,tasks,modal,toggleModal,toggleTasksList}}>
             {children}
         </Context.Provider>
     )}

@@ -15,7 +15,7 @@ const ModalMain=()=>{
      <div className="modal-title">
       {!selectedValue && <div className="modal-complete"> </div>}
       <input type='text' id="modal-title" className="modal-input-title"
-       placeholder="Title"  name="modalTitle"  
+       placeholder="Task title"  name="modalTitle"  
        value={tempHolder.modalTitle}
        onFocus={()=>toggleSelected('Title')}
        onBlur={()=>toggleSelected('')}

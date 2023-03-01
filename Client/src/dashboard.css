@@ -477,13 +477,19 @@ color: grey
     margin-top: 0;
 }
 
+
 #add-task-modal-title:hover {
     opacity: 0.4;
 }
 #add-task-modal-description:hover{
     opacity: 0.4;
 }
-
+#add-task-modal-title:focus{
+    opacity: 1;
+}
+#add-task-modal-description:focus{
+    opacity: 1;
+}
 .tag-holder{
     display: flex;
     width: 100%;

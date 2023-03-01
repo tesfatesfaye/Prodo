@@ -15,8 +15,8 @@ const ModalMain=()=>{
      <div className="modal-title">
       {!selectedValue && <div className="modal-complete"> </div>}
       <input type='text' id="modal-title" className="modal-input-title"
-       placeholder="Task title"  name="modalTitle"  
-       value={tempHolder.modalTitle}
+       placeholder="Task title"  name="title"  
+       value={tempHolder.title}
        onFocus={()=>toggleSelected('Title')}
        onBlur={()=>toggleSelected('')}
        onChange={(event)=>updateTemp(event)}/>
@@ -24,10 +24,10 @@ const ModalMain=()=>{
       </div> 
   <div className="modal-description" style={{display:'flex',gap:'10px'}}>
           <MdSort color="white"/>
-          <textarea type='text' name="modalDescription"id="modal-title"className="modal-input-title" 
+          <textarea type='text' name="description"id="modal-title"className="modal-input-title" 
           style={{color:"white", fontSize:"medium",overflow:'visible'}}
           placeholder="Description" 
-          value={tempHolder.modalDescription}
+          value={tempHolder.description}
           onChange={(event)=>updateTemp(event)}
           onFocus={()=>toggleSelected('Description')}
           onBlur={()=>toggleSelected('')}/>

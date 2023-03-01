@@ -11,7 +11,7 @@ const AddTaskModal=()=>{
     const{modal,toggleModal}=useContext(Context)
     if(modal!=="AddTaskModal") return null
     const {selectedValue,tempHolder,updateTemp,
-        toggleSelected,focusStyle}=useModal()
+        toggleSelected,focusStyle,addNewTask}=useModal()
     
 
     return(
@@ -23,18 +23,20 @@ const AddTaskModal=()=>{
      <div className="modal-title">
      <input type='text' className="modal-input-title"
        id="add-task-modal-title" 
-       placeholder="Task title"  name="modalTitle"  
-       value={tempHolder.modalTitle}
+       style={{opacity: tempHolder.title ? "1" : ''}}
+       placeholder="Task title"  name="title"  
+       value={tempHolder.title}
        onFocus={()=>toggleSelected('Title')}
        onBlur={()=>toggleSelected('')}
        onChange={(event)=>updateTemp(event)}/>
 
       </div> 
   <div className="modal-description" style={{display:'flex',gap:'10px'}}>
-          <input type='text' name="modalDescription"className="modal-input-title"
+          <input type='text' name="description"className="modal-input-title"
           id="add-task-modal-description" 
+          style={{opacity: tempHolder.description ? "1" : ''}}
              placeholder="Description" 
-          value={tempHolder.modalDescription}
+          value={tempHolder.description}
           onChange={(event)=>updateTemp(event)}
           onFocus={()=>toggleSelected('Description')}
           onBlur={()=>toggleSelected('')}/>
@@ -54,7 +56,7 @@ const AddTaskModal=()=>{
         <General color="yellow" size={"0.75rem"} style={{margin:"0"}}/>
         <h6 style={{color:"rgba(255,255,255,0.7)",margin:"0"}}>General</h6>
         </span>
-        <ModalButtons/>
+        <ModalButtons addNewTask={addNewTask}/>
         </div>
   </div>
         

@@ -10,13 +10,13 @@ const Context=createContext()
         const[modal,setModal]=useState('AddTaskModal')
         const [sideBar,setSideBar]=useState(true)
         const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[],comments:"This is the first",
-        description:'none',duedate:"",Tags:[]},
+        description:'none',dueDate:"",tags:[],dateCreated:""},
         {id:uuid4(), title:"Test 2", subtasks:[],
-        comments:'This is the second',description:'none',duedate:"",Tags:[]},
+        comments:'This is the second',description:'none',dueDate:"",tags:[],dateCreated:""},
         {id:uuid4(), title:"Test 3", 
-        subtasks:[],comments:'This is the third',description:'none',duedate:"",Tags:[]},
+        subtasks:[],comments:'This is the third',description:'none',dueDate:"",tags:[],dateCreated:""},
         {id:uuid4(), title:"Test 4", 
-        subtasks:[],comments:'This is the fourth',description:'none',Duedate:"",Tags:[]}
+        subtasks:[],comments:'This is the fourth',description:'none',dueDate:"",tags:[],dateCreated:""}
         
     ])
 

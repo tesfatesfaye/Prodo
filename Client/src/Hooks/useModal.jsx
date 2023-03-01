@@ -1,10 +1,12 @@
-import React,{useContext,useState,useLayoutEffect, useRef} from "react";
+import React,{useContext,useState,useLayoutEffect, useRef, useEffect} from "react";
 import { Context } from "../Context/Context";
-
+import { uuid4 } from 'uuid4';
+const tempHolderModel={title:"",description:""
+,subtask:'',subtasks:[],comment:'',comments:[],tag:'',tags:[],dueDate:"",dateCreated:''}
 const useModal=()=>{
-const[tempHolder,setTemHolder]=useState(()=>({modalTitle:"",modalDescription:""
-,subtask:'',subtasks:[],comment:'',comments:[],tag:'',tags:[]}))
+const[tempHolder,setTempHolder]=useState(tempHolderModel)
 const commentRef=useRef(null)
+const {toggleTasksList,tasks,toggleModal}=useContext(Context)
 const [selectedValue,setSelectedValue]=useState('')
 const focusStyle=(value,valueTwo="EmptyValue")=>{
     if(value===selectedValue || valueTwo===selectedValue){
@@ -15,6 +17,18 @@ const focusStyle=(value,valueTwo="EmptyValue")=>{
     
 }
 
+const addNewTask=()=>{
+        let objectHolder={}
+        for(let key in tempHolder){
+        if(key.toString()!=="comment" && key.toString()!=="tag"){
+            if(key.toString()!=="subtask")
+      objectHolder[key]=tempHolder[key]
+        }
+    toggleTasksList([...tasks,{id:uuid4(),...objectHolder}])
+        toggleModal('')
+        setTempHolder(tempHolderModel)
+    }
+}
 
 const toggleSelected=(value)=>{
     setSelectedValue(value)
@@ -24,14 +38,25 @@ const toggleShift=(value)=>{
 }
 const updateTemp=(event)=>{
     const{name,value}=event.target
-    setTemHolder(prev=>{
+    setTempHolder(prev=>{
         return {...prev, [name]:value}
     })
 }
-useLayoutEffect(()=>{
+useEffect(()=>{
+    let objectHolder={}
     
+    for(let key in tempHolder){
+        if(key.toString()!=="comment" && key.toString()!=="tag"){
+            if(key.toString()!=="subtask")
+      objectHolder[key]=tempHolder[key]
+        }
+    
+    }
+
+    console.log(objectHolder)
 },[tempHolder])
         return{tempHolder,selectedValue,toggleSelected,
-            updateTemp,toggleShift,focusStyle}
+            updateTemp,toggleShift,focusStyle,addNewTask}
 }
  export default useModal
+ export{tempHolderModel}

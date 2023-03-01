@@ -7,7 +7,7 @@ BsFilterLeft as Tags,BsFillTrash2Fill as Deleted} from'react-icons/bs'
 import {AiTwotoneCalendar as Today} from 'react-icons/ai'
 import { Context } from "../Context/Context";
     const SideBar=()=>{
-        const {sideBar}=useContext(Context)
+       
         const {sideBarRef}=useSideBar()     
         return(
          

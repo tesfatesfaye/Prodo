@@ -7,11 +7,15 @@ const ModalButtons=(props)=>{
     return(
         <div className="modal-buttons">
           <button className="save-cancel"style={{background:"rgba(0, 106, 78,0.9)"}} 
+          onClick={()=>{
+            props.addNewTask ? props.addNewTask() : ''
+          }}
         >
             {props.textOne? props.textOne : 'Save'}
             </button>
           <button className="save-cancel"style={{background:"rgba(128, 0, 32,0.9)"}}
             onClick={()=>
+            
               toggleModal('')
               }
           >

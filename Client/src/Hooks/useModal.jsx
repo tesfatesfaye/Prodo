@@ -1,8 +1,8 @@
 import React,{useContext,useState,useLayoutEffect, useRef, useEffect} from "react";
 import { Context } from "../Context/Context";
 import { uuid4 } from 'uuid4';
-const tempHolderModel={title:"",description:""
-,subtask:'',subtasks:[],comment:'',comments:[],tag:'',tags:[],dueDate:"",dateCreated:''}
+import { tempHolderModel } from "../utils/tempHolderModel";
+
 const useModal=()=>{
 const[tempHolder,setTempHolder]=useState(tempHolderModel)
 const commentRef=useRef(null)

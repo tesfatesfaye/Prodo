@@ -1,13 +1,14 @@
 import React,{useState,useEffect,createContext} from "react";
 import {useNavigate} from "react-router-dom";
 import { uuid4 } from 'uuid4';
+import { tempHolderModel } from "../Hooks/useModal";
 const Context=createContext()
     
     function ContextFunction({children}){
         const [formState,setFormState]=useState(()=>({firstName:'Tesfa',lastName:'Tesfaye',
         email:'',password:'', staySignedIn:false}))
         const [theme,setTheme]=useState(()=>'dark')
-        const[modal,setModal]=useState('AddTaskModal')
+        const[modal,setModal]=useState('')
         const [sideBar,setSideBar]=useState(true)
         const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[],comments:"This is the first",
         description:'none',dueDate:"",tags:[],dateCreated:""},

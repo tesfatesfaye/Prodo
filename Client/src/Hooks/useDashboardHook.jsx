@@ -12,7 +12,11 @@ const useDashboardHook=()=>{
     const toggleDraggable=(value)=>{
         setDraggable(value)
     }
-
+    const openEditModal=(id)=>{
+        const task=tasks.filter(x=> x.id===id)
+        
+        console.log(task)
+    }
     const modifyTaskOrder=(value)=>{
         if(!value.destination) return'';
         const items=structuredClone(tasks)
@@ -23,7 +27,7 @@ const useDashboardHook=()=>{
 
 
     return{taskHoverId,toggleTaskHoverId,draggable,
-        toggleDraggable,modifyTaskOrder}
+        toggleDraggable,modifyTaskOrder,openEditModal}
 
 
     

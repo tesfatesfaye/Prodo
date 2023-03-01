@@ -12,7 +12,7 @@ import useDashboardHook from "../Hooks/useDashboardHook"
 
 const Tasks=()=>{
     const{tasks,toggleModal}=useContext(Context)
-    const{taskHoverId,toggleTaskHoverId,draggable,toggleDraggable,modifyTaskOrder}=useDashboardHook()
+    const{taskHoverId,toggleTaskHoverId,draggable,toggleDraggable,modifyTaskOrder,openEditModal}=useDashboardHook()
     return(
         <div className="tasks-wrapper">
             
@@ -26,7 +26,10 @@ const Tasks=()=>{
             <Draggable key={task.id} draggableId={task.id} index={index} isDragDisabled={draggable ? false : true}>
                {(prov)=>( 
                <li className="tasks" id={task.id} onMouseEnter={()=>toggleTaskHoverId(task.id) } 
-               onClick={()=>toggleModal('TaskModal')}
+               onClick={()=>{
+                toggleModal('TaskModal')
+                openEditModal(task.id)
+               }}
             onMouseLeave={()=>toggleTaskHoverId('')} {...prov.draggableProps} {...prov.dragHandleProps} ref={prov.innerRef} >
             <RxHamburgerMenu color="white" size="0.9em"style={{visibility: taskHoverId=== task.id ? 'visible' : 'hidden'}}
             onMouseEnter={()=>toggleDraggable(true)} onMouseLeave={()=>toggleDraggable(false)}/>

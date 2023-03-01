@@ -1,4 +1,5 @@
-import React from "react";
+import React ,{useContext}from "react";
+import { Context } from "../Context/Context";
 import ProfileHolder from "./ProfileHolder";
 import '../dashboard.css'
 import useModal from "../Hooks/useModal";
@@ -6,9 +7,8 @@ import ModalButtons from "./ModalButtons";
 import {MdSort} from "react-icons/md"
 import {VscAdd} from 'react-icons/vsc'
 const ModalMain=()=>{
-    const {selectedValue,tempHolder,updateTemp,
-      toggleSelected,focusStyle}=useModal()
-    
+    const {selectedValue,toggleSelected,focusStyle}=useModal()
+      const {tempHolder,updateTemp}=useContext(Context)
     return(
         <div className="modal-main">
         <div className="title-description-parent" style={focusStyle('Title',"Description")}>

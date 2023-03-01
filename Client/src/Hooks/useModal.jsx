@@ -1,12 +1,12 @@
-import React,{useContext,useState,useLayoutEffect, useRef, useEffect} from "react";
+import {useContext,useState,useLayoutEffect, useRef, useEffect} from "react";
 import { Context } from "../Context/Context";
 import { uuid4 } from 'uuid4';
 import { tempHolderModel } from "../utils/tempHolderModel";
 
 const useModal=()=>{
 
-const commentRef=useRef(null)
-const {toggleTasksList,tasks,toggleModal,toggleTempHolder,tempHolder}=useContext(Context)
+const titleRef=useRef(null)
+const {toggleTasksList,tasks,toggleModal,toggleTempHolder,tempHolder,modal}=useContext(Context)
 const [selectedValue,setSelectedValue]=useState('')
 const focusStyle=(value,valueTwo="EmptyValue")=>{
     if(value===selectedValue || valueTwo===selectedValue){
@@ -24,12 +24,12 @@ const addNewTask=()=>{
             if(key.toString()!=="subtask")
       objectHolder[key]=tempHolder[key]
         }
-    toggleTasksList([...tasks,{id:uuid4(),...objectHolder}])
+    toggleTasksList([...tasks,{...objectHolder,id:uuid4()}])
         toggleModal('')
         toggleTempHolder(tempHolderModel)
     }
 }
-
+   
 const toggleSelected=(value)=>{
     setSelectedValue(value)
 }
@@ -38,6 +38,6 @@ const toggleShift=(value)=>{
 }
 
         return{tempHolder,selectedValue,toggleSelected,
-            toggleShift,focusStyle,addNewTask}
+            toggleShift,focusStyle,addNewTask,titleRef}
 }
  export default useModal

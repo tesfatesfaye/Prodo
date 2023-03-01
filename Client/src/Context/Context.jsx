@@ -16,7 +16,7 @@ const Context=createContext()
         {id:uuid4(), title:"Test 2", subtasks:[],
         comments:['This is the second'],description:'none',dueDate:"",tags:[],dateCreated:""},
         {id:uuid4(), title:"Test 3", 
-        subtasks:[],comments:['This is the third'],description:'none',dueDate:"",tags:[],dateCreated:""},
+        subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:""},
         {id:uuid4(), title:"Test 4", 
         subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:""}
         
@@ -38,8 +38,7 @@ const Context=createContext()
 
             setModal(value)
         }
-       
-    
+           
         const navigate=useNavigate()
               
         const updateForm=(event)=>{
@@ -56,12 +55,8 @@ const Context=createContext()
             navigate(page)
             
         }
-
-
-            const toggleSideBar=(e,value)=>{
+              const toggleSideBar=(e,value)=>{
             value==='mainIcon' ? setSideBar(prev=>!prev) : ''
-           
-    
         }
        return(
         <Context.Provider value={{formState,updateForm,changePage,

@@ -18,6 +18,7 @@ const ModalButtons=(props)=>{
             onClick={()=>{
             toggleModal('')
             toggleTempHolder({...tempHolderModel,comment:"",tag:"",subtask:""})
+            // toggleTaskHoverId('')
               }}
           >
             {props.textTwo ? props.textTwo : 'Cancel'}

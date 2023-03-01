@@ -27,8 +27,9 @@ const Tasks=()=>{
                {(prov)=>( 
                <li className="tasks" id={task.id} onMouseEnter={()=>toggleTaskHoverId(task.id) } 
                onClick={()=>{
-                toggleModal('TaskModal')
                 openEditModal(task.id)
+                toggleModal('TaskModal')
+                
                }}
             onMouseLeave={()=>toggleTaskHoverId('')} {...prov.draggableProps} {...prov.dragHandleProps} ref={prov.innerRef} >
             <RxHamburgerMenu color="white" size="0.9em"style={{visibility: taskHoverId=== task.id ? 'visible' : 'hidden'}}

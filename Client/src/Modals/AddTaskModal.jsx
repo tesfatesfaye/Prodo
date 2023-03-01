@@ -8,16 +8,16 @@ import {AiTwotoneCalendar as Today} from 'react-icons/ai'
 import ModalButtons from "../Components/ModalButtons";
 import "../dashboard.css"
 const AddTaskModal=()=>{
-    const{modal,toggleModal}=useContext(Context)
+    const{modal,toggleModal,updateTemp}=useContext(Context)
     if(modal!=="AddTaskModal") return null
-    const {selectedValue,tempHolder,updateTemp,
+    const {selectedValue,tempHolder,
         toggleSelected,focusStyle,addNewTask}=useModal()
     
 
     return(
        <ReactPortal wrapperId="portal">
         <>
-        <div className="over-lay-styles" ></div>
+        <div className="over-lay-styles"></div>
         <div className="add-task-modal">
         <div className="title-description-add-task" >
      <div className="modal-title">
@@ -61,12 +61,7 @@ const AddTaskModal=()=>{
   </div>
         
         </div>
-           
-
-        
-        
-        
-        </>
+    </>
           </ReactPortal>
     )
 

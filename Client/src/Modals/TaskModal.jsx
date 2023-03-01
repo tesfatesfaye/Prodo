@@ -6,10 +6,10 @@ import {FaTasks as General} from 'react-icons/fa'
 import {VscChromeClose} from 'react-icons/vsc'
 import ModalSideBar from "../Components/ModalSideBar";
 import ModalMain from "../Components/ModalMain";
+import { tempHolderModel } from "../utils/tempHolderModel";
  const TaskModal=()=>{
-
       
-    const{modal,toggleModal,formState}=useContext(Context)
+    const{modal,toggleModal,formState,toggleTempHolder}=useContext(Context)
     if(modal!=="TaskModal") return null
        return(
         <ReactPortal wrapperId="portal">
@@ -22,7 +22,10 @@ import ModalMain from "../Components/ModalMain";
                     <span style={{fontWeight:'300',fontSize:'13px'}}>General</span>
                 </div>
                 <VscChromeClose style={{marginLeft:'auto',cursor:'pointer'}}size={'0.9em'} 
-                color="white" onClick={()=>toggleModal('')}/>
+                color="white" onClick={()=>{
+                toggleModal('')
+                toggleTempHolder({...tempHolderModel,comment:"",tag:"",subtask:""})
+                }}/>
                 </div>
                 <div className="modalParent">
                  <ModalMain/>

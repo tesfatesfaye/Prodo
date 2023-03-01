@@ -9,7 +9,7 @@ import ModalMain from "../Components/ModalMain";
 import { tempHolderModel } from "../utils/tempHolderModel";
  const TaskModal=()=>{
       
-    const{modal,toggleModal,formState,toggleTempHolder}=useContext(Context)
+    const{modal,toggleModal,toggleTempHolder}=useContext(Context)
     if(modal!=="TaskModal") return null
        return(
         <ReactPortal wrapperId="portal">

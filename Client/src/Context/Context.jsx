@@ -12,13 +12,13 @@ const Context=createContext()
         const[modal,setModal]=useState('')
         const [sideBar,setSideBar]=useState(true)
         const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[],comments:["This is the first"],
-        description:'none',dueDate:"",tags:[],dateCreated:""},
+        description:'none',dueDate:"",tags:[],dateCreated:"",completed:false},
         {id:uuid4(), title:"Test 2", subtasks:[],
-        comments:['This is the second'],description:'none',dueDate:"",tags:[],dateCreated:""},
+        comments:['This is the second'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:false},
         {id:uuid4(), title:"Test 3", 
-        subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:""},
+        subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:false},
         {id:uuid4(), title:"Test 4", 
-        subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:""}
+        subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:true}
         
     ])
 

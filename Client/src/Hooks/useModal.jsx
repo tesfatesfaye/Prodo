@@ -4,8 +4,36 @@ import { uuid4 } from 'uuid4';
 import { tempHolderModel } from "../utils/tempHolderModel";
 const useModal=()=>{
 const titleRef=useRef(null)
+let descriptionRef=useRef(null)
 const {toggleTasksList,tasks,toggleModal,toggleTempHolder,tempHolder,modal}=useContext(Context)
 const [selectedValue,setSelectedValue]=useState('')
+const [heightValue,setHeightValue]=useState(0)
+
+
+useLayoutEffect(()=>{
+ 
+    if(descriptionRef.current){
+        console.log(descriptionRef.current.style.height)
+       descriptionRef.current.style.height="0px"
+        const scrollH=descriptionRef.current.scrollHeight;
+        descriptionRef.current.style.height=scrollH+"px"     
+        console.log(descriptionRef.current.style.height)
+    }
+    else{
+        console.log("No joy")
+    }
+     return()=>{
+          
+        console.log('cleanedUp')
+        descriptionRef=null
+          
+     }
+},[heightValue])
+
+const changeHeightValue=(value)=>{
+    if(value)return setHeightValue(value)
+    setHeightValue(prev=>prev+1)
+}
 const focusStyle=(value,valueTwo="EmptyValue")=>{
     if(value===selectedValue || valueTwo===selectedValue){
         return ({border:'1px solid grey'})
@@ -34,6 +62,6 @@ const toggleShift=(value)=>{
 }
 
         return{tempHolder,selectedValue,toggleSelected,
-            toggleShift,focusStyle,addNewTask,titleRef}
+            toggleShift,focusStyle,addNewTask,descriptionRef,changeHeightValue}
 }
  export default useModal

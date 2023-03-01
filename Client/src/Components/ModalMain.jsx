@@ -7,8 +7,8 @@ import ModalButtons from "./ModalButtons";
 import {MdSort} from "react-icons/md"
 import {VscAdd} from 'react-icons/vsc'
 const ModalMain=()=>{
-    const {selectedValue,toggleSelected,focusStyle}=useModal()
-      const {tempHolder,updateTemp}=useContext(Context)
+    const {selectedValue,toggleSelected,focusStyle,descriptionRef,changeHeightValue}=useModal()
+      const {tempHolder,updateTemp,modal}=useContext(Context)
     return(
         <div className="modal-main">
         <div className="title-description-parent" style={focusStyle('Title',"Description")}>
@@ -24,13 +24,21 @@ const ModalMain=()=>{
       </div> 
   <div className="modal-description" style={{display:'flex',gap:'10px'}}>
           <MdSort color="white"/>
-          <textarea type='text' name="description"id="modal-title"className="modal-input-title" 
-          style={{color:"white", fontSize:"medium",overflow:'visible'}}
+          <textarea type='text' name="description"id="modal-title-description"className="modal-input-title" 
+          style={{color:"white", fontSize:"medium"}}
           placeholder="Description" 
+          ref= {descriptionRef}
           value={tempHolder.description}
-          onChange={(event)=>updateTemp(event)}
+          onChange={(event)=>{
+            updateTemp(event)
+            changeHeightValue()
+            
+        }}
           onFocus={()=>toggleSelected('Description')}
-          onBlur={()=>toggleSelected('')}/>
+          onBlur={()=>{
+            toggleSelected('')
+            changeHeightValue(0)
+            }}/>
          
   </div>
   {(selectedValue==="Title" ||selectedValue==="Description") && <ModalButtons/>}

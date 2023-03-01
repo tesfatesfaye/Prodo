@@ -21,6 +21,15 @@ const Context=createContext()
         subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:""}
         
     ])
+
+        const deleteTask=(event,id)=>{
+           event.stopPropagation()
+            setTasks(prev=>{
+             return prev.filter(tasks=>{
+               return( tasks.id !==id)
+             })
+            })
+        }
         const toggleTempHolder=(value)=>{
             setTempHolder(value)
         }
@@ -60,7 +69,8 @@ const Context=createContext()
         }
        return(
         <Context.Provider value={{formState,updateForm,changePage,
-        theme,sideBar,toggleSideBar,tasks,modal,toggleModal,toggleTasksList,toggleTempHolder,updateTemp,tempHolder}}>
+        theme,sideBar,toggleSideBar,tasks,modal,toggleModal,toggleTasksList,
+        toggleTempHolder,updateTemp,tempHolder,deleteTask}}>
             {children}
         </Context.Provider>
     )}

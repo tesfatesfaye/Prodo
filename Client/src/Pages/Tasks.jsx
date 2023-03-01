@@ -11,8 +11,9 @@ import {MdTitle} from 'react-icons/md'
 import useDashboardHook from "../Hooks/useDashboardHook"
 
 const Tasks=()=>{
-    const{tasks,toggleModal}=useContext(Context)
-    const{taskHoverId,toggleTaskHoverId,draggable,toggleDraggable,modifyTaskOrder,openEditModal}=useDashboardHook()
+    const{tasks,toggleModal,deleteTask}=useContext(Context)
+    const{taskHoverId,toggleTaskHoverId,draggable,toggleDraggable,modifyTaskOrder
+        ,openEditModal}=useDashboardHook()
     return(
         <div className="tasks-wrapper">
             
@@ -44,7 +45,7 @@ const Tasks=()=>{
                    opacity:'0.4', marginLeft:'auto'}}
                    /> 
                 <BsTrash style={{visibility: taskHoverId=== task.id && !draggable ? 'visible' : 'hidden',
-                opacity:'0.4'}}/>
+                opacity:'0.4'}} onClick={(event)=>deleteTask(event,task.id)}/>
                  <FaCommentAlt 
                   style={{visibility: taskHoverId=== task.id && !draggable ? 'visible' : 'hidden',
                   opacity:'0.4', marginRight:'5px'}}
@@ -62,7 +63,7 @@ const Tasks=()=>{
         {provided.placeholder}
             
        
-        <span style={{display:'flex',alignItems:'center',gap:'12px'}}>
+        <span style={{display:'flex',alignItems:'center',gap:'12px'}} onClick={()=>toggleModal('AddTaskModal')}>
             <VscAdd color="ff0706" size='1em' className="add-task-button"/> 
             <small className="add-task-button">Add task</small>
 

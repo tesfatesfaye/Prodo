@@ -2,9 +2,7 @@ import {useContext,useState,useLayoutEffect, useRef, useEffect} from "react";
 import { Context } from "../Context/Context";
 import { uuid4 } from 'uuid4';
 import { tempHolderModel } from "../utils/tempHolderModel";
-
 const useModal=()=>{
-
 const titleRef=useRef(null)
 const {toggleTasksList,tasks,toggleModal,toggleTempHolder,tempHolder,modal}=useContext(Context)
 const [selectedValue,setSelectedValue]=useState('')
@@ -12,10 +10,8 @@ const focusStyle=(value,valueTwo="EmptyValue")=>{
     if(value===selectedValue || valueTwo===selectedValue){
         return ({border:'1px solid grey'})
     }
-    
-    return({border:''})
-    
-}
+        return({border:''})
+    }
 
 const addNewTask=()=>{
         let objectHolder={}

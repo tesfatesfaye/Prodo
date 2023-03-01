@@ -11,9 +11,7 @@ const AddTaskModal=()=>{
     const{modal,toggleModal,updateTemp}=useContext(Context)
     if(modal!=="AddTaskModal") return null
     const {tempHolder,titleRef,toggleSelected,addNewTask}=useModal()
-    
-
-    return(
+       return(
        <ReactPortal wrapperId="portal">
         <>
         <div className="over-lay-styles"></div>

@@ -218,20 +218,16 @@ padding-right: 10px;
     width: auto;
     margin-bottom: 0;
     height: auto;
-   
     
 }
 .modal-complete{
-
-
    display: flex;
     width: 15px;
     height: 15px;
     border-radius: 50%;
     border: #FFFFFF 1px solid;
     margin-bottom: 0;
-   
-}
+   }
 
 
 .modal-input-title{

@@ -15,7 +15,7 @@ const useDashboardHook=()=>{
     const openEditModal=(id)=>{
         const task=tasks.find(x=> x.id===id)
        toggleTempHolder({...task,comment:"",tag:"",subtask:""})
-       toggleClickedTask(id)
+       
        
     }
     const modifyTaskOrder=(value)=>{

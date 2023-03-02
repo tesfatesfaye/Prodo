@@ -7,7 +7,7 @@ import ModalButtons from "./ModalButtons";
 import {MdSort} from "react-icons/md"
 import {VscAdd} from 'react-icons/vsc'
 const ModalMain=()=>{
-    const {selectedValue,toggleSelected,focusStyle,descriptionRef,changeHeightValue,hoverState,toggleHoverState}=useModal()
+    const {selectedValue,toggleSelected,focusStyle,descriptionRef,changeHeightValue}=useModal()
       const {tempHolder,updateTemp,modal,updateTask}=useContext(Context)
     return(
         <div className="modal-main">
@@ -18,12 +18,7 @@ const ModalMain=()=>{
        placeholder="Task title"  name="title"  
        value={tempHolder.title}
        onFocus={()=>toggleSelected('Title')}
-        onBlur={()=>{
-            if(hoverState){
-            toggleSelected('')
-            changeHeightValue(0)
-            }
-            }}
+       onBlur={()=>toggleSelected('')}
        onChange={(event)=>updateTemp(event)}/>
 
       </div> 
@@ -41,10 +36,8 @@ const ModalMain=()=>{
         }}
           onFocus={()=>toggleSelected('Description')}
           onBlur={()=>{
-            if(!hoverState){
             toggleSelected('')
             changeHeightValue(0)
-            }
             }}/>
          
   </div>
@@ -87,10 +80,7 @@ const ModalMain=()=>{
    </div>
           
       </div>
-      <ModalButtons updateTask={updateTask} textOne="Update Task"
-       toggleSelected={toggleSelected} 
-       toggleHoverState={toggleHoverState}
-       hoverState={hoverState}/>
+      <ModalButtons updateTask={updateTask} textOne="Update Task" toggleSelected={toggleSelected}/>
       </div>
     )
 }

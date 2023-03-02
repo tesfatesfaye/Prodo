@@ -8,7 +8,7 @@ let descriptionRef=useRef(null)
 const {toggleTasksList,tasks,toggleModal,toggleTempHolder,tempHolder,modal}=useContext(Context)
 const [selectedValue,setSelectedValue]=useState('')
 const [heightValue,setHeightValue]=useState(0)
-const [hoverState, setHoverState]=useState(false)
+
 
 useEffect(()=>{
     console.log(`${selectedValue} selected`)
@@ -32,9 +32,7 @@ useLayoutEffect(()=>{
           
      }
 },[heightValue])
-const toggleHoverState=(value)=>{
-    setHoverState(value)
-}
+
 const changeHeightValue=(value)=>{
     if(value)return setHeightValue(value)
     setHeightValue(prev=>prev+1)
@@ -67,7 +65,6 @@ const toggleShift=(value)=>{
 }
 
         return{selectedValue,toggleSelected,
-            toggleShift,focusStyle,addNewTask,descriptionRef,changeHeightValue,
-            toggleHoverState,hoverState}
+            toggleShift,focusStyle,addNewTask,descriptionRef,changeHeightValue}
 }
  export default useModal

@@ -3,14 +3,12 @@ import { Context } from "../Context/Context";
 import { tempHolderModel } from "../utils/tempHolderModel";
 import '../dashboard.css'
 const ModalButtons=(props)=>{
-  const {toggleModal,toggleTempHolder}=useContext(Context)
+  const {toggleModal,toggleTempHolder,clickedTaskID}=useContext(Context)
 
     return(
         <div className="modal-buttons">
           <button className="save-cancel"style={{background:"rgba(0, 106, 78,0.9)"}} 
-          onClick={()=>{
-            props.addNewTask ? props.addNewTask() : ''
-          }}
+          onClick={(event)=>props.save ? props.save() : (props.updateTask(event,clickedTaskID)&&props.toggleSelected('')) }
         >
             {props.textOne? props.textOne : 'Save'}
             </button>

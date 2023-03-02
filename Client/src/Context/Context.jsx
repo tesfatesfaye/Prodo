@@ -11,6 +11,7 @@ const Context=createContext()
         const [theme,setTheme]=useState(()=>'dark')
         const[modal,setModal]=useState('')
         const [sideBar,setSideBar]=useState(true)
+        const [clickedTaskID,setClickedTaskID]=useState()
         const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[],comments:["This is the first"],
         description:'none',dueDate:"",tags:[],dateCreated:"",completed:false},
         {id:uuid4(), title:"Test 2", subtasks:[],
@@ -21,7 +22,33 @@ const Context=createContext()
         subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:true}
         
     ])
-
+        const toggleClickedTask=(id)=>{
+            setClickedTaskID(id)
+        }
+        useEffect(()=>{
+           console.log(modal)
+           console.log(tasks[0])
+        })
+        const updateTask= (event,id)=>{
+            
+            event.stopPropagation()
+            let objectHolder={}
+            for(let key in tempHolder){
+            if(key.toString()!=="comment" && key.toString()!=="tag"){
+                if(key.toString()!=="subtask"){
+                    objectHolder[key]=tempHolder[key]
+                }
+                  }
+            }
+                   setTasks(prev=>{
+            return prev.map(task=>{
+                return (task.id ===id ? objectHolder : task)
+            })
+          })
+            setModal('')
+            setTempHolder(tempHolderModel)
+          
+        }
         const deleteTask=(event,id)=>{
            event.stopPropagation()
             setTasks(prev=>{
@@ -70,7 +97,7 @@ const Context=createContext()
        return(
         <Context.Provider value={{formState,updateForm,changePage,
         theme,sideBar,toggleSideBar,tasks,modal,toggleModal,toggleTasksList,
-        toggleTempHolder,updateTemp,tempHolder,deleteTask}}>
+        toggleTempHolder,updateTemp,tempHolder,deleteTask,updateTask,toggleClickedTask,clickedTaskID}}>
             {children}
         </Context.Provider>
     )}

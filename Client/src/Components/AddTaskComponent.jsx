@@ -7,8 +7,8 @@ import {AiTwotoneCalendar as Today} from 'react-icons/ai'
 import ModalButtons from "../Components/ModalButtons";
 import "../dashboard.css";
  const AddTaskComponent=()=>{
-    const{modal,toggleModal,updateTemp}=useContext(Context)
-    const {tempHolder,titleRef,toggleSelected,addNewTask,
+    const{tempHolder,modal,toggleModal,updateTemp}=useContext(Context)
+    const {titleRef,toggleSelected,addNewTask,
         descriptionRef,changeHeightValue}=useModal()
     return(
         <>
@@ -58,7 +58,7 @@ import "../dashboard.css";
         <General color="yellow" size={"0.75rem"} style={{margin:"0"}}/>
         <h6 style={{color:"rgba(255,255,255,0.7)",margin:"0"}}>General</h6>
         </span>
-        <ModalButtons  addNewTask={addNewTask}/>
+        <ModalButtons  save={addNewTask}/>
         </div>
   </div>
         

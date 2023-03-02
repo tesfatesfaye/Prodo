@@ -2,7 +2,7 @@ import { useState,useEffect,useContext,useRef } from "react";
 import { Context } from "../Context/Context";
 
 const useDashboardHook=()=>{
-    const{toggleTasksList,tasks,toggleTempHolder}=useContext(Context)
+    const{toggleTasksList,tasks,toggleTempHolder,toggleClickedTask}=useContext(Context)
     const[taskHoverId,setTaskHoverId]=useState("")
     const [draggable,setDraggable]=useState('')
 
@@ -15,6 +15,7 @@ const useDashboardHook=()=>{
     const openEditModal=(id)=>{
         const task=tasks.find(x=> x.id===id)
        toggleTempHolder({...task,comment:"",tag:"",subtask:""})
+       toggleClickedTask(id)
        
     }
     const modifyTaskOrder=(value)=>{

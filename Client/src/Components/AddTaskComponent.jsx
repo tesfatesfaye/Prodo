@@ -16,7 +16,7 @@ import "../dashboard.css";
         <div className="add-task-modal">
         <div className="title-description-add-task" >
      <div className="modal-title">
-     <input type='text' className="modal-input-title"
+     <input type="text"  className="modal-input-title"
        id="add-task-modal-title" autoFocus={true}
        style={{opacity: tempHolder.title ? "1" : ''}}
        placeholder="Task title"  name="title"  
@@ -27,7 +27,7 @@ import "../dashboard.css";
 
       </div> 
   <div className="modal-description" style={{display:'flex',gap:'10px'}}>
-          <input ref={descriptionRef}type='text' name="description"className="modal-input-title"
+          <textarea ref={descriptionRef}type='text' name="description"className="modal-input-title"
           id="add-task-modal-description" rows={1}
           style={{opacity: tempHolder.description ? "1" : ''}}
              placeholder="Description" 

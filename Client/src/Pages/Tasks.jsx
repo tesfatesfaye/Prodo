@@ -25,7 +25,7 @@ const Tasks=()=>{
         <Droppable droppableId="tasks-div">
             {(provided)=>( <ul className="tasks-div"  {...provided.droppableProps} ref={provided.innerRef}>
        
-        {tasks.filter(x=>x.completed===false).map((task,index)=>(
+        {tasks.map((task,index)=>(
             <Draggable key={task.id} draggableId={task.id} index={index} isDragDisabled={draggable ? false : true}>
                {(prov)=>( 
                <li className="tasks" id={task.id} onMouseEnter={()=>toggleTaskHoverId(task.id) } 

@@ -14,7 +14,7 @@ useLayoutEffect(()=>{
  
     if(descriptionRef.current){
         console.log(descriptionRef.current.style.height)
-       descriptionRef.current.style.height="0px"
+       descriptionRef.current.style.height="19px"
         const scrollH=descriptionRef.current.scrollHeight;
         descriptionRef.current.style.height=scrollH+"px"     
         console.log(descriptionRef.current.style.height)

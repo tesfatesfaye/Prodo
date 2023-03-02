@@ -454,10 +454,10 @@ color: grey
     width: 550px;
     justify-content: space-between;
     flex-direction: column;
-    height: 190px;
+    height: auto;
     position: fixed;
     top: 15%;
-    bottom:75%;
+    bottom: 62%;
     left: 30%;
     right: 55%;
     background: linear-gradient(109.6deg, rgb(5, 12, 20) 10%, rgb(0, 0, 0) 100%);

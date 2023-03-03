@@ -1,4 +1,5 @@
 import React ,{useContext, useState}from "react";
+import useTasks from "../Hooks/useTasks";
 import '../dashboard.css'
 import {RxHamburgerMenu} from 'react-icons/rx'
 import TaskModal from "../Modals/TaskModal";
@@ -11,21 +12,22 @@ import {MdTitle} from 'react-icons/md'
 import useDashboardHook from "../Hooks/useDashboardHook"
 
 const Tasks=()=>{
-    const{tasks,toggleModal,deleteTask}=useContext(Context)
+    const {FilteredTasks}=useTasks() 
+    const{tasks,toggleModal,deleteTask,pageTitle}=useContext(Context)
     const{taskHoverId,toggleTaskHoverId,draggable,toggleDraggable,modifyTaskOrder
         ,openEditModal}=useDashboardHook()
         
-      
+ 
     return(
         <div className="tasks-wrapper">
             
     
-    <span className="task-Title">General </span>
+    <span className="task-Title">{pageTitle} </span>
     <DragDropContext onDragEnd={modifyTaskOrder}>
         <Droppable droppableId="tasks-div">
             {(provided)=>( <ul className="tasks-div"  {...provided.droppableProps} ref={provided.innerRef}>
        
-        {tasks.map((task,index)=>(
+        {FilteredTasks.map((task,index)=>(
             <Draggable key={task.id} draggableId={task.id} index={index} isDragDisabled={draggable ? false : true}>
                {(prov)=>( 
                <li className="tasks" id={task.id} onMouseEnter={()=>toggleTaskHoverId(task.id) } 

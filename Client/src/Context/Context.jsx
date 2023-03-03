@@ -11,6 +11,7 @@ const Context=createContext()
         const [theme,setTheme]=useState(()=>'dark')
         const[modal,setModal]=useState('')
         const [sideBar,setSideBar]=useState(true)
+        const[pageTitle,setPageTitle]=useState("General")
         const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[],comments:["This is the first"],
         description:'none',dueDate:"",tags:[],dateCreated:"",completed:false},
         {id:uuid4(), title:"Test 2", subtasks:[],
@@ -21,9 +22,10 @@ const Context=createContext()
         subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:true}
         
     ])
-        
+    const togglePageTitle=(value)=>{
+        setPageTitle(value)
+    }
         const updateTask= (event,id)=>{
-            
             event.stopPropagation()
             let objectHolder={}
             for(let key in tempHolder){
@@ -90,7 +92,7 @@ const Context=createContext()
        return(
         <Context.Provider value={{formState,updateForm,changePage,
         theme,sideBar,toggleSideBar,tasks,modal,toggleModal,toggleTasksList,
-        toggleTempHolder,updateTemp,tempHolder,deleteTask,updateTask}}>
+        toggleTempHolder,updateTemp,tempHolder,deleteTask,updateTask,togglePageTitle,pageTitle}}>
             {children}
         </Context.Provider>
     )}

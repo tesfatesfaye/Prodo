@@ -7,18 +7,18 @@ BsFilterLeft as Tags,BsFillTrash2Fill as Deleted} from'react-icons/bs'
 import {AiTwotoneCalendar as Today} from 'react-icons/ai'
 import { Context } from "../Context/Context";
     const SideBar=()=>{
-       
+        const {togglePageTitle}=useContext(Context)
         const {sideBarRef}=useSideBar()     
         return(
          
             
            <nav ref={sideBarRef} id="sideBar"className='side-bar '>
-                <div className="general-tasks"  > 
+                <div className="general-tasks"  onClick={()=>togglePageTitle('General')} > 
                     
                     <General color="yellow"/>
                     <span>General</span>
                 </div>
-            <div className="completed-tasks">
+            <div className="completed-tasks" onClick={()=>togglePageTitle('Completed')}>
                 <Completed color="green" />
                 <span>Completed</span>
             </div>

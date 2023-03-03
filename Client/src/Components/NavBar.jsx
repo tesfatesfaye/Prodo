@@ -7,7 +7,7 @@ import {ReactComponent as LightToggle} from '../assets/light-mode-toggle-icon.sv
 import {ReactComponent as DarkToggle} from '../assets/dark-mode-toggle-icon.svg'
 import { Context } from "../Context/Context";
 const NavBar=()=>{
-  const {toggleSideBar,formState,toggleModal}=useContext(Context)
+  const {toggleSideBar,toggleModal}=useContext(Context)
     const[on,setOn]=useState(true)
     const toggle=()=>{
         setOn(prev=>!prev)

@@ -8,7 +8,7 @@ import ModalButtons from "../Components/ModalButtons";
 import "../dashboard.css";
  const AddTaskComponent=()=>{
     const{tempHolder,modal,toggleModal,updateTemp}=useContext(Context)
-    const {titleRef,toggleSelected,addNewTask,
+    const {toggleSelected,addNewTask,
         descriptionRef,changeHeightValue}=useModal()
     return(
         <>

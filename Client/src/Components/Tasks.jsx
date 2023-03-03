@@ -59,19 +59,19 @@ const Tasks=()=>{
 
                 </div>
                 
-        
+                
             </li>)}
             </Draggable>
         ))}
         
         {provided.placeholder}
-            
        
+       {pageTitle==="General" && 
         <span style={{display:'flex',alignItems:'center',gap:'12px'}} onClick={()=>toggleModal('AddTaskModal')}>
             <VscAdd color="ff0706" size='1em' className="add-task-button"/> 
             <small className="add-task-button">Add task</small>
 
-        </span>
+        </span>}
         </ul>
             )}
         </Droppable>

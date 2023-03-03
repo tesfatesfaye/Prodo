@@ -5,7 +5,7 @@ import SideBar from "../Components/SideBar";
 import { Route,Routes } from "react-router";
 import Split from 'react-split'
 import AddTaskModal from "../Modals/AddTaskModal";
-import Tasks from "../Components/GeneralTasks";
+import Tasks from "../Components/Tasks";
 import useDashboardHook from "../Hooks/useDashboardHook";
 const DashBoard=()=>{
     const{sideBar,toggleDash,dashRef}=useDashboardHook()

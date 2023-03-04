@@ -2,6 +2,7 @@ import React ,{useContext, useState}from "react";
 import useTasks from "../Hooks/useTasks";
 import '../dashboard.css'
 import {RxHamburgerMenu} from 'react-icons/rx'
+import{RiCheckboxBlankLine as CheckBoxIcon,RiCheckboxLine as CheckBoxIconHover} from 'react-icons/ri'
 import TaskModal from "../Modals/TaskModal";
 import {BsTrash} from 'react-icons/bs'
 import {VscAdd} from 'react-icons/vsc'
@@ -12,16 +13,14 @@ import {MdTitle} from 'react-icons/md'
 import useDashboardHook from "../Hooks/useDashboardHook"
 
 const Tasks=()=>{
-    const {FilteredTasks}=useTasks() 
-    const{tasks,toggleModal,deleteTask,pageTitle}=useContext(Context)
+    const {FilteredTasks,toggleCompletedHover,completeHover}=useTasks() 
+    const{tasks,toggleModal,deleteTask,pageTitle,completeTask}=useContext(Context)
     const{taskHoverId,toggleTaskHoverId,draggable,toggleDraggable,modifyTaskOrder
         ,openEditModal}=useDashboardHook()
-        
- 
-    return(
+      
+     return(
         <div className="tasks-wrapper">
-            
-    
+        
     <span className="task-Title">{pageTitle} </span>
     <DragDropContext onDragEnd={modifyTaskOrder}>
         <Droppable droppableId="tasks-div">
@@ -30,7 +29,8 @@ const Tasks=()=>{
         {FilteredTasks.map((task,index)=>(
             <Draggable key={task.id} draggableId={task.id} index={index} isDragDisabled={draggable ? false : true}>
                {(prov)=>( 
-               <li className="tasks" id={task.id} onMouseEnter={()=>toggleTaskHoverId(task.id) } 
+               <li className={`tasks ${(pageTitle.toLowerCase())}`}
+                id={task.id} onMouseEnter={()=>toggleTaskHoverId(task.id) } 
                onClick={()=>{
                 openEditModal(task.id)
                 toggleModal('TaskModal')
@@ -40,9 +40,12 @@ const Tasks=()=>{
             <RxHamburgerMenu color="white" size="0.9em"style={{visibility: taskHoverId=== task.id ? 'visible' : 'hidden'}}
             onMouseEnter={()=>toggleDraggable(true)} onMouseLeave={()=>toggleDraggable(false)}/>
             
-            <div className="task-toggler"><div className="task-completed">  
-
-              </div>
+            <div className="task-toggler" > <div className="task-completer" onMouseEnter={()=>toggleCompletedHover(task.id)} 
+              onMouseLeave={()=>toggleCompletedHover('')} onClick={(event)=>{
+                completeTask(event,task.id)
+            }}>  <CheckBoxIconHover style={{display: completeHover===task.id ||pageTitle==='Completed'? "" : "none"}}/> 
+                <CheckBoxIcon style={{display: completeHover===task.id  ||pageTitle==='Completed'? "none" : ""}}/> 
+                </div>
                 <span>{task.title}</span>
                 <MdTitle 
                    style={{visibility: taskHoverId=== task.id && !draggable ? 'visible' : 'hidden',

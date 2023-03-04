@@ -9,7 +9,7 @@ function App() {
   return (
     <IconContext.Provider value={{size:'1.2em',margin:'0'}}>
     <div className="App dark">
-
+    
       <Routes>
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<SignUp/>}/>

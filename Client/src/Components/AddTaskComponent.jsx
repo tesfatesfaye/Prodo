@@ -9,7 +9,7 @@ import "../dashboard.css";
  const AddTaskComponent=()=>{
     const{tempHolder,modal,toggleModal,updateTemp}=useContext(Context)
     const {toggleSelected,addNewTask,
-        descriptionRef,changeHeightValue}=useModal()
+        descriptionRef}=useModal()
     return(
         <>
         <div className="over-lay-styles"></div>
@@ -27,21 +27,19 @@ import "../dashboard.css";
 
       </div> 
   <div className="modal-description" style={{display:'flex',gap:'10px'}}>
-          <textarea ref={descriptionRef}type='text' name="description"className="modal-input-title"
+          <textarea ref={descriptionRef}type='text' name="description"
+          className="modal-input-title"
           id="add-task-modal-description" rows={1}
           style={{opacity: tempHolder.description ? "1" : ''}}
              placeholder="Description" 
           value={tempHolder.description}
           onChange={(event)=>{
             updateTemp(event)
-            changeHeightValue()
-            
-        }}
+                   }}
           onFocus={()=>toggleSelected('Description')}
           onBlur={()=>{
             toggleSelected('')
-            changeHeightValue(0)
-            }}/>
+                       }}/>
          
   </div>
   <div className="tag-holder">

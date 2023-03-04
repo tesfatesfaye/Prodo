@@ -3,22 +3,28 @@ import { Context } from "../Context/Context"
 import uuid4 from "uuid4"
 
 const useTasks=()=>{
-    const{pageTitle,tasks}=useContext(Context)
+    const{pageTitle,tasks,completedTasks}=useContext(Context)
     const[FilteredTasks,setFilteredTasks]=useState(tasks)
+    const[completeHover,setCompleteHover]=useState("")
+    
         useLayoutEffect(()=>{
-                console.table(tasks)
+               
             if(pageTitle==="General"){
-                setFilteredTasks(tasks.filter(task=>task.completed===false))
+                setFilteredTasks(tasks)
             }
 
             else{ 
-                setFilteredTasks(tasks.filter(task=>task.completed===true))
+                setFilteredTasks(completedTasks)
             }
    
     },[tasks,pageTitle])
 
-  
-        return{FilteredTasks}
+    const toggleCompletedHover=(id)=>{
+
+        setCompleteHover(id)
+    }
+    
+        return{FilteredTasks,toggleCompletedHover,completeHover}
 }
 
 export default useTasks

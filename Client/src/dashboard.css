@@ -97,7 +97,9 @@ nav > div :hover{
     margin-top: 55px;
 }
 
-
+ul >:last-of-type li{
+    border: none;
+}
   .task-Title{
     display: flex;
     position: fixed;
@@ -112,6 +114,7 @@ nav > div :hover{
   }
   .tasks-wrapper{
     display: flex;
+    flex-direction: column;
     width: 50%;
     align-items: start;
     justify-content: center;
@@ -139,15 +142,24 @@ nav > div :hover{
      position: relative;
      box-sizing: border-box;
      padding-top: 8px;
+     align-items: center;
     }
-    .task-completed{
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        border: 1px solid whitesmoke ;
+    .task-completer{
+        display: flex;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 2px;
         
     }
 
+    .task-completed{
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: lightgreen;
+    }    
     .add-task-button{
         font-weight: 300;
         font-size: small;
@@ -373,9 +385,7 @@ color: #FFFFFF;
     color: #FFFFFF;
 }
 
-#modal-title-description{
-    
-}
+
 .modal-mini-input:focus{
    outline: none;
    
@@ -528,6 +538,9 @@ color: grey
     align-items:center ;
     padding-right: 10px;
     box-sizing: border-box;
+}
+.completed{
+    text-decoration: line-through 
 }
 .add-general{
     display: flex;

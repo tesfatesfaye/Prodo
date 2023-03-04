@@ -7,7 +7,7 @@ import ModalButtons from "./ModalButtons";
 import {MdSort} from "react-icons/md"
 import {VscAdd} from 'react-icons/vsc'
 const ModalMain=()=>{
-    const {selectedValue,toggleSelected,focusStyle,descriptionRef,changeHeightValue}=useModal()
+    const {selectedValue,toggleSelected,focusStyle,descriptionRef}=useModal()
       const {tempHolder,updateTemp,modal,updateTask}=useContext(Context)
     return(
         <div className="modal-main">
@@ -31,13 +31,13 @@ const ModalMain=()=>{
           value={tempHolder.description}
           onChange={(event)=>{
             updateTemp(event)
-            changeHeightValue()
+          
             
         }}
           onFocus={()=>toggleSelected('Description')}
           onBlur={()=>{
             toggleSelected('')
-            changeHeightValue(0)
+           
             }}/>
          
   </div>

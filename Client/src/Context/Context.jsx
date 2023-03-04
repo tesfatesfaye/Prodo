@@ -19,17 +19,31 @@ const Context=createContext()
         {id:uuid4(), title:"Test 3", 
         subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:false},
         {id:uuid4(), title:"Test 4", 
-        subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:false},
-        {id:uuid4(), title:"Test 5", 
-        subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:false},
-        {id:uuid4(), title:"Test 6", 
-        subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:false},
-        {id:uuid4(), title:"Test 7", 
-        subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:false},
-        {id:uuid4(), title:"Test 8", 
         subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:false}
         
+        
     ])
+        const [completedTasks, setCompletedTasks]=useState([{id:uuid4(), title:"Test 5", 
+        subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:true},
+        {id:uuid4(), title:"Test 6", 
+        subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:true},
+        {id:uuid4(), title:"Test 7", 
+        subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:true},
+        {id:uuid4(), title:"Test 8", 
+        subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:true}])
+
+        const completeTask=(event,id)=>{
+            event.stopPropagation()
+            const [filteredTask]=tasks.filter(task=>task.id===id)
+            .map(task=>({...task,completed:true}))
+
+            setTasks(prev=>prev.filter(task=>task.id!==id))
+
+            setCompletedTasks(tasks=>[...tasks,filteredTask])
+            
+
+        }
+
     const togglePageTitle=(value)=>{
         setPageTitle(value)
     }
@@ -100,7 +114,7 @@ const Context=createContext()
        return(
         <Context.Provider value={{formState,updateForm,changePage,
         theme,sideBar,toggleSideBar,tasks,modal,toggleModal,toggleTasksList,
-        toggleTempHolder,updateTemp,tempHolder,deleteTask,updateTask,togglePageTitle,pageTitle}}>
+        toggleTempHolder,updateTemp,tempHolder,deleteTask,updateTask,togglePageTitle,pageTitle,completedTasks,completeTask}}>
             {children}
         </Context.Provider>
     )}

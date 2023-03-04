@@ -7,7 +7,7 @@ const titleRef=useRef(null)
 let descriptionRef=useRef(null)
 const {toggleTasksList,tasks,toggleModal,toggleTempHolder,tempHolder,modal}=useContext(Context)
 const [selectedValue,setSelectedValue]=useState('')
-const [heightValue,setHeightValue]=useState(0)
+
 
 
 useEffect(()=>{
@@ -31,12 +31,9 @@ useLayoutEffect(()=>{
         descriptionRef=null
           
      }
-},[heightValue])
+},[tempHolder])
 
-const changeHeightValue=(value)=>{
-    if(value)return setHeightValue(value)
-    setHeightValue(prev=>prev+1)
-}
+
 const focusStyle=(value,valueTwo="EmptyValue")=>{
     if(value===selectedValue || valueTwo===selectedValue){
         return ({border:'1px solid grey'})
@@ -65,6 +62,6 @@ const toggleShift=(value)=>{
 }
 
         return{selectedValue,toggleSelected,
-            toggleShift,focusStyle,addNewTask,descriptionRef,changeHeightValue}
+            toggleShift,focusStyle,addNewTask,descriptionRef}
 }
  export default useModal

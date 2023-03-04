@@ -456,8 +456,7 @@ color: grey
     flex-direction: column;
     height: auto;
     position: fixed;
-    top: 15%;
-    bottom: 62%;
+    top: 16%;
     left: 30%;
     right: 55%;
     background: linear-gradient(109.6deg, rgb(5, 12, 20) 10%, rgb(0, 0, 0) 100%);
@@ -466,7 +465,7 @@ color: grey
     box-sizing: border-box;
     padding-top: 5px;
     box-shadow: 0px 0px 1.5px gray;
-
+    padding-bottom: 10px;
 }
 
 

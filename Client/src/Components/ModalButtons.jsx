@@ -7,7 +7,7 @@ const ModalButtons=(props)=>{
 
     return(
         <div className="modal-buttons">
-          <button className="save-cancel"style={{background:"rgba(0, 106, 78,0.9)"}} 
+          <button className="save-cancel"style={{background:"rgb(42, 170, 138,0.9)"}} 
           onMouseDown={(event)=>props.save ? props.save() : (props.updateTask(event,tempHolder.id)&&props.toggleSelected('')) }
         >
             {props.textOne? props.textOne : 'Save'}

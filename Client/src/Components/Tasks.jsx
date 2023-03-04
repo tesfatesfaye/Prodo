@@ -26,7 +26,7 @@ const Tasks=()=>{
     <DragDropContext onDragEnd={modifyTaskOrder}>
         <Droppable droppableId="tasks-div">
             {(provided)=>( <ul className="tasks-div"  {...provided.droppableProps} ref={provided.innerRef}>
-       
+            
         {FilteredTasks.map((task,index)=>(
             <Draggable key={task.id} draggableId={task.id} index={index} isDragDisabled={draggable ? false : true}>
                {(prov)=>( 
@@ -67,7 +67,7 @@ const Tasks=()=>{
         {provided.placeholder}
        
        {pageTitle==="General" && 
-        <span style={{display:'flex',alignItems:'center',gap:'12px'}} onClick={()=>toggleModal('AddTaskModal')}>
+        <span style={{display:'flex',alignItems:'center',gap:'12px',marginLeft:"22px"}} onClick={()=>toggleModal('AddTaskModal')}>
             <VscAdd color="ff0706" size='1em' className="add-task-button"/> 
             <small className="add-task-button">Add task</small>
 

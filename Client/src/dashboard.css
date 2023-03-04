@@ -85,9 +85,10 @@ nav > *{
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
-
-nav > div :hover{
-    opacity: 0.4;
+ 
+.side-bar  > div:hover > * {
+    opacity: 0.8;
+   
 }
 
 

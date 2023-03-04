@@ -43,7 +43,8 @@ const Tasks=()=>{
             <div className="task-toggler" > <div className="task-completer" onMouseEnter={()=>toggleCompletedHover(task.id)} 
               onMouseLeave={()=>toggleCompletedHover('')} onClick={(event)=>{
                 completeTask(event,task.id)
-            }}>  <CheckBoxIconHover style={{display: completeHover===task.id ||pageTitle==='Completed'? "" : "none"}}/> 
+            }}>  <CheckBoxIconHover style={{display: completeHover===task.id ||pageTitle==='Completed'? "" : "none", 
+            color:pageTitle==='Completed' ? "green" :''}}/> 
                 <CheckBoxIcon style={{display: completeHover===task.id  ||pageTitle==='Completed'? "none" : ""}}/> 
                 </div>
                 <span>{task.title}</span>
@@ -70,7 +71,8 @@ const Tasks=()=>{
         {provided.placeholder}
        
        {pageTitle==="General" && 
-        <span style={{display:'flex',alignItems:'center',gap:'12px',marginLeft:"22px"}} onClick={()=>toggleModal('AddTaskModal')}>
+        <span style={{display:'flex',alignItems:'center',gap:'12px',marginLeft:"22px"}} 
+        onClick={()=>toggleModal('AddTaskModal')}>
             <VscAdd color="ff0706" size='1em' className="add-task-button"/> 
             <small className="add-task-button">Add task</small>
 

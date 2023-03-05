@@ -13,8 +13,11 @@ const useTasks=()=>{
                 setFilteredTasks(tasks)
             }
 
-            else{ 
+            else if(pageTitle==="Completed"){ 
                 setFilteredTasks(completedTasks)
+            }
+            else if(pageTitle==="Today"){
+                setFilteredTasks([])
             }
    
     },[tasks,pageTitle])

@@ -5,6 +5,7 @@ import { tempHolderModel } from "../utils/tempHolderModel";
 const useModal=()=>{
 const titleRef=useRef(null)
 let descriptionRef=useRef(null)
+const commentRef=useRef(null)
 const {toggleTasksList,tasks,toggleModal,toggleTempHolder,tempHolder,modal}=useContext(Context)
 const [selectedValue,setSelectedValue]=useState('')
 
@@ -62,6 +63,6 @@ const toggleShift=(value)=>{
 }
 
         return{selectedValue,toggleSelected,
-            toggleShift,focusStyle,addNewTask,descriptionRef}
+            toggleShift,focusStyle,addNewTask,descriptionRef,commentRef}
 }
  export default useModal

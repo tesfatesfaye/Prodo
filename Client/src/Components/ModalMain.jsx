@@ -24,7 +24,7 @@ const ModalMain=()=>{
       </div> 
   <div className="modal-description" style={{display:'flex',gap:'10px'}}>
           <MdSort color="white"/>
-          <textarea type='text' name="description"id="modal-title-description"className="modal-input-title" 
+          <input type='text' name="description"id="modal-title-description"className="modal-input-title" 
           style={{color:"white", fontSize:"medium"}}
           placeholder="Description" 
           ref= {descriptionRef}

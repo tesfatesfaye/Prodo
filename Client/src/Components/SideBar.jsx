@@ -25,7 +25,7 @@ import { Context } from "../Context/Context";
                 <Tags/>
                 <span>Tags</span>
             </div>
-             <div className="today">
+             <div className="today" onClick={()=>togglePageTitle('Today')}>
                 <Today color="orange"/>
                 <span>Today</span>
                 </div>  

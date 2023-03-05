@@ -20,8 +20,7 @@ const Tasks=()=>{
       
      return(
         <div className="tasks-wrapper">
-        
-    <span className="task-Title">{pageTitle} </span>
+        <span className="task-Title">{pageTitle} </span>
     <DragDropContext onDragEnd={modifyTaskOrder}>
         <Droppable droppableId="tasks-div">
             {(provided)=>( <ul className="tasks-div"  {...provided.droppableProps} ref={provided.innerRef}>

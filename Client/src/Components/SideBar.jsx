@@ -10,11 +10,8 @@ import { Context } from "../Context/Context";
         const {togglePageTitle,tasks,completedTasks}=useContext(Context)
         const {sideBarRef}=useSideBar()     
         return(
-         
-            
-           <nav ref={sideBarRef} id="sideBar"className='side-bar '>
+                <nav ref={sideBarRef} id="sideBar"className='side-bar '>
                 <div className="general-tasks"  onClick={()=>togglePageTitle('General')} > 
-                    
                     <General color="yellow"/>
                     <span>General</span>
                     <span className="side-bar-tasks-length"style={{}}>{tasks.length}</span>

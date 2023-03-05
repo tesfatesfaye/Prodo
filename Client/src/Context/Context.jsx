@@ -20,8 +20,7 @@ const Context=createContext()
         subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:false},
         {id:uuid4(), title:"Test 4", 
         subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:false}
-        
-        
+              
     ])
         const [completedTasks, setCompletedTasks]=useState([{id:uuid4(), title:"Test 5", 
         subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:true},
@@ -30,7 +29,8 @@ const Context=createContext()
         {id:uuid4(), title:"Test 7", 
         subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:true},
         {id:uuid4(), title:"Test 8", 
-        subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:true}])
+        subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:true},{id:uuid4(), title:"Test 5", 
+        subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:true}])
 
         const completeTask=(event,id)=>{
             event.stopPropagation()

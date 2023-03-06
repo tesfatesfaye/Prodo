@@ -1,13 +1,11 @@
 import { useState,useContext, useEffect, useLayoutEffect } from "react"
 import { Context } from "../Context/Context"
 
-
 const useTasks=()=>{
     const{pageTitle,tasks,completedTasks}=useContext(Context)
     const[FilteredTasks,setFilteredTasks]=useState(tasks)
     const[completeHover,setCompleteHover]=useState("")
-    
-        useLayoutEffect(()=>{
+            useLayoutEffect(()=>{
                
             if(pageTitle==="General"){
                 setFilteredTasks(tasks)

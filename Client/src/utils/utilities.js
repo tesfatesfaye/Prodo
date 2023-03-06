@@ -5,6 +5,7 @@ class DateManager{
         this.dayNumber=this.dateObject.getDay()
         this.month=this.dateObject.getMonth()
         this.year=this.dateObject.getFullYear()
+        this.date=this.dateObject.getDate()
         this.monthNameHolder=["January","February","March","April","May","June","July","August",
         "September","October","November","December"];
         this.dayNameHolder=["Monday","Tuesday","Wednesday","Thursday","Friday",
@@ -14,7 +15,7 @@ class DateManager{
            return this.dayNameHolder[this.dayNumber-1]
             
          }
-         get currentDayNameAb(){
+         get currentDayAb(){
              return this.dayNameHolder[this.dayNumber-1].substring(0,3);
              
          }
@@ -31,6 +32,6 @@ const tempHolderModel={id:"",title:"",description:""
 const subtaskModel={parentId:"",id:"",title:"",description:"",completed:false}
 
     const dateInfo=new DateManager()
+    const dateInfoTitle= `${dateInfo.currentDayAb}${dateInfo.currentMonthAb} ${dateInfo.date}`
 
-
-export {tempHolderModel,dateInfo}
+export {tempHolderModel,dateInfo,dateInfoTitle}

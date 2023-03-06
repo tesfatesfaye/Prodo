@@ -5,8 +5,8 @@ import { tempHolderModel } from "../utils/utilities";
 const Context=createContext()
     
     function ContextFunction({children}){
-        const [formState,setFormState]=useState(()=>({firstName:'Tesfa',lastName:'Tesfaye',
-        email:'',password:'', staySignedIn:false}))
+        const [formState,setFormState]=useState(()=>({firstName:'Tesfa',
+        lastName:'Tesfaye', email:'',password:'', staySignedIn:false}))
         const[tempHolder,setTempHolder]=useState(tempHolderModel)
         const [theme,setTheme]=useState(()=>'dark')
         const[modal,setModal]=useState('')
@@ -31,10 +31,11 @@ const Context=createContext()
         {id:uuid4(), title:"Test 8", 
         subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:true},{id:uuid4(), title:"Test 5", 
         subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:true}])
-
+        const [overDue,setOverDueTasks]=useState([])
+        const [dueToday,setDueToday]=useState([])
         const completeTask=(event,id)=>{
             event.stopPropagation()
-            const [filteredTask]=tasks.filter(task=>task.id===id)
+            const [filteredTask]=tasks.find(task=>task.id===id)
             .map(task=>({...task,completed:true}))
 
             setTasks(prev=>prev.filter(task=>task.id!==id))
@@ -114,7 +115,8 @@ const Context=createContext()
        return(
         <Context.Provider value={{formState,updateForm,changePage,
         theme,sideBar,toggleSideBar,tasks,modal,toggleModal,toggleTasksList,
-        toggleTempHolder,updateTemp,tempHolder,deleteTask,updateTask,togglePageTitle,pageTitle,completedTasks,completeTask}}>
+        toggleTempHolder,updateTemp,tempHolder,deleteTask,updateTask,togglePageTitle,
+        pageTitle,completedTasks,completeTask,overDue,dueToday}}>
             {children}
         </Context.Provider>
     )}

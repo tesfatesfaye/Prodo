@@ -42,8 +42,8 @@ const Login=()=>{
                
                </section>
                      <div className="check-box-div">
-                    <input name="staySignedIn"id="checkBoxLogin"className="checkbox"type="checkbox" onChange={(e)=>updateForm(e)}value={formState.staySignedIn}></input>
-                    <label for="checkBoxLogin" className="remember-me"> Remember me </label>
+                    <input name="staySignedIn"id="check-box-login"className="checkbox"type="checkbox" onChange={(e)=>updateForm(e)}value={formState.staySignedIn}></input>
+                    <label for="check-box-login" className="remember-me"> Remember me </label>
                     </div>
                      <div className="login-button" onClick={()=>changePage('/')}> Login</div>  
                     <div>

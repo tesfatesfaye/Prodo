@@ -6,7 +6,7 @@ import {FaTasks as General} from 'react-icons/fa'
 import {VscChromeClose} from 'react-icons/vsc'
 import ModalSideBar from "../Components/ModalSideBar";
 import ModalMain from "../Components/ModalMain";
-import { tempHolderModel } from "../utils/tempHolderModel";
+import { tempHolderModel } from "../utils/utilities";
  const TaskModal=()=>{
       
     const{modal,toggleModal,toggleTempHolder}=useContext(Context)

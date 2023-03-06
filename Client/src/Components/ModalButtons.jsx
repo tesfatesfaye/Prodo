@@ -1,6 +1,6 @@
 import React ,{useContext}from "react";
 import { Context } from "../Context/Context";
-import { tempHolderModel } from "../utils/tempHolderModel";
+import { tempHolderModel } from "../utils/utilities";
 import '../dashboard.css'
 const ModalButtons=(props)=>{
   const {toggleModal,toggleTempHolder,tempHolder}=useContext(Context)

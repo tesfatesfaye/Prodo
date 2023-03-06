@@ -1,7 +1,7 @@
 import {useContext,useState,useLayoutEffect, useRef, useEffect} from "react";
 import { Context } from "../Context/Context";
 import { uuid4 } from 'uuid4';
-import { tempHolderModel } from "../utils/tempHolderModel";
+import { tempHolderModel } from "../utils/utilities";
 const useModal=()=>{
 const titleRef=useRef(null)
 let descriptionRef=useRef(null)

@@ -111,15 +111,25 @@ ul >:last-of-type li{
   .task-Title{
     display: flex;
     position: fixed;
-    font-weight: 300;
     top:110px;
     left: 480px;
     font-size: large;
     font-weight: 700;
     color: lightcyan;
+    align-items: center;
+    gap:5px;
+    min-height: 25px;
+}
+.currentDay{
+    display: flex;
+   justify-content: center;
+    align-items: end;
+    font-weight:300;
+    font-size:small;
+   height: 25px;
+    padding: 0;
 
-    
-  }
+}
   .tasks-wrapper{
     display: flex;
     flex-direction: column;
@@ -610,5 +620,8 @@ color: grey
     }
 }
     
+a{
+    all: unset;
+}
 
     

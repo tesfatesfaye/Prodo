@@ -8,7 +8,7 @@ const {Overdue}=useContext(Context)
     return(
         <Tasks 
         tasks={Overdue}
-        pageTitle="Over-Due Tasks"
+        pageTitle="OverDue Tasks"
         />
     )
 

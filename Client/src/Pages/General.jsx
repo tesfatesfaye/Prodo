@@ -6,10 +6,14 @@ const {tasks}=useContext(Context)
 
 
     return(
+    
+      
         <Tasks 
         tasks={tasks}
         pageTitle="General"
         />
+    
+        
     )
 
 }

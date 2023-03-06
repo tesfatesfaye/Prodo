@@ -39,11 +39,8 @@ const Context=createContext()
             .map(task=>({...task,completed:true}))
 
             setTasks(prev=>prev.filter(task=>task.id!==id))
-
             setCompletedTasks(tasks=>[...tasks,filteredTask])
-            
-
-        }
+            }
 
     const togglePageTitle=(value)=>{
         setPageTitle(value)
@@ -89,7 +86,6 @@ const Context=createContext()
             })
         }
         const toggleModal=(value)=>{
-
             setModal(value)
         }
            

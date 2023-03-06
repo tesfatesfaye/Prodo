@@ -13,18 +13,19 @@ import {MdTitle} from 'react-icons/md'
 import useDashboardHook from "../Hooks/useDashboardHook"
 
 const Tasks=({tasks,pageTitle,currentDay})=>{
-  
+  console.log(currentDay)
     const {toggleCompletedHover,completeHover}=useTasks() 
     const{toggleModal,deleteTask,
-        pageTitle,completeTask}=useContext(Context)
+        completeTask}=useContext(Context)
     const{taskHoverId,toggleTaskHoverId,draggable,toggleDraggable,modifyTaskOrder
         ,openEditModal}=useDashboardHook(pageTitle)
       
      return(
         <div className="tasks-wrapper">
-        <span className="task-Title">{pageTitle} 
-        { currentDay && <span style={{fontWeight:"300"}}>{currentDay}</span>}
-        </span>
+        <div className="task-Title">
+            <span>{pageTitle} </span>
+        { currentDay && <span className="currentDay">{currentDay}</span>}
+        </div>
     <DragDropContext onDragEnd={modifyTaskOrder}>
         <Droppable droppableId="tasks-div">
             {(provided)=>( <ul className="tasks-div"  {...provided.droppableProps} ref={provided.innerRef}>

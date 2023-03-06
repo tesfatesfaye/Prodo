@@ -6,26 +6,28 @@ import {BsCheck2All as Completed,BsAlarm as Overdue,
 BsFilterLeft as Tags,BsFillTrash2Fill as Deleted} from'react-icons/bs'
 import {AiTwotoneCalendar as Today} from 'react-icons/ai'
 import { Context } from "../Context/Context";
+import { Link } from "react-router-dom";
     const SideBar=()=>{
-        const {togglePageTitle,tasks,completedTasks}=useContext(Context)
+        const {togglePageTitle,tasks,completedTasks,changePage}=useContext(Context)
         const {sideBarRef}=useSideBar()     
         return(
                 <nav ref={sideBarRef} id="sideBar"className='side-bar '>
-                <div className="general-tasks"  onClick={()=>togglePageTitle('General')} > 
+                <div className="general-tasks"  
+                onClick={()=>changePage('General')} > 
                     <General color="yellow"/>
                     <span>General</span>
-                    <span className="side-bar-tasks-length"style={{}}>{tasks.length}</span>
+                    <span className="side-bar-tasks-length">{tasks.length}</span>
                 </div>
-            <div className="completed-tasks" onClick={()=>togglePageTitle('Completed')}>
+            <div className="completed-tasks" onClick={()=>changePage('Completed')}>
                 <Completed color="green" />
                 <span>Completed</span>
-                <span className="side-bar-tasks-length"style={{}}>{completedTasks.length}</span>
+                <span className="side-bar-tasks-length">{completedTasks.length}</span>
             </div>
             <div className="tags-labels">
                 <Tags/>
                 <span>Tags</span>
             </div>
-             <div className="today" onClick={()=>togglePageTitle('Today')}>
+             <div className="today" onClick={()=>changePage('Today')}>
                 <Today color="orange"/>
                 <span>Today</span>
                 </div>  

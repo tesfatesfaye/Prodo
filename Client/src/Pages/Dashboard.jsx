@@ -7,12 +7,16 @@ import Split from 'react-split'
 import AddTaskModal from "../Modals/AddTaskModal";
 import Tasks from "../Components/Tasks";
 import useDashboardHook from "../Hooks/useDashboardHook";
+import General from "./General";
+import Completed from "./Completed";
+import Overdue from "./Overdue";
+import Today from "./Today";
 const DashBoard=()=>{
     const{sideBar,toggleDash,dashRef}=useDashboardHook()
 
     return(
         <div className="dashboard-parent" ref={dashRef}>
-          
+    
            <NavBar
           toggleDash={toggleDash}
            />
@@ -21,8 +25,15 @@ const DashBoard=()=>{
             <SideBar
             sideBar={sideBar}
             />
-          
-            <Tasks/>
+          <Routes>
+          <Route path="/dashboard/general" element={<General/>}/>
+          <Route path="completed" element={<Completed/>}/>
+          {/* <Route path="/overdue" element={<Overdue/>}/> */}
+          <Route path='today' element={<Today/>}/>
+          </Routes>
+         <Today/>
+
+           
            <AddTaskModal/>
           
            

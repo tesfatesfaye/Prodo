@@ -35,7 +35,7 @@ const Context=createContext()
         const [dueToday,setDueToday]=useState([])
         const completeTask=(event,id)=>{
             event.stopPropagation()
-            const [filteredTask]=tasks.find(task=>task.id===id)
+            const [filteredTask]=tasks.filter(task=>task.id===id)
             .map(task=>({...task,completed:true}))
 
             setTasks(prev=>prev.filter(task=>task.id!==id))

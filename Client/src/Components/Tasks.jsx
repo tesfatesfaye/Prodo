@@ -13,7 +13,7 @@ import {MdTitle} from 'react-icons/md'
 import useDashboardHook from "../Hooks/useDashboardHook"
 
 const Tasks=({tasks,pageTitle,currentDay})=>{
-  console.log(currentDay)
+ 
     const {toggleCompletedHover,completeHover}=useTasks() 
     const{toggleModal,deleteTask,
         completeTask}=useContext(Context)

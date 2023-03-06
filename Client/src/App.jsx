@@ -1,29 +1,25 @@
 import './App.css'
-import {Routes,Route,Link} from "react-router-dom"
+import { useContext } from 'react'
+import {Routes,Route} from "react-router-dom"
 import Login from './Pages/Login'
 import SignUp from './Pages/Signup'
-import General from './Pages/General'
-import Completed from './Pages/Completed'
-import Today from './Pages/Today'
 import DashBoard from './Pages/Dashboard'
 import { IconContext } from "react-icons/lib";
-import { useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { Context } from './Context/Context'
+import Tasks from './Components/Tasks'
+import { dateInfoTitle } from './utils/utilities'
 function App() {
-  let location=useLocation()
- useEffect(()=>{
-  console.log(location)
- })
+    const {dueToday,tasks,completedTasks}=useContext(Context)
   return (
     <IconContext.Provider value={{size:'1.2em',margin:'0'}}>
     <div className="App dark">
 
       <Routes>
       <Route path='/' element={<DashBoard/>} >
-      <Route path="general" element={<General/>}/>
-          <Route path="completed" element={<Completed/>}/>
+      <Route path="general" element={<Tasks tasks={tasks} pageTitle="General"/>}/>
+          <Route path="completed" element={<Tasks tasks={completedTasks} pageTitle="Completed"/>}/>
           {/* <Route path="/overdue" element={<Overdue/>}/> */}
-          <Route path='today' element={<Today/>}/>
+          <Route path='today' element={<Tasks tasks={dueToday} pageTitle="Today" currentDay={dateInfoTitle}/>}/>
         
         </Route>
       <Route path='/login' element={<Login/>}/>

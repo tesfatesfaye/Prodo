@@ -13,12 +13,12 @@ import { Link } from "react-router-dom";
         return(
                 <nav ref={sideBarRef} id="sideBar"className='side-bar '>
                 <div className="general-tasks"  
-                onClick={()=>changePage('General')} > 
+                onClick={()=>changePage('general')} > 
                     <General color="yellow"/>
                     <span>General</span>
                     <span className="side-bar-tasks-length">{tasks.length}</span>
                 </div>
-            <div className="completed-tasks" onClick={()=>changePage('Completed')}>
+            <div className="completed-tasks" onClick={()=>changePage('completed')}>
                 <Completed color="green" />
                 <span>Completed</span>
                 <span className="side-bar-tasks-length">{completedTasks.length}</span>
@@ -27,7 +27,7 @@ import { Link } from "react-router-dom";
                 <Tags/>
                 <span>Tags</span>
             </div>
-             <div className="today" onClick={()=>changePage('Today')}>
+             <div className="today" onClick={()=>changePage('today')}>
                 <Today color="orange"/>
                 <span>Today</span>
                 </div>  

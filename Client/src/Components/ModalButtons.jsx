@@ -8,14 +8,15 @@ const ModalButtons=(props)=>{
     return(
         <div className="modal-buttons">
           <button className="save-cancel"style={{background:"rgb(42, 170, 138,0.9)"}} 
-          onMouseDown={(event)=>props.save ? props.save() : (props.updateTask(event,tempHolder.id)&&props.toggleSelected('')) }
+          onMouseDown={(event)=>props.save ? props.save() : 
+            (props.updateTask(event,tempHolder.id)&&props.toggleSelected('')&&props.openEditModal) }
         >
             {props.textOne? props.textOne : 'Save'}
             </button>
           <button className="save-cancel"style={{background:"rgba(128, 0, 32,0.9)"}}
             onMouseDown={()=>{
-            toggleModal('')
-            toggleTempHolder({...tempHolderModel,comment:"",tag:"",subtask:""})
+              {props.openEditModal && props.openEditModal}
+            // toggleTempHolder({...tempHolderModel,comment:"",tag:"",subtask:""})
             props.toggleSelected ? props.toggleSelected(''):''
           }}
           >

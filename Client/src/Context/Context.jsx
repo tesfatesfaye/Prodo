@@ -60,8 +60,8 @@ const Context=createContext()
                 return (task.id ===id ? objectHolder : task)
             })
           })
-            setModal('')
-            setTempHolder(tempHolderModel)
+            // setModal('')
+            // setTempHolder(tempHolderModel)
           
         }
         const deleteTask=(event,id)=>{

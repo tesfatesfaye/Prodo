@@ -6,8 +6,10 @@ import useModal from "../Hooks/useModal";
 import ModalButtons from "./ModalButtons";
 import {MdSort} from "react-icons/md"
 import {VscAdd} from 'react-icons/vsc'
+import useDashboardHook from "../Hooks/useDashboardHook";
 const ModalMain=()=>{
     const {selectedValue,toggleSelected,focusStyle,descriptionRef}=useModal()
+    const {openEditModal}=useDashboardHook()
       const {tempHolder,updateTemp,modal,updateTask}=useContext(Context)
     return(
         <div className="modal-main">
@@ -42,7 +44,7 @@ const ModalMain=()=>{
          
   </div>
   {(selectedValue==="Title" ||selectedValue==="Description") && 
-  <ModalButtons updateTask={updateTask} textOne="Update Task"/>}
+  <ModalButtons updateTask={updateTask} openModal={()=>openEditModal(tempHolder.id,"General")} textOne="Update Task"/>}
   </div>
        <div className="subtasks-parent" style={(focusStyle('subtask'))}>
        
@@ -80,7 +82,7 @@ const ModalMain=()=>{
    </div>
           
       </div>
-      <ModalButtons updateTask={updateTask} textOne="Update Task" toggleSelected={toggleSelected}/>
+      
       </div>
     )
 }

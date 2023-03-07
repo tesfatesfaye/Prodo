@@ -44,7 +44,8 @@ const ModalMain=()=>{
          
   </div>
   {(selectedValue==="Title" ||selectedValue==="Description") && 
-  <ModalButtons updateTask={updateTask} openModal={()=>openEditModal(tempHolder.id,"General")} textOne="Update Task"/>}
+  <ModalButtons updateTask={updateTask} openModal={openEditModal}
+   textOne="Update Task" toggleSelected={toggleSelected}/> }
   </div>
        <div className="subtasks-parent" style={(focusStyle('subtask'))}>
        

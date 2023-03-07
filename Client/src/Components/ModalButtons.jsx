@@ -8,16 +8,34 @@ const ModalButtons=(props)=>{
     return(
         <div className="modal-buttons">
           <button className="save-cancel"style={{background:"rgb(42, 170, 138,0.9)"}} 
-          onMouseDown={(event)=>props.save ? props.save() : 
-            (props.updateTask(event,tempHolder.id)&&props.toggleSelected('')&&props.openEditModal) }
+          onMouseDown={(event)=>{
+              if(props.save){
+                props.save()
+              }
+           else if(props.updateTask){
+            props.updateTask(event,tempHolder.id)
+            props.toggleSelected('')
+           
+           }
+            
+            }
+          }
         >
             {props.textOne? props.textOne : 'Save'}
             </button>
           <button className="save-cancel"style={{background:"rgba(128, 0, 32,0.9)"}}
             onMouseDown={()=>{
-              {props.openEditModal && props.openEditModal}
-            // toggleTempHolder({...tempHolderModel,comment:"",tag:"",subtask:""})
-            props.toggleSelected ? props.toggleSelected(''):''
+             props.toggleSelected('')
+              if(props.openModal){
+                props.openModal(tempHolder.id,"General")
+              }
+              else{
+                toggleTempHolder({...tempHolderModel,comment:"",tag:"",subtask:""})
+                toggleModal('')
+              }
+              
+            
+           
           }}
           >
             {props.textTwo ? props.textTwo : 'Cancel'}

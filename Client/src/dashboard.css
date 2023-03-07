@@ -1,3 +1,11 @@
+
+[data-title]:hover:after {
+   visibility: visible;
+}
+
+[date-title]:after {
+    background-color: #ff0706;
+}
 .dashboard-parent{
   display: flex;
   width: 100vw;
@@ -17,7 +25,6 @@
     display: flex;
     flex-direction: row;
     overflow: none;
-    z-index: 99;
     position: fixed;
     top: 0;
     align-items: center;

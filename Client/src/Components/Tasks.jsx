@@ -43,13 +43,14 @@ const Tasks=({tasks,pageTitle,currentDay})=>{
             onMouseLeave={()=>toggleTaskHoverId('')} {...prov.draggableProps} {...prov.dragHandleProps} ref={prov.innerRef} >
             <RxHamburgerMenu color="white" size="0.9em"style={{visibility: taskHoverId=== task.id ? 'visible' : 'hidden'}}
             onMouseEnter={()=>toggleDraggable(true)} onMouseLeave={()=>toggleDraggable(false)}/>
+                
             
-            <div className="task-toggler" > <div className="task-completer" 
+            <div className="task-toggler" > <div className="task-completer" title="Complete Task"
             onMouseEnter={()=>toggleCompletedHover(task.id)} 
               onMouseLeave={()=>toggleCompletedHover('')} onClick={(event)=>{
                 completeTask(event,task.id)
             }}>  <CheckBoxIconHover style={{display: completeHover===task.id ||pageTitle==='Completed'? "" : "none", 
-            color:pageTitle==='Completed' ? "green" :''}}/> 
+            color:pageTitle==='Completed' ? "green" :''}} title="Drag"/> 
                 <CheckBoxIcon style={{display: completeHover===task.id  ||pageTitle==='Completed'? "none" : ""}}/> 
                 </div>
                 <span>{task.title}</span>

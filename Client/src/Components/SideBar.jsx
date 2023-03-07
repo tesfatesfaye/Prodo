@@ -6,7 +6,7 @@ import {BsCheck2All as Completed,BsAlarm as Overdue,
 BsFilterLeft as Tags,BsFillTrash2Fill as Deleted} from'react-icons/bs'
 import {AiTwotoneCalendar as Today} from 'react-icons/ai'
 import { Context } from "../Context/Context";
-import { Link } from "react-router-dom";
+import { monthDate } from "../utils/utilities";
     const SideBar=()=>{
         const {togglePageTitle,tasks,completedTasks,changePage}=useContext(Context)
         const {sideBarRef}=useSideBar()     
@@ -27,7 +27,7 @@ import { Link } from "react-router-dom";
                 <Tags/>
                 <span>Tags</span>
             </div>
-             <div className="today" onClick={()=>changePage('today')}>
+             <div className="today" onClick={()=>changePage('today')} title={monthDate}>
                 <Today color="orange"/>
                 <span>Today</span>
                 </div>  

@@ -33,5 +33,5 @@ const subtaskModel={parentId:"",id:"",title:"",description:"",completed:false}
 
     const dateInfo=new DateManager()
     const dateInfoTitle= ` ${dateInfo.currentDayAb} ${dateInfo.currentMonthAb} ${dateInfo.date}`
-
-export {tempHolderModel,dateInfo,dateInfoTitle}
+    const monthDate=`${dateInfo.currentMonthAb} ${dateInfo.date}`
+export {tempHolderModel,dateInfo,dateInfoTitle,monthDate}

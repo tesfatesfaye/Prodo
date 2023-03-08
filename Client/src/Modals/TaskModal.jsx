@@ -1,7 +1,6 @@
 import React,{useContext, useEffect} from "react";
 import '../dashboard.css'
 import { Context } from "../Context/Context"
-import useDashboardHook from "../Hooks/useDashboardHook";
 import ReactPortal from '../Context/ReactPortal'
 import {FaTasks as General} from 'react-icons/fa'
 import {VscChromeClose} from 'react-icons/vsc'

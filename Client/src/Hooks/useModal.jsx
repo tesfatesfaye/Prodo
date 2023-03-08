@@ -8,7 +8,7 @@ let descriptionRef=useRef(null)
 const commentRef=useRef(null)
 const {toggleTasksList,tasks,toggleModal,toggleTempHolder,tempHolder,modal}=useContext(Context)
 const [selectedValue,setSelectedValue]=useState('')
-
+const [modalCompleteHover,setModalCompleteHover]=useState(false)
 
 
 useEffect(()=>{
@@ -42,6 +42,9 @@ const focusStyle=(value,valueTwo="EmptyValue")=>{
         return({border:''})
     }
 
+const toggleModalCompletedHover=(value)=>{
+    setModalCompleteHover(value)
+}
 const addNewTask=()=>{
         let objectHolder={}
         for(let key in tempHolder){
@@ -63,6 +66,7 @@ const toggleShift=(value)=>{
 }
 
         return{selectedValue,toggleSelected,
-            toggleShift,focusStyle,addNewTask,descriptionRef,commentRef}
+            toggleShift,focusStyle,addNewTask,
+            descriptionRef,commentRef,toggleModalCompletedHover,modalCompleteHover}
 }
  export default useModal

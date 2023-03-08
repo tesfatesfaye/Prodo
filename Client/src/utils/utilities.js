@@ -1,4 +1,3 @@
-
 class DateManager{
     constructor (){
         this.dateObject =new Date()

@@ -11,8 +11,7 @@ const Context=createContext()
         const [theme,setTheme]=useState(()=>'dark')
         const[modal,setModal]=useState('')
         const [sideBar,setSideBar]=useState(true)
-        const[pageTitle,setPageTitle]=useState("General")
-        const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[],comments:["This is the first"],
+              const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[],comments:["This is the first"],
         description:'none',dueDate:"",tags:[],dateCreated:"",completed:false},
         {id:uuid4(), title:"Test 2", subtasks:[],
         comments:['This is the second'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:false},
@@ -64,6 +63,18 @@ const Context=createContext()
             // setTempHolder(tempHolderModel)
           
         }
+        const openEditModal=(id,page)=>{
+            if(page==='General'){
+                const task=tasks.find(x=> x.id===id)
+                toggleTempHolder({...task,comment:"",tag:"",subtask:""})
+          }
+           else if(page==='Completed'){
+                const task=completedTasks.find(x=> x.id===id)
+               toggleTempHolder({...task,comment:"",tag:"",subtask:""})
+           }
+           
+           
+        }
         const deleteTask=(event,id)=>{
            event.stopPropagation()
             setTasks(prev=>{
@@ -78,7 +89,9 @@ const Context=createContext()
         const toggleTasksList=(value)=>{
             setTasks(value)
         }
-
+        const toggleCompletedTasksList=(value)=>{
+            setCompletedTasks(value)
+        }
         const updateTemp=(event)=>{
             const{name,value}=event.target
             setTempHolder(prev=>{
@@ -111,8 +124,8 @@ const Context=createContext()
        return(
         <Context.Provider value={{formState,updateForm,changePage,
         theme,sideBar,toggleSideBar,tasks,modal,toggleModal,toggleTasksList,
-        toggleTempHolder,updateTemp,tempHolder,deleteTask,updateTask,togglePageTitle,
-        pageTitle,completedTasks,completeTask,overDue,dueToday}}>
+        toggleTempHolder,updateTemp,tempHolder,deleteTask,updateTask,
+        completedTasks,completeTask,overDue,dueToday,openEditModal,toggleCompletedTasksList}}>
             {children}
         </Context.Provider>
     )}

@@ -2,7 +2,8 @@ import React ,{useContext, useState}from "react";
 import useTasks from "../Hooks/useTasks";
 import '../dashboard.css'
 import {RxHamburgerMenu} from 'react-icons/rx'
-import{RiCheckboxBlankLine as CheckBoxIcon,RiCheckboxLine as CheckBoxIconHover} from 'react-icons/ri'
+import{RiCheckboxBlankLine as CheckBoxIcon,
+RiCheckboxLine as CheckBoxIconHover} from 'react-icons/ri'
 import TaskModal from "../Modals/TaskModal";
 import {BsTrash} from 'react-icons/bs'
 import {VscAdd} from 'react-icons/vsc'
@@ -14,16 +15,16 @@ import useDashboardHook from "../Hooks/useDashboardHook"
 
 const Tasks=({tasks,pageTitle,currentDay})=>{
  
-    const {toggleCompletedHover,completeHover}=useTasks() 
+    const {toggleCompletedHover,completeHover,modifyTaskOrder}=useTasks(pageTitle) 
     const{toggleModal,deleteTask,
-        completeTask}=useContext(Context)
-    const{taskHoverId,toggleTaskHoverId,draggable,toggleDraggable,modifyTaskOrder
-        ,openEditModal}=useDashboardHook(pageTitle)
+        completeTask,openEditModal}=useContext(Context)
+    const{taskHoverId,toggleTaskHoverId,draggable,toggleDraggable
+        }=useDashboardHook()
       
      return(
         <div className="tasks-wrapper">
         <div className="task-Title">
-            <span>{pageTitle} </span>
+            <span>{pageTitle}</span>
         { currentDay && <span className="currentDay">{currentDay}</span>}
         </div>
     <DragDropContext onDragEnd={modifyTaskOrder}>
@@ -50,7 +51,7 @@ const Tasks=({tasks,pageTitle,currentDay})=>{
               onMouseLeave={()=>toggleCompletedHover('')} onClick={(event)=>{
                 completeTask(event,task.id)
             }}>  <CheckBoxIconHover style={{display: completeHover===task.id ||pageTitle==='Completed'? "" : "none", 
-            color:pageTitle==='Completed' ? "green" :''}} title="Drag"/> 
+            color:pageTitle==='Completed' ? "green" :''}} /> 
                 <CheckBoxIcon style={{display: completeHover===task.id  ||pageTitle==='Completed'? "none" : ""}}/> 
                 </div>
                 <span>{task.title}</span>

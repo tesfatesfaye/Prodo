@@ -7,15 +7,24 @@ import ModalButtons from "./ModalButtons";
 import {MdSort} from "react-icons/md"
 import {VscAdd} from 'react-icons/vsc'
 import useDashboardHook from "../Hooks/useDashboardHook";
+import{RiCheckboxBlankLine as CheckBoxIcon,RiCheckboxLine as CheckBoxIconHover} from 'react-icons/ri';
 const ModalMain=()=>{
-    const {selectedValue,toggleSelected,focusStyle,descriptionRef}=useModal()
-    const {openEditModal}=useDashboardHook()
-      const {tempHolder,updateTemp,modal,updateTask}=useContext(Context)
+    const {selectedValue,toggleSelected,focusStyle,descriptionRef,toggleModalCompletedHover,modalCompleteHover}=useModal()
+      const {tempHolder,updateTemp,modal,updateTask,completeTask,toggleModal,openEditModal}=useContext(Context)
     return(
         <div className="modal-main">
         <div className="title-description-parent" style={focusStyle('Title',"Description")}>
      <div className="modal-title">
-      {!selectedValue && <div className="modal-complete"> </div>}
+      {!selectedValue && 
+      
+      <div title="Complete Task" onMouseEnter={()=>toggleModalCompletedHover(true)}
+      style={{display:"flex",alignItems:"center"}} onMouseLeave={()=>toggleModalCompletedHover(false)} 
+      onClick={(event)=>{
+         completeTask(event,tempHolder.id)
+          
+        }}>
+       { modalCompleteHover ? <CheckBoxIconHover/>:<CheckBoxIcon/>} 
+        </div>}
       <input type='text' id="modal-title" className="modal-input-title"
        placeholder="Task title"  name="title"  
        value={tempHolder.title}
@@ -26,7 +35,8 @@ const ModalMain=()=>{
       </div> 
   <div className="modal-description" style={{display:'flex',gap:'10px'}}>
           <MdSort color="white"/>
-          <input type='text' name="description"id="modal-title-description"className="modal-input-title" 
+          <input type='text' name="description"id="modal-title-description"
+          className="modal-input-title" 
           style={{color:"white", fontSize:"medium"}}
           placeholder="Description" 
           ref= {descriptionRef}

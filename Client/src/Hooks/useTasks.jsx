@@ -1,31 +1,39 @@
 import { useState,useContext, useEffect, useLayoutEffect } from "react"
 import { Context } from "../Context/Context"
 
-const useTasks=()=>{
-    const{pageTitle,tasks,completedTasks}=useContext(Context)
-    const[FilteredTasks,setFilteredTasks]=useState(tasks)
-    const[completeHover,setCompleteHover]=useState("")
-            useLayoutEffect(()=>{
-               
-            if(pageTitle==="General"){
-                setFilteredTasks(tasks)
-            }
+const useTasks=(pageTitle)=>{
+    const{tasks,completedTasks,toggleTasksList,toggleCompletedTasksList}=useContext(Context)
 
-            else if(pageTitle==="Completed"){ 
-                setFilteredTasks(completedTasks)
-            }
-            else if(pageTitle==="Today"){
-                setFilteredTasks([])
-            }
+    useEffect(()=>{
+        console.log(pageTitle)
+    })
+    const[completeHover,setCompleteHover]=useState("")
+    const modifyTaskOrder=(value)=>{
+        console.log(`modify ${pageTitle}`)
+        if(pageTitle==="General"){
+            if(!value.destination) return'';
+            const items=structuredClone(tasks)
+            const [holder]=items.splice(value.source.index,1)
+            items.splice(value.destination.index,0,holder)
+            toggleTasksList(items)
+        }
+       else if(pageTitle==="Completed"){
+        if(!value.destination) return'';
+            const items=structuredClone(completedTasks)
+            const [holder]=items.splice(value.source.index,1)
+            items.splice(value.destination.index,0,holder)
+            toggleCompletedTasksList(items)
+       }
+    }
+
    
-    },[tasks,pageTitle])
 
     const toggleCompletedHover=(id)=>{
 
         setCompleteHover(id)
     }
     
-        return{FilteredTasks,toggleCompletedHover,completeHover}
+        return{toggleCompletedHover,completeHover,modifyTaskOrder}
 }
 
 export default useTasks

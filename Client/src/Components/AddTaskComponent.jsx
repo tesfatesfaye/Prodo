@@ -56,7 +56,7 @@ import "../dashboard.css";
         <General color="yellow" size={"0.75rem"} style={{margin:"0"}}/>
         <h6 style={{color:"rgba(255,255,255,0.7)",margin:"0"}}>General</h6>
         </span>
-        <ModalButtons  save={addNewTask}/>
+        <ModalButtons  toggleSelected={toggleSelected} save={addNewTask}/>
         </div>
   </div>
         

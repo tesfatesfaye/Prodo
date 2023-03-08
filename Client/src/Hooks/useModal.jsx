@@ -3,33 +3,42 @@ import { Context } from "../Context/Context";
 import { uuid4 } from 'uuid4';
 import { tempHolderModel } from "../utils/utilities";
 const useModal=()=>{
-const titleRef=useRef(null)
+let titleRef=useRef(null)
 let descriptionRef=useRef(null)
 let addSubTaskRef=useRef(null)
 let commentRef=useRef(null)
 const {toggleTasksList,tasks,toggleModal,toggleTempHolder,tempHolder,modal}=useContext(Context)
 const [selectedValue,setSelectedValue]=useState('')
 const [modalCompleteHover,setModalCompleteHover]=useState(false)
+const [hoverInput,setHoverInput]=useState(false)
 
 
 useEffect(()=>{
-    console.log(`${selectedValue} selected`)
+   
+console.log(selectedValue)
+console.log(hoverInput)
+   
+
 })
-useLayoutEffect(()=>{
+useEffect(()=>{
     if(titleRef.current){
      titleRef.current.style.height="19px"
      const scrollH=titleRef.current.scrollHeight;
      titleRef.current.style.height=scrollH+"px"  
-     descriptionRef.current.style.height="19px"
-     const scrollHD=descriptionRef.current.scrollHeight;
-     descriptionRef.current.style.height=scrollHD+"px"     
+     console.log(titleRef.current.style.height)
+        if(descriptionRef.current){
+            descriptionRef.current.style.height="19px"
+            const scrollHD=descriptionRef.current.scrollHeight;
+            descriptionRef.current.style.height=scrollHD+"px" 
+        }
+        
       }
     else{
         console.log("No joy for title")
     }
        
     if(addSubTaskRef.current){
-             addSubTaskRef.current.style.height="19px"
+             
          const scrollH=addSubTaskRef.current.scrollHeight;
          addSubTaskRef.current.style.height=scrollH+"px"
          const scrollHC=commentRef.current.scrollHeight;
@@ -43,6 +52,7 @@ useLayoutEffect(()=>{
      return()=>{
           
         console.log('cleanedUp')
+        titleRef=null
         descriptionRef=null
         addSubTaskRef=null
         commentRef=null
@@ -50,6 +60,25 @@ useLayoutEffect(()=>{
 },[tempHolder])
 
 
+useLayoutEffect(()=>{
+
+   
+    if(selectedValue==="Title"){
+        // titleRef.current.focus()
+        document.querySelector('#modal-title')
+    }
+
+    else if(selectedValue==="description"){
+        descriptionRef.current.focus()
+    }
+   
+ 
+
+},[tempHolder,selectedValue])
+
+const toggleHoverInput=(value)=>{
+    setHoverInput(value)
+}
 const focusStyle=(value,valueTwo="EmptyValue")=>{
     if(value===selectedValue || valueTwo===selectedValue){
         return ({border:'1px solid grey'})
@@ -84,6 +113,6 @@ const toggleShift=(value)=>{
             toggleShift,focusStyle,addNewTask,
             descriptionRef,commentRef,addSubTaskRef,
             toggleModalCompletedHover,modalCompleteHover,
-            titleRef}
+            titleRef,toggleHoverInput,hoverInput}
 }
  export default useModal

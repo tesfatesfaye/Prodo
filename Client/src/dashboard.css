@@ -263,6 +263,7 @@ padding-right: 10px;
     border-radius: 50%;
     border: #FFFFFF 1px solid;
     margin-bottom: 0;
+    align-items: center;
    }
 
 
@@ -271,6 +272,7 @@ padding-right: 10px;
     display: flex;
     align-items: center;
     width: 100%;
+    height: 28px;
     background-color: transparent;
     color:white;
     border: none;
@@ -278,13 +280,29 @@ padding-right: 10px;
     padding-left: 0;
     font-size: large;
     font-weight: 300;
-    flex-wrap: wrap;
-    height: auto;
-    resize: none;
+     resize: none;
     overflow: hidden;
     
 
 }
+
+
+.modal-input-title-not-selected{
+    -webkit-line-clamp: 1;    
+    width: 95%;
+    max-height: 100%;
+    display: -webkit-box;
+     -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-box-align: center;
+      box-sizing: border-box;
+      padding-top: 1px;
+
+    /* overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; */
+    
+    }
 .subtasks-parent{
     display: flex;
     flex-direction: column;
@@ -400,8 +418,8 @@ color: #FFFFFF;
     box-sizing: border-box;
     padding: 8px 8px 8px 8px;
     border: 1px solid rgb(255, 255, 255,0.3) ;
-    border-radius: 15px;
     box-sizing: border-box;
+    border-radius: 2px;
 }
 .modal-mini-input{
     padding-top:0px;

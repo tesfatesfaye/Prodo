@@ -9,7 +9,7 @@ const ModalSideBar=()=>{
            <span>Type</span>
            <div className="modal-holder">
            <General color="yellow"/> 
-           <span style={{paddingBottom:'5px'}}>General</span>
+           <span>General</span>
            </div>
            <span></span>
         </div>

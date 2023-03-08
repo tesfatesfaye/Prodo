@@ -90,6 +90,7 @@ const Context=createContext()
             setCompletedTasks(value)
         }
         const updateTemp=(event)=>{
+            event.preventDefault()
             const{name,value}=event.target
             setTempHolder(prev=>{
                 return {...prev, [name]:value}

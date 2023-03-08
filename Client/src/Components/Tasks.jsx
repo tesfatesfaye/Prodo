@@ -35,7 +35,7 @@ const Tasks=({tasks,pageTitle,currentDay})=>{
             <Draggable key={task.id} draggableId={task.id} index={index} isDragDisabled={draggable ? false : true}>
                {(prov)=>( 
                <li className={`tasks ${(pageTitle.toLowerCase())}`}
-                id={task.id} onMouseEnter={()=>toggleTaskHoverId(task.id) } 
+                id={task.id} onMouseEnter={()=>toggleTaskHoverId(task.id)} 
                onClick={()=>{
                 openEditModal(task.id,pageTitle)
                 toggleModal('TaskModal')

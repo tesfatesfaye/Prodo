@@ -41,10 +41,7 @@ const Context=createContext()
             setCompletedTasks(tasks=>[...tasks,filteredTask])
             }
 
-    const togglePageTitle=(value)=>{
-        setPageTitle(value)
-    }
-        const updateTask= (event,id)=>{
+     const updateTask= (event,id)=>{
             event.stopPropagation()
             let objectHolder={}
             for(let key in tempHolder){

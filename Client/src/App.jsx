@@ -2,7 +2,7 @@ import './App.css'
 import { useContext } from 'react'
 import {Routes,Route} from "react-router-dom"
 import Login from './Pages/Login'
-import SignUp from './Pages/Signup'
+import SignUp from './Pages/SignUp'
 import DashBoard from './Pages/Dashboard'
 import { IconContext } from "react-icons/lib";
 import { Context } from './Context/Context'
@@ -18,7 +18,7 @@ function App() {
       <Route path='/' element={<DashBoard/>} >
       <Route path="general" element={<Tasks tasks={tasks} pageTitle="General"/>}/>
           <Route path="completed" element={<Tasks tasks={completedTasks} pageTitle="Completed"/>}/>
-          {/* <Route path="/overdue" element={<Overdue/>}/> */}
+          <Route path="/overdue" element={<Tasks pageTitle="Overdue"/>}/>
           <Route path='today' element={<Tasks tasks={dueToday} pageTitle="Today" currentDay={dateInfoTitle}/>}/>
         
         </Route>

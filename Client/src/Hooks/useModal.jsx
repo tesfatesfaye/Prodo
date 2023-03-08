@@ -5,7 +5,8 @@ import { tempHolderModel } from "../utils/utilities";
 const useModal=()=>{
 const titleRef=useRef(null)
 let descriptionRef=useRef(null)
-const commentRef=useRef(null)
+let addSubTaskRef=useRef(null)
+let commentRef=useRef(null)
 const {toggleTasksList,tasks,toggleModal,toggleTempHolder,tempHolder,modal}=useContext(Context)
 const [selectedValue,setSelectedValue]=useState('')
 const [modalCompleteHover,setModalCompleteHover]=useState(false)
@@ -15,22 +16,36 @@ useEffect(()=>{
     console.log(`${selectedValue} selected`)
 })
 useLayoutEffect(()=>{
- 
-    if(descriptionRef.current){
-        console.log(descriptionRef.current.style.height)
-       descriptionRef.current.style.height="19px"
-        const scrollH=descriptionRef.current.scrollHeight;
-        descriptionRef.current.style.height=scrollH+"px"     
-        console.log(descriptionRef.current.style.height)
+    if(titleRef.current){
+     titleRef.current.style.height="19px"
+     const scrollH=titleRef.current.scrollHeight;
+     titleRef.current.style.height=scrollH+"px"  
+     descriptionRef.current.style.height="19px"
+     const scrollHD=descriptionRef.current.scrollHeight;
+     descriptionRef.current.style.height=scrollHD+"px"     
+      }
+    else{
+        console.log("No joy for title")
+    }
+       
+    if(addSubTaskRef.current){
+             addSubTaskRef.current.style.height="19px"
+         const scrollH=addSubTaskRef.current.scrollHeight;
+         addSubTaskRef.current.style.height=scrollH+"px"
+         const scrollHC=commentRef.current.scrollHeight;
+         commentRef.current.style.height=scrollH+"px"        
+      
     }
     else{
-        console.log("No joy")
+        console.log("No joy for add subtask")
     }
+ 
      return()=>{
           
         console.log('cleanedUp')
         descriptionRef=null
-          
+        addSubTaskRef=null
+        commentRef=null
      }
 },[tempHolder])
 
@@ -67,6 +82,8 @@ const toggleShift=(value)=>{
 
         return{selectedValue,toggleSelected,
             toggleShift,focusStyle,addNewTask,
-            descriptionRef,commentRef,toggleModalCompletedHover,modalCompleteHover}
+            descriptionRef,commentRef,addSubTaskRef,
+            toggleModalCompletedHover,modalCompleteHover,
+            titleRef}
 }
  export default useModal

@@ -1,10 +1,7 @@
 
-[data-title]:hover:after {
-   visibility: visible;
-}
-
-[date-title]:after {
-    background-color: #ff0706;
+textarea{
+    font-family: 'Noto Sans','Raleway', 'sans-serif';
+    resize: none;
 }
 .dashboard-parent{
   display: flex;

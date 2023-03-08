@@ -6,11 +6,11 @@ import useModal from "../Hooks/useModal";
 import ModalButtons from "./ModalButtons";
 import {MdSort} from "react-icons/md"
 import {VscAdd} from 'react-icons/vsc'
-import useDashboardHook from "../Hooks/useDashboardHook";
 import{RiCheckboxBlankLine as CheckBoxIcon,RiCheckboxLine as CheckBoxIconHover} from 'react-icons/ri';
 const ModalMain=()=>{
-    const {selectedValue,toggleSelected,focusStyle,descriptionRef,toggleModalCompletedHover,modalCompleteHover}=useModal()
-      const {tempHolder,updateTemp,modal,updateTask,completeTask,toggleModal,openEditModal}=useContext(Context)
+    const {selectedValue,toggleSelected,focusStyle,descriptionRef,
+      toggleModalCompletedHover,modalCompleteHover,titleRef,commentRef,addSubTaskRef}=useModal()
+      const {tempHolder,updateTemp,modal,updateTask,completeTask,toggleModal,openEditModal,changePage}=useContext(Context)
     return(
         <div className="modal-main">
         <div className="title-description-parent" style={focusStyle('Title',"Description")}>
@@ -21,21 +21,25 @@ const ModalMain=()=>{
       style={{display:"flex",alignItems:"center"}} onMouseLeave={()=>toggleModalCompletedHover(false)} 
       onClick={(event)=>{
          completeTask(event,tempHolder.id)
-          
+         toggleModal('')
         }}>
        { modalCompleteHover ? <CheckBoxIconHover/>:<CheckBoxIcon/>} 
         </div>}
-      <input type='text' id="modal-title" className="modal-input-title"
-       placeholder="Task title"  name="title"  
+      <textarea  id="modal-title" className="modal-input-title"
+       placeholder="Task title"  name="title"
+       style={{paddingTop:"",boxSizing:"border-box"}}  
        value={tempHolder.title}
        onFocus={()=>toggleSelected('Title')}
        onBlur={()=>toggleSelected('')}
-       onChange={(event)=>updateTemp(event)}/>
+       onChange={(event)=>updateTemp(event)}
+       ref={titleRef}
+       />
+      
 
       </div> 
   <div className="modal-description" style={{display:'flex',gap:'10px'}}>
           <MdSort color="white"/>
-          <input type='text' name="description"id="modal-title-description"
+          <textarea type='text' name="description"id="modal-title-description"
           className="modal-input-title" 
           style={{color:"white", fontSize:"medium"}}
           placeholder="Description" 
@@ -43,7 +47,7 @@ const ModalMain=()=>{
           value={tempHolder.description}
           onChange={(event)=>{
             updateTemp(event)
-          
+            
             
         }}
           onFocus={()=>toggleSelected('Description')}
@@ -59,7 +63,7 @@ const ModalMain=()=>{
   </div>
        <div className="subtasks-parent" style={(focusStyle('subtask'))}>
        
-          { tempHolder.subtasks.length ? 
+          { tempHolder.subtasks.length > 0 ? 
            <div className="subtasks">
         <span style={{marginLeft:'3px', width:'100%',
          fontWeight:'300',paddingBottom:'3px',
@@ -70,10 +74,13 @@ const ModalMain=()=>{
              
       <div className="modal-add" >
             <VscAdd color="white" size={'1em'}/>
-      <input placeholder="Add sub-task" 
-      style={{fontWeight:'300',fontSize:'13px',background:"transparent"}}
+      <textarea placeholder="Add sub-task" 
+      style={{fontWeight:'300',fontSize:'13px',background:"transparent",
+      paddingTop:"", boxSizing:"border-box" }}
       className="modal-mini-input" onFocus={()=>toggleSelected('subtask')}
       onBlur={()=>toggleSelected('')}
+      ref={addSubTaskRef}
+      
       /> 
       </div>
       {selectedValue==="subtask" && <ModalButtons/>}
@@ -83,12 +90,12 @@ const ModalMain=()=>{
         marginLeft='20px'/>}
 
    <div className={`comments-div ${selectedValue==="Comment" ? "comments-div-focused" : ''}`} >
-      <input className="modal-mini-input" placeholder="comments"
+      <textarea className="modal-mini-input" placeholder="comments"
       name="comment" style={{opacity: tempHolder.comment ? "1" : "0.6"}}
       value={tempHolder.comment} onChange={(event)=>updateTemp(event)}
       onFocus={()=>toggleSelected('Comment')}
       onBlur={()=>toggleSelected('')}
-      />
+      ref={commentRef}/>
        {selectedValue==="Comment" && <ModalButtons/>}
    </div>
           

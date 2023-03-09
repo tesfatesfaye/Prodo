@@ -6,7 +6,7 @@ import {BsCheck2All as Completed,BsAlarm as Overdue,
 BsFilterLeft as Tags,BsFillTrash2Fill as Deleted} from'react-icons/bs'
 import {AiTwotoneCalendar as Today} from 'react-icons/ai'
 import { Context } from "../Context/Context";
-import { monthDate } from "../utils/utilities";
+import { monthDate } from "../utils/dateHandler";
     const SideBar=()=>{
         const {togglePageTitle,tasks,completedTasks,changePage}=useContext(Context)
         const {sideBarRef}=useSideBar()     

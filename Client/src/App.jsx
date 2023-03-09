@@ -7,7 +7,7 @@ import DashBoard from './Pages/Dashboard'
 import { IconContext } from "react-icons/lib";
 import { Context } from './Context/Context'
 import Tasks from './Components/Tasks'
-import { dateInfoTitle } from './utils/utilities'
+import { dateInfoTitle } from './utils/dateHandler'
 function App() {
     const {dueToday,tasks,completedTasks}=useContext(Context)
   return (

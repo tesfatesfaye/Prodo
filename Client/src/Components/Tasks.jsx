@@ -25,7 +25,7 @@ const Tasks=({tasks,pageTitle,currentDay})=>{
         <div className="tasks-wrapper">
         <div className="task-Title">
             <span>{pageTitle}</span>
-        { currentDay && <span className="currentDay">{currentDay}</span>}
+        { currentDay && <span className="currentDay">{currentDay()}</span>}
         </div>
     <DragDropContext onDragEnd={modifyTaskOrder}>
         <Droppable droppableId="tasks-div">

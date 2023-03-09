@@ -105,7 +105,7 @@ const ModalMain=()=>{
       {selectedValue==="Subtask" && <ModalButtons />}
       </div>
       <div className={`modal-comments`}>
-        {selectedValue!=="Comment" && <ProfileHolder backgroundColor='rgba(0,0,0,0.1)' marginLeft='20px'/>}
+        {selectedValue!=="Comment" && <ProfileHolder backgroundColor='rgba(0,0,0,0.1)' marginLeft='20px' marginBottom="20px"/>}
 
    <div className={`comments-div ${selectedValue==="Comment" ? "comments-div-focused" : ''}`}>
       <TextareaAutosize className="modal-mini-input" 

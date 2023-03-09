@@ -3,7 +3,6 @@ import '../dashboard.css'
 import NavBar from "../Components/NavBar";
 import SideBar from "../Components/SideBar";
 import { Outlet, Route,Routes } from "react-router";
-import Split from 'react-split'
 import AddTaskModal from "../Modals/AddTaskModal";
 import useDashboardHook from "../Hooks/useDashboardHook";
 

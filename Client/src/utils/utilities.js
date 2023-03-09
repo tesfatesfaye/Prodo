@@ -26,6 +26,14 @@ class DateManager{
          }
     }
 
+
+
+    function startAtEndTextArea(event){
+        const element=event.target
+        element.setSelectionRange(element.value.length,element.value.length)
+    
+    }
+    
 const tempHolderModel={id:"",title:"",description:""
 ,subtask:'',subtasks:[],comment:'',comments:[],tag:'',tags:[],dueDate:"",dateCreated:'',completed:false}
 const subtaskModel={parentId:"",id:"",title:"",description:"",completed:false}
@@ -33,4 +41,4 @@ const subtaskModel={parentId:"",id:"",title:"",description:"",completed:false}
     const dateInfo=new DateManager()
     const dateInfoTitle= ` ${dateInfo.currentDayAb} ${dateInfo.currentMonthAb} ${dateInfo.date}`
     const monthDate=`${dateInfo.currentMonthAb} ${dateInfo.date}`
-export {tempHolderModel,dateInfo,dateInfoTitle,monthDate}
+export {tempHolderModel,dateInfo,dateInfoTitle,monthDate,startAtEndTextArea}

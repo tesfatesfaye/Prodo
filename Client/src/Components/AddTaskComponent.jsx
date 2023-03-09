@@ -36,13 +36,9 @@ import "../dashboard.css";
           style={{opacity: tempHolder.description ? "1" : ''}}
              placeholder="Description" 
           value={tempHolder.description}
-          onChange={(event)=>{
-            updateTemp(event)
-                   }}
+          onChange={(event)=>{updateTemp(event)}}
           onFocus={()=>toggleSelected('Description')}
-          onBlur={()=>{
-            toggleSelected('')
-                       }}/>
+          onBlur={()=>{toggleSelected('')}}/>
          
   </div>
   <div className="tag-holder">

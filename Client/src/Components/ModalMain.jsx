@@ -8,6 +8,7 @@ import {MdSort} from "react-icons/md"
 import {VscAdd} from 'react-icons/vsc'
 import{RiCheckboxBlankLine as CheckBoxIcon,RiCheckboxLine as CheckBoxIconHover} from 'react-icons/ri';
 import TextareaAutosize from 'react-textarea-autosize';
+import { startAtEndTextArea } from "../utils/utilities";
 const ModalMain=()=>{
 
     const {selectedValue,toggleSelected,focusStyle,
@@ -40,6 +41,7 @@ const ModalMain=()=>{
          <TextareaAutosize id="modal-title" 
          className='modal-input-title'
          name="title"
+         onFocus={(event)=>{startAtEndTextArea(event)}}
          placeholder="Task title" 
          autoFocus
          onChange={(event)=>updateTemp(event)}
@@ -61,6 +63,7 @@ const ModalMain=()=>{
           className="modal-description-textarea" 
           placeholder="Description" 
           autoFocus
+          onFocus={(event)=>startAtEndTextArea(event)}
           onBlur={()=>toggleSelected('') }
          value={tempHolder.description}
          onChange={(event)=>updateTemp(event)}/>
@@ -90,11 +93,11 @@ const ModalMain=()=>{
           <TextareaAutosize
        placeholder="Add sub-task" style={{fontWeight:'300',fontSize:'13px',
        background:"transparent",overflow:"hidden",paddingLeft:'4px',boxSizing:"border-box",alignItems:"center"}}
-      className="modal-mini-input" onFocus={()=>toggleSelected('subtask')}
+      className="modal-mini-input" onFocus={()=>{toggleSelected('Subtask')}}
       onBlur={()=>toggleSelected('') }/> 
       
       </div>
-      {selectedValue==="subtask" && <ModalButtons />}
+      {selectedValue==="Subtask" && <ModalButtons />}
       </div>
       <div className="modal-comments">
         {selectedValue!=="Comment" && <ProfileHolder backgroundColor='rgba(0,0,0,0.1)' marginLeft='20px'/>}

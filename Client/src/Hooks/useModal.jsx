@@ -1,12 +1,22 @@
-import {useContext,useState} from "react";
+import {useContext,useEffect,useLayoutEffect,useState} from "react";
 import { Context } from "../Context/Context";
 import { uuid4 } from 'uuid4';
 import { tempHolderModel } from "../utils/utilities";
-const useModal=()=>{
+const useModal=({titleRef})=>{
 
 const {toggleTasksList,tasks,toggleModal,toggleTempHolder,tempHolder}=useContext(Context)
 const [selectedValue,setSelectedValue]=useState('')
 const [modalCompleteHover,setModalCompleteHover]=useState(false)
+
+
+
+useLayoutEffect(()=>{
+    if(titleRef.current){
+        titleRef.current.focus()
+    }
+    console.log(selectedValue)})
+
+
 
 const focusStyle=(value,valueTwo="EmptyValue")=>{
     if(value===selectedValue || valueTwo===selectedValue){

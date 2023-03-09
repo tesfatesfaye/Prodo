@@ -1,4 +1,4 @@
-import React ,{useContext}from "react";
+import React ,{useContext, useRef}from "react";
 import { Context } from "../Context/Context";
 import ProfileHolder from "./ProfileHolder";
 import '../dashboard.css'
@@ -10,16 +10,17 @@ import{RiCheckboxBlankLine as CheckBoxIcon,RiCheckboxLine as CheckBoxIconHover} 
 import TextareaAutosize from 'react-textarea-autosize';
 import { startAtEndTextArea } from "../utils/utilities";
 const ModalMain=()=>{
-
+      const titleRef=useRef(null)
     const {selectedValue,toggleSelected,focusStyle,
-      toggleModalCompletedHover,modalCompleteHover,clickModalTextArea}=useModal()
+      toggleModalCompletedHover,modalCompleteHover,clickModalTextArea}=useModal({titleRef})
       const {tempHolder,updateTemp,updateTask,completeTask,toggleModal,openEditModal}=useContext(Context)
     return(
         <div className="modal-main" >
         <div className="title-description-parent" 
         style={focusStyle('Title',"Description")}>
      <div className="modal-title"  
-     onMouseDown={(event)=>clickModalTextArea(event,"Title")} >
+     onMouseDown={(event)=>clickModalTextArea(event,"Title")}
+      >
       
     
       {!selectedValue && 
@@ -28,11 +29,7 @@ const ModalMain=()=>{
       style={{display:"flex",alignItems:"center"}}
       onMouseEnter={()=>toggleModalCompletedHover(true)}
       onMouseLeave={()=>toggleModalCompletedHover(false)} 
-      onMouseDown={(event)=>{
-        event.preventDefault()
-        completeTask(event,tempHolder.id)
-         toggleModal('')
-        }}>
+      onMouseDown={(event)=>clickModalTextArea(event,"Description")}>
        
        { modalCompleteHover ? <CheckBoxIconHover/>:<CheckBoxIcon/>} 
         </div>}
@@ -44,9 +41,12 @@ const ModalMain=()=>{
          onFocus={(event)=>{startAtEndTextArea(event)}}
          placeholder="Task title" 
          autoFocus
+         ref={titleRef}
          onChange={(event)=>updateTemp(event)}
           value={tempHolder.title}
-         onBlur={()=>toggleSelected('')}
+         onBlur={()=>{
+      
+          toggleSelected('')}}
          
         
       /> :<div className="modal-input-title modal-input-title-not-selected">{tempHolder.title}</div>
@@ -64,7 +64,10 @@ const ModalMain=()=>{
           placeholder="Description" 
           autoFocus
           onFocus={(event)=>startAtEndTextArea(event)}
-          onBlur={()=>toggleSelected('') }
+          onBlur={()=>{
+             toggleSelected('')}}
+         
+          
          value={tempHolder.description}
          onChange={(event)=>updateTemp(event)}/>
           : 
@@ -76,7 +79,7 @@ const ModalMain=()=>{
   <ModalButtons updateTask={updateTask} openModal={openEditModal}
    textOne={selectedValue==="Title" ? "Update Title": "Update Description"} toggleSelected={toggleSelected}/> }
   </div>
-       <div className="subtasks-parent" style={(focusStyle('subtask'))}>
+       <div className="subtasks-parent" style={(focusStyle('Subtask'))}>
        
           { tempHolder.subtasks.length > 0 ? 
            <div className="subtasks">
@@ -94,12 +97,14 @@ const ModalMain=()=>{
        placeholder="Add sub-task" style={{fontWeight:'300',fontSize:'13px',
        background:"transparent",overflow:"hidden",paddingLeft:'4px',boxSizing:"border-box",alignItems:"center"}}
       className="modal-mini-input" onFocus={()=>{toggleSelected('Subtask')}}
-      onBlur={()=>toggleSelected('') }/> 
+      onBlur={()=>{(selectedValue!=="Title" && selectedValue!=="Description") ? toggleSelected(''): ''}}
+      
+       /> 
       
       </div>
       {selectedValue==="Subtask" && <ModalButtons />}
       </div>
-      <div className="modal-comments">
+      <div className={`modal-comments`}>
         {selectedValue!=="Comment" && <ProfileHolder backgroundColor='rgba(0,0,0,0.1)' marginLeft='20px'/>}
 
    <div className={`comments-div ${selectedValue==="Comment" ? "comments-div-focused" : ''}`}>
@@ -109,7 +114,7 @@ const ModalMain=()=>{
       value={tempHolder.comment} 
       onChange={(event)=>updateTemp(event)}
       onFocus={()=>toggleSelected('Comment')}
-      onBlur={()=>toggleSelected('')}/>
+      onBlur={()=>{(selectedValue!=="Title" && selectedValue!=="Description") ? toggleSelected(''): ''}}/>
       
        {selectedValue==="Comment" && <ModalButtons/>}
    </div>

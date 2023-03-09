@@ -17,6 +17,7 @@
     "react-router": "^6.8.0",
     "react-router-dom": "^6.8.0",
     "react-split": "^2.0.14",
+    "react-textarea-autosize": "^8.4.0",
     "uuid4": "^2.0.3",
     "uuidv4": "^6.2.13",
     "vite-plugin-svgr": "^2.4.0"

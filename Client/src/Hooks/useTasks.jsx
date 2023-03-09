@@ -3,11 +3,7 @@ import { Context } from "../Context/Context"
 
 const useTasks=(pageTitle)=>{
     const{tasks,completedTasks,toggleTasksList,toggleCompletedTasksList}=useContext(Context)
-
-    useEffect(()=>{
-        console.log(pageTitle)
-    })
-    const[completeHover,setCompleteHover]=useState("")
+     const[completeHover,setCompleteHover]=useState("")
     const modifyTaskOrder=(value)=>{
         console.log(`modify ${pageTitle}`)
         if(pageTitle==="General"){

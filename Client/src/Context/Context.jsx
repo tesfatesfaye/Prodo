@@ -42,7 +42,7 @@ const Context=createContext()
             }
 
      const updateTask= (event,id)=>{
-            event.stopPropagation()
+           
             let objectHolder={}
             for(let key in tempHolder){
             if(key.toString()!=="comment" && key.toString()!=="tag"){
@@ -90,7 +90,7 @@ const Context=createContext()
             setCompletedTasks(value)
         }
         const updateTemp=(event)=>{
-            event.preventDefault()
+           
             const{name,value}=event.target
             setTempHolder(prev=>{
                 return {...prev, [name]:value}

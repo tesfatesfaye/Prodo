@@ -11,20 +11,16 @@ import TextareaAutosize from 'react-textarea-autosize';
 const ModalMain=()=>{
 
     const {selectedValue,toggleSelected,focusStyle,
-      toggleModalCompletedHover,modalCompleteHover}=useModal()
+      toggleModalCompletedHover,modalCompleteHover,clickModalTextArea}=useModal()
       const {tempHolder,updateTemp,updateTask,completeTask,toggleModal,openEditModal}=useContext(Context)
     return(
         <div className="modal-main" >
         <div className="title-description-parent" 
         style={focusStyle('Title',"Description")}>
      <div className="modal-title"  
-     onMouseDown={(event)=>{
-      if(selectedValue!=="Title") { 
-      event.preventDefault()
-      toggleSelected('Title') 
-    }
-        }} 
-     >
+     onMouseDown={(event)=>clickModalTextArea(event,"Title")} >
+      
+    
       {!selectedValue && 
       
       <div title="Complete Task" 
@@ -48,9 +44,7 @@ const ModalMain=()=>{
          autoFocus
          onChange={(event)=>updateTemp(event)}
           value={tempHolder.title}
-         onBlur={()=>{
-          toggleSelected('') 
-       }}
+         onBlur={()=>toggleSelected('')}
          
         
       /> :<div className="modal-input-title modal-input-title-not-selected">{tempHolder.title}</div>
@@ -58,29 +52,18 @@ const ModalMain=()=>{
       
 
       </div> 
-  <div className="modal-description" onMouseDown={(event)=>{
-      if(selectedValue!=="Description"){
-        event.preventDefault() 
-         toggleSelected('Description')
-      }
-    
-      
-  }}>
-          <MdSort color="white"/>
+  <div className="modal-description" 
+  onMouseDown={(event)=>clickModalTextArea(event,"Description")}>
+   <MdSort color="white"/>
           {selectedValue==="Description" ?
 
           <TextareaAutosize name="description"id="modal-title-description"
           className="modal-description-textarea" 
           placeholder="Description" 
           autoFocus
-          onBlur={()=>{
-             toggleSelected('') 
-         }}
+          onBlur={()=>toggleSelected('') }
          value={tempHolder.description}
-         onChange={(event)=>{
-           updateTemp(event)
-         }}
-          />
+         onChange={(event)=>updateTemp(event)}/>
           : 
             <div className=" modal-description-not-selected">{tempHolder.description} </div>
             }
@@ -108,29 +91,22 @@ const ModalMain=()=>{
        placeholder="Add sub-task" style={{fontWeight:'300',fontSize:'13px',
        background:"transparent",overflow:"hidden",paddingLeft:'4px',boxSizing:"border-box",alignItems:"center"}}
       className="modal-mini-input" onFocus={()=>toggleSelected('subtask')}
-      onBlur={()=>{
-       toggleSelected('') 
-     }}/> 
+      onBlur={()=>toggleSelected('') }/> 
       
       </div>
       {selectedValue==="subtask" && <ModalButtons />}
       </div>
       <div className="modal-comments">
-        {selectedValue!=="Comment" && <ProfileHolder backgroundColor='rgba(0,0,0,0.1)' 
-        marginLeft='20px'/>}
+        {selectedValue!=="Comment" && <ProfileHolder backgroundColor='rgba(0,0,0,0.1)' marginLeft='20px'/>}
 
    <div className={`comments-div ${selectedValue==="Comment" ? "comments-div-focused" : ''}`}>
       <TextareaAutosize className="modal-mini-input" 
       placeholder="comments"
       name="comment"
-       style={{opacity: tempHolder.comment.length>0 ? "1" : "0.6"}}
       value={tempHolder.comment} 
       onChange={(event)=>updateTemp(event)}
       onFocus={()=>toggleSelected('Comment')}
-      onBlur={()=>{
-          toggleSelected('') 
-      }}
-      />
+      onBlur={()=>toggleSelected('')}/>
       
        {selectedValue==="Comment" && <ModalButtons/>}
    </div>

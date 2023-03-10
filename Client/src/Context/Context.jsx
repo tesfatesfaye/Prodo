@@ -2,6 +2,7 @@ import React,{useState,useEffect,createContext} from "react";
 import {useNavigate} from "react-router-dom";
 import { uuid4 } from 'uuid4';
 import { tempHolderModel } from "../utils/utilities";
+import { dateCreated } from "../utils/dateHandler";
 const Context=createContext()
     
     function ContextFunction({children}){
@@ -12,13 +13,13 @@ const Context=createContext()
         const[modal,setModal]=useState('')
         const [sideBar,setSideBar]=useState(true)
               const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[],comments:["This is the first"],
-        description:'none',dueDate:"",tags:[],dateCreated:"",completed:false},
+        description:'none',dueDate:"",tags:[],dateCreated:dateCreated(),completed:false},
         {id:uuid4(), title:"Test 2", subtasks:[],
-        comments:['This is the second'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:false},
+        comments:['This is the second'],description:'none',dueDate:"",tags:[],dateCreated:dateCreated(),completed:false},
         {id:uuid4(), title:"Test 3", 
-        subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:false},
+        subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:dateCreated(),completed:false},
         {id:uuid4(), title:"Test 4", 
-        subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:false}
+        subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:dateCreated(),completed:false}
               
     ])
         const [completedTasks, setCompletedTasks]=useState([{id:uuid4(), title:"Test 5", 

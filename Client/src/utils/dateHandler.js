@@ -2,7 +2,7 @@ class DateManager{
     constructor (){
         this.dateObject =new Date()
         this.dayNumber=this.dateObject.getDay()
-        this.month=this.dateObject.getMonth()
+        this.month=this.dateObject.getMonth()+1
         this.year=this.dateObject.getFullYear()
         this.date=this.dateObject.getDate()
         this.monthNameHolder=["January","February","March","April","May","June","July","August",
@@ -28,4 +28,5 @@ class DateManager{
     const dateInfo=new DateManager()
     const dateInfoTitle=()=> ` ${dateInfo.currentDayAb} ${dateInfo.currentMonthAb} ${dateInfo.date}`
     const monthDate=`${dateInfo.currentMonthAb} ${dateInfo.date}`
-    export{dateInfo,dateInfoTitle,monthDate,}
+    const dateCreated=()=>`${dateInfo.month}/${dateInfo.date}/${dateInfo.year}`
+    export{dateInfo,dateInfoTitle,monthDate,dateCreated}

@@ -2,8 +2,7 @@ import {useContext,useEffect,useLayoutEffect,useState} from "react";
 import { Context } from "../Context/Context";
 import { uuid4 } from 'uuid4';
 import { tempHolderModel } from "../utils/utilities";
-const useModal=({titleRef})=>{
-
+const useModal=()=>{
 const {toggleTasksList,tasks,toggleModal,toggleTempHolder,tempHolder}=useContext(Context)
 const [selectedValue,setSelectedValue]=useState('')
 const [modalCompleteHover,setModalCompleteHover]=useState(false)

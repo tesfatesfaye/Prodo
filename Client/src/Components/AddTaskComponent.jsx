@@ -8,7 +8,7 @@ import ModalButtons from "../Components/ModalButtons";
 import "../dashboard.css";
  const AddTaskComponent=()=>{
     const{tempHolder,modal,toggleModal,updateTemp}=useContext(Context)
-    const {toggleSelected,addNewTask,titleRef,descriptionRef}=useModal()
+    const {toggleSelected,addNewTask}=useModal()
     useEffect(()=>{
       console.log('add task component')
     })
@@ -26,11 +26,11 @@ import "../dashboard.css";
        onFocus={()=>toggleSelected('Title')}
        onBlur={()=>toggleSelected('')}
        onChange={(event)=>updateTemp(event)}
-       ref={titleRef}/>
+      />
 
       </div> 
   <div className="modal-description" style={{display:'flex',gap:'10px'}}>
-          <textarea ref={descriptionRef}type='text' name="description"
+          <textarea type='text' name="description"
           className="modal-input-title"
           id="add-task-modal-description" rows={1}
           style={{opacity: tempHolder.description ? "1" : ''}}

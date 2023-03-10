@@ -12,12 +12,13 @@ const Context=createContext()
         const [theme,setTheme]=useState(()=>'dark')
         const[modal,setModal]=useState('')
         const [sideBar,setSideBar]=useState(true)
-              const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[],comments:["This is the first"],
+         const [tasks,setTasks]=useState([{id:uuid4(), title:"Test 1", subtasks:[],comments:["This is the first"],
         description:'none',dueDate:"",tags:[],dateCreated:dateCreated(),completed:false},
         {id:uuid4(), title:"Test 2", subtasks:[],
         comments:['This is the second'],description:'none',dueDate:"",tags:[],dateCreated:dateCreated(),completed:false},
         {id:uuid4(), title:"Test 3", 
-        subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:dateCreated(),completed:false},
+        subtasks:[],comments:['This is the third'],description:'kanye was right',
+        dueDate:"",tags:[],dateCreated:dateCreated(),completed:false},
         {id:uuid4(), title:"Test 4", 
         subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:dateCreated(),completed:false}
               
@@ -72,8 +73,7 @@ const Context=createContext()
                toggleTempHolder({...task,comment:"",tag:"",subtask:""})
            }
            
-           
-        }
+             }
         const deleteTask=(event,id)=>{
            event.stopPropagation()
             setTasks(prev=>{

@@ -33,13 +33,14 @@ const Context=createContext()
         subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:true}])
         const [overDue,setOverDueTasks]=useState([])
         const [dueToday,setDueToday]=useState([])
-        const completeTask=(event,id)=>{
+        const completeTask=(event,id,closeModal)=>{
             event.stopPropagation()
             const [filteredTask]=tasks.filter(task=>task.id===id)
             .map(task=>({...task,completed:true}))
 
             setTasks(prev=>prev.filter(task=>task.id!==id))
             setCompletedTasks(tasks=>[...tasks,filteredTask])
+            closeModal && closeModal()
             }
 
      const updateTask= (event,id)=>{

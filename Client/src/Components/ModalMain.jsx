@@ -29,7 +29,7 @@ const ModalMain=()=>{
       style={{display:"flex",alignItems:"center"}}
       onMouseEnter={()=>toggleModalCompletedHover(true)}
       onMouseLeave={()=>toggleModalCompletedHover(false)} 
-      onMouseDown={(event)=>clickModalTextArea(event,"Description")}>
+      onMouseDown={(event)=>completeTask(event,tempHolder.id,toggleModal)}>
        
        { modalCompleteHover ? <CheckBoxIconHover/>:<CheckBoxIcon/>} 
         </div>}
@@ -45,8 +45,7 @@ const ModalMain=()=>{
          onChange={(event)=>updateTemp(event)}
           value={tempHolder.title}
          onBlur={()=>{
-      
-          toggleSelected('')}}
+      toggleSelected('')}}
          
         
       /> :<div className="modal-input-title modal-input-title-not-selected">{tempHolder.title}</div>
@@ -64,10 +63,7 @@ const ModalMain=()=>{
           placeholder="Description" 
           autoFocus
           onFocus={(event)=>startAtEndTextArea(event)}
-          onBlur={()=>{
-             toggleSelected('')}}
-         
-          
+          onBlur={()=>{toggleSelected('')}}
          value={tempHolder.description}
          onChange={(event)=>updateTemp(event)}/>
           : 

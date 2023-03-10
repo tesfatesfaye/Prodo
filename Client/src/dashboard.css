@@ -696,7 +696,12 @@ color: grey
         margin-bottom: 0px;
     }
 }
+.subtask-holder{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 
+}
 @media(max-width:900px){
     .modal-styles{
         width: 80%;

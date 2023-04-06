@@ -18,7 +18,7 @@ function App() {
       <Route path='/' element={<DashBoard/>} >
       <Route path="general" element={<Tasks tasks={tasks} pageTitle="General"/>}/>
           <Route path="completed" element={<Tasks tasks={completedTasks} pageTitle="Completed"/>}/>
-          <Route path="/overdue" element={<Tasks pageTitle="Overdue"/>}/>
+          <Route path="overdue" element={<Tasks pageTitle="Overdue"/>}/>
           <Route path='today' element={<Tasks tasks={dueToday} pageTitle="Today" currentDay={dateInfoTitle}/>}/>
         
         </Route>

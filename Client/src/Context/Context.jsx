@@ -23,6 +23,7 @@ const Context=createContext()
         subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:dateCreated(),completed:false}
               
     ])
+
         const [completedTasks, setCompletedTasks]=useState([{id:uuid4(), title:"Test 5", 
         subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:true},
         {id:uuid4(), title:"Test 6", 
@@ -35,8 +36,8 @@ const Context=createContext()
         const [overDue,setOverDueTasks]=useState([])
         const [dueToday,setDueToday]=useState([])
         useEffect(()=>{
-            changePage("/general")
-        },[])
+               console.log(tempHolder.subtask)
+        },)
         const completeTask=(event,id,closeModal)=>{
             event.stopPropagation()
             const [filteredTask]=tasks.filter(task=>task.id===id)
@@ -47,6 +48,30 @@ const Context=createContext()
             closeModal && closeModal()
             }
 
+            const addSubtask=(id)=>{
+                let objectHolder=structuredClone(tempHolder)
+                objectHolder.subtasks.push({id:uuid4(),subtask:objectHolder.subtask,
+                    complete:false})
+                objectHolder.subtask=""
+                setTempHolder(objectHolder)
+                let objectHolder2={}
+                for(let key in objectHolder){
+                    if(key.toString()!=="comment" && key.toString()!=="tag"){
+                        if(key.toString()!=="subtask"){
+                            objectHolder[key]=objectHolder2[key]
+                        }
+                          }
+                    }
+                           setTasks(prev=>{
+                    return prev.map(task=>{
+                        return (task.id ===id ? objectHolder2 : task)
+                    })
+                  })
+
+
+
+            
+            }
      const updateTask= (event,id)=>{
            
             let objectHolder={}
@@ -131,7 +156,7 @@ const Context=createContext()
         <Context.Provider value={{formState,updateForm,changePage,
         theme,sideBar,toggleSideBar,tasks,modal,toggleModal,toggleTasksList,
         toggleTempHolder,updateTemp,tempHolder,deleteTask,updateTask,
-        completedTasks,completeTask,overDue,dueToday,openEditModal,toggleCompletedTasksList}}>
+        completedTasks,completeTask,overDue,dueToday,openEditModal,toggleCompletedTasksList,addSubtask}}>
             {children}
         </Context.Provider>
     )}

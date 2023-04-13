@@ -17,6 +17,9 @@ const ModalButtons=(props)=>{
             props.toggleSelected('')
            
            }
+            else if(props.addSubtask){
+              props.addSubtask(tempHolder.id)
+            }
             
             }
           }

@@ -2,12 +2,11 @@ import React,{useContext}from "react"
 import {VscAdd} from 'react-icons/vsc'
 import TextareaAutosize from 'react-textarea-autosize';
 import ModalButtons from "./ModalButtons";
-import useModal from "../Hooks/useModal";
 import { Context } from "../Context/Context";
 
-const ModalSubsTasks=()=>{
-const{toggleSelected,selectedValue,focusStyle}=useModal()
-const {tempHolder,updateTemp,updateTask,completeTask,toggleModal,openEditModal}=useContext(Context)
+const ModalSubsTasks=({focusStyle,selectedValue,toggleSelected})=>{
+
+const {tempHolder,updateTemp,addSubtask}=useContext(Context)
 
 return(
     <div className="modal-subtasks-parent" style={(focusStyle('Subtask'))}>
@@ -17,6 +16,8 @@ return(
   <span style={{marginLeft:'3px', width:'100%',
    fontWeight:'300',paddingBottom:'3px',
    borderBottom: '1px solid rgba(255, 255, 255,0.3)'}}>Sub-tasks</span>
+   
+
    </div>
       : ''
     }
@@ -25,15 +26,19 @@ return(
       <VscAdd style={{marginTop:"2px"}}color="white" size={'1em'}/>
 
     <TextareaAutosize
- placeholder="Add sub-task" style={{fontWeight:'300',fontSize:'13px',
- background:"transparent",overflow:"hidden",paddingLeft:'4px',boxSizing:"border-box",alignItems:"center"}}
+ placeholder="Add sub-task" name="subtask"
+ style={{fontWeight:'300',fontSize:'13px',
+ background:"transparent",overflow:"hidden",
+ paddingLeft:'4px',boxSizing:"border-box",
+ alignItems:"center"}}
 className="modal-mini-input" onFocus={()=>{toggleSelected('Subtask')}}
+onChange={(event)=>updateTemp(event)}
 onBlur={()=>{(selectedValue!=="Title" && selectedValue!=="Description") ? toggleSelected(''): ''}}
 
  /> 
 
 </div>
-{selectedValue==="Subtask" && <ModalButtons textOne="Add subtask"/>}
+{selectedValue==="Subtask" && <ModalButtons textOne="Add subtask" addSubtask={addSubtask}/>}
 </div>
 )
 

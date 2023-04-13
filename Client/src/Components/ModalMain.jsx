@@ -77,7 +77,10 @@ const ModalMain=()=>{
    textOne={selectedValue==="Title" ? "Update Title": "Update Description"} 
    toggleSelected={toggleSelected}/> }
   </div>
-      <ModalSubsTasks/>
+      <ModalSubsTasks toggleSelected={toggleSelected}
+       selectedValue={selectedValue}
+        focusStyle={focusStyle}
+      />
       <div className={`modal-comments`}>
         {selectedValue!=="Comment" && <ProfileHolder backgroundColor='rgba(0,0,0,0.1)'
          marginLeft='20px' marginBottom="20px"/>}

@@ -4,7 +4,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 import ModalButtons from "./ModalButtons";
 import { Context } from "../Context/Context";
 import ModalSubsTasksList from "./ModalSubsTasksList";
-const ModalSubsTasks=({focusStyle,selectedValue,toggleSelected})=>{
+const ModalSubsTasks=({focusStyle,selectedValue,toggleSelected,toggleModalCompletedHover,modalCompleteHover})=>{
 
 const {tempHolder,updateTemp,addSubtask}=useContext(Context)
 let completedSubtasks=0
@@ -17,6 +17,8 @@ const subtasks=tempHolder.subtasks.map((item)=>{
          id={item.id}
          value={item.value}
          completed={item.completed}
+         toggleModalCompletedHover={toggleModalCompletedHover}
+         modalCompleteHover={modalCompleteHover}
       />
    )
 

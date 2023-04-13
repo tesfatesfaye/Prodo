@@ -28,11 +28,11 @@ const ModalMain=()=>{
       
       <div title="Complete Task" 
       style={{display:"flex",alignItems:"center"}}
-      onMouseEnter={()=>toggleModalCompletedHover(true)}
+      onMouseEnter={()=>toggleModalCompletedHover("title")}
       onMouseLeave={()=>toggleModalCompletedHover(false)} 
       onMouseDown={(event)=>completeTask(event,tempHolder.id,toggleModal)}>
        
-       { modalCompleteHover ? <CheckBoxIconHover/>:<CheckBoxIcon/>} 
+       { modalCompleteHover==="title" ? <CheckBoxIconHover/>:<CheckBoxIcon/>} 
         </div>}
          {selectedValue==="Title" ? 
          
@@ -78,8 +78,9 @@ const ModalMain=()=>{
    toggleSelected={toggleSelected}/> }
   </div>
       <ModalSubsTasks toggleSelected={toggleSelected}
+      modalCompleteHover={modalCompleteHover}
        selectedValue={selectedValue}
-        focusStyle={focusStyle}
+        focusStyle={focusStyle} toggleModalCompletedHover={toggleModalCompletedHover}
       />
       <div className={`modal-comments`}>
         {selectedValue!=="Comment" && <ProfileHolder backgroundColor='rgba(0,0,0,0.1)'

@@ -50,7 +50,7 @@ const Context=createContext()
 
             const addSubtask=(id)=>{
                 let objectHolder=structuredClone(tempHolder)
-                objectHolder.subtasks.push({id:uuid4(),subtask:objectHolder.subtask,
+                objectHolder.subtasks.push({id:uuid4(),value:objectHolder.subtask,
                     complete:false})
                 objectHolder.subtask=""
                 setTempHolder(objectHolder)

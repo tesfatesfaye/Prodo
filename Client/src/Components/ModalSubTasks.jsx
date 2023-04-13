@@ -1,14 +1,14 @@
 import React from "react";
 
 
-const ModalSubsTasks=()=>{
+const ModalSubsTasks=({value})=>{
 
 
 
 
 return(
-    <div className="modal-subtasks-parent" style={(focusStyle('Subtask'))}>
-
+    <div className="subtasks" style={(focusStyle('Subtask'))}>
+        {value}
     </div>
 )
 

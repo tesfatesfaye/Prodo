@@ -36,7 +36,7 @@ const Context=createContext()
         const [overDue,setOverDueTasks]=useState([])
         const [dueToday,setDueToday]=useState([])
         useEffect(()=>{
-               console.log(tempHolder.subtask)
+               console.log(tempHolder.subtasks)
         },)
         const completeTask=(event,id,closeModal)=>{
             event.stopPropagation()
@@ -54,19 +54,12 @@ const Context=createContext()
                     complete:false})
                 objectHolder.subtask=""
                 setTempHolder(objectHolder)
-                let objectHolder2={}
-                for(let key in objectHolder){
-                    if(key.toString()!=="comment" && key.toString()!=="tag"){
-                        if(key.toString()!=="subtask"){
-                            objectHolder[key]=objectHolder2[key]
-                        }
-                          }
-                    }
-                           setTasks(prev=>{
-                    return prev.map(task=>{
-                        return (task.id ===id ? objectHolder2 : task)
-                    })
-                  })
+                          
+                //            setTasks(prev=>{
+                //     return prev.map(task=>{
+                //         return (task.id ===id ? objectHolder2 : task)
+                //     })
+                //   })
 
 
 

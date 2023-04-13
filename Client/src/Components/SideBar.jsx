@@ -11,7 +11,7 @@ import { monthDate } from "../utils/dateHandler";
         const {togglePageTitle,tasks,completedTasks,changePage}=useContext(Context)
         const {sideBarRef}=useSideBar()     
         return(
-                <nav ref={sideBarRef} id="sideBar"className='side-bar '>
+                <nav ref={sideBarRef} id="sideBar"className='side-bar'>
                 <div className="general-tasks"  
                 onClick={()=>changePage('general')} > 
                     <General color="yellow"/>

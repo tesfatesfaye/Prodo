@@ -46,7 +46,8 @@ const Tasks=({tasks,pageTitle,currentDay})=>{
             onMouseEnter={()=>toggleDraggable(true)} onMouseLeave={()=>toggleDraggable(false)}/>
                 
             
-            <div className="task-toggler" > <div className="task-completer" title="Complete Task"
+            <div className="task-toggler" >
+                 <div className="task-completer" title="Complete Task"
             onMouseEnter={()=>toggleCompletedHover(task.id)} 
               onMouseLeave={()=>toggleCompletedHover('')} onClick={(event)=>{
                 completeTask(event,task.id)

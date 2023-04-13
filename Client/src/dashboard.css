@@ -380,20 +380,30 @@ padding-right: 10px;
 
 .subtasks{
     display: flex;
+    flex-direction: column;
     width: 100%;
-    gap:10px;
+    gap:3px;
     box-sizing: border-box;
     margin-top: 10px;
-    margin-bottom: 10px;
+    /* margin-bottom: 5px; */
+    
     
 }
 
-.subtaskItem{
+.subtask-list{
     display:flex;
+    cursor: pointer;
     width: 100%;
     border-bottom: gray 1px solid;
     align-items: center;
-    padding-bottom: 3px;
+    margin-left: 5px;
+    box-sizing: border-box;
+    font-weight: 300;
+    /* font-size: small; */
+    gap:3px;
+    /* padding-top: 4px;
+    padding-bottom: 7px; */
+    height: 35px;
 }
 .modal-buttons{
     display: flex;

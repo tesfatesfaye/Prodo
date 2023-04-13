@@ -50,16 +50,24 @@ const Context=createContext()
 
             const addSubtask=(id)=>{
                 let objectHolder=structuredClone(tempHolder)
+                let objectHolder2=structuredClone(tempHolder)
                 objectHolder.subtasks.push({id:uuid4(),value:objectHolder.subtask,
                     complete:false})
                 objectHolder.subtask=""
                 setTempHolder(objectHolder)
-                          
-                //            setTasks(prev=>{
-                //     return prev.map(task=>{
-                //         return (task.id ===id ? objectHolder2 : task)
-                //     })
-                //   })
+               
+                for(let key in objectHolder){
+                    if(key.toString()!=="comment" && key.toString()!=="tag"){
+                        if(key.toString()!=="subtask"){
+                            objectHolder2[key]=objectHolder[key]
+                        }
+                          }
+                    }
+                    setTasks(prev=>{
+                    return prev.map(task=>{
+                        return (task.id ===id ? objectHolder2 : task)
+                    })
+                  })
 
 
 

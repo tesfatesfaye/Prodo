@@ -9,6 +9,7 @@ import {VscAdd} from 'react-icons/vsc'
 import{RiCheckboxBlankLine as CheckBoxIcon,RiCheckboxLine as CheckBoxIconHover} from 'react-icons/ri';
 import TextareaAutosize from 'react-textarea-autosize';
 import { startAtEndTextArea } from "../utils/utilities";
+import ModalSubsTasks from "./ModalSubTasksParent";
 const ModalMain=()=>{
       const titleRef=useRef(null)
     const {selectedValue,toggleSelected,focusStyle,
@@ -73,35 +74,13 @@ const ModalMain=()=>{
   </div>
   {(selectedValue==="Title" ||selectedValue==="Description") && 
   <ModalButtons updateTask={updateTask} openModal={openEditModal}
-   textOne={selectedValue==="Title" ? "Update Title": "Update Description"} toggleSelected={toggleSelected}/> }
+   textOne={selectedValue==="Title" ? "Update Title": "Update Description"} 
+   toggleSelected={toggleSelected}/> }
   </div>
-       <div className="subtasks-parent" style={(focusStyle('Subtask'))}>
-       
-          { tempHolder.subtasks.length > 0 ? 
-           <div className="subtasks">
-        <span style={{marginLeft:'3px', width:'100%',
-         fontWeight:'300',paddingBottom:'3px',
-         borderBottom: '1px solid rgba(255, 255, 255,0.3)'}}>Sub-tasks</span>
-         </div>
-            : ''
-          }
-             
-      <div className="modal-add" >
-            <VscAdd style={{marginTop:"2px"}}color="white" size={'1em'}/>
-
-          <TextareaAutosize
-       placeholder="Add sub-task" style={{fontWeight:'300',fontSize:'13px',
-       background:"transparent",overflow:"hidden",paddingLeft:'4px',boxSizing:"border-box",alignItems:"center"}}
-      className="modal-mini-input" onFocus={()=>{toggleSelected('Subtask')}}
-      onBlur={()=>{(selectedValue!=="Title" && selectedValue!=="Description") ? toggleSelected(''): ''}}
-      
-       /> 
-      
-      </div>
-      {selectedValue==="Subtask" && <ModalButtons />}
-      </div>
+      <ModalSubsTasks/>
       <div className={`modal-comments`}>
-        {selectedValue!=="Comment" && <ProfileHolder backgroundColor='rgba(0,0,0,0.1)' marginLeft='20px' marginBottom="20px"/>}
+        {selectedValue!=="Comment" && <ProfileHolder backgroundColor='rgba(0,0,0,0.1)'
+         marginLeft='20px' marginBottom="20px"/>}
 
    <div className={`comments-div ${selectedValue==="Comment" ? "comments-div-focused" : ''}`}>
       <TextareaAutosize className="modal-mini-input" 

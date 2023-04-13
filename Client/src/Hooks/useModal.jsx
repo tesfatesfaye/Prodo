@@ -7,6 +7,10 @@ const {toggleTasksList,tasks,toggleModal,toggleTempHolder,tempHolder}=useContext
 const [selectedValue,setSelectedValue]=useState('')
 const [modalCompleteHover,setModalCompleteHover]=useState(false)
 
+useEffect(()=>{
+    console.log("useModal useEffect")
+    console.log("selectedValue",selectedValue)
+},[selectedValue])
 const focusStyle=(value,valueTwo="EmptyValue")=>{
     if(value===selectedValue || valueTwo===selectedValue){
         return ({border:'1px solid grey'})

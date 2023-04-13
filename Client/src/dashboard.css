@@ -361,7 +361,7 @@ padding-right: 10px;
     text-overflow: ellipsis; */
     
     }
-.subtasks-parent{
+.modal-subtasks-parent{
     display: flex;
     flex-direction: column;
     width: 95%;

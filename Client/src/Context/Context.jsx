@@ -119,10 +119,7 @@ const Context=createContext()
             
         }
 
-        useEffect(()=>{
-            changePage("/general")
-        },[])
-
+     
 
               const toggleSideBar=(e,value)=>{
             value==='mainIcon' ? setSideBar(prev=>!prev) : ''

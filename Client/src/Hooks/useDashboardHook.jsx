@@ -3,10 +3,13 @@ import { Context } from "../Context/Context";
 
 const useDashboardHook=()=>{
     const{toggleTasksList,tasks,
-        completedTasks,toggleCompletedTasksList}=useContext(Context)
+        completedTasks,toggleCompletedTasksList,changePage}=useContext(Context)
     const[taskHoverId,setTaskHoverId]=useState("")
     const [draggable,setDraggable]=useState('')
-
+     
+    useEffect(()=>{
+        changePage("general")
+    },[])
 
     const toggleTaskHoverId=(value)=>{
         setTaskHoverId(value)

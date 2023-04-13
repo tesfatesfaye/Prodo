@@ -6,8 +6,7 @@ const useSideBar=()=>{
     const sideBarRef=useRef(null)
 
     useEffect(()=>{
-        console.log(sideBarRef)
-        console.log(sideBar)
+      
                  sideBar ? sideBarRef.current.style.display='flex' 
                  :sideBarRef.current.style.display='none'
     

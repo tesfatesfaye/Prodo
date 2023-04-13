@@ -382,28 +382,21 @@ padding-right: 10px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap:3px;
     box-sizing: border-box;
     margin-top: 10px;
-    /* margin-bottom: 5px; */
-    
-    
 }
 
 .subtask-list{
     display:flex;
     cursor: pointer;
-    width: 100%;
+    /* width: 100%; */
     border-bottom: gray 1px solid;
     align-items: center;
-    margin-left: 5px;
+      padding-left: 5px;
     box-sizing: border-box;
     font-weight: 300;
-    /* font-size: small; */
-    gap:3px;
-    /* padding-top: 4px;
-    padding-bottom: 7px; */
-    height: 35px;
+      gap: 5px;
+      height: 35px;
 }
 .modal-buttons{
     display: flex;

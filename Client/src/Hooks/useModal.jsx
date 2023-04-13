@@ -48,7 +48,7 @@ const toggleSelected=(value)=>{
 }
 
         return{selectedValue,toggleSelected,
-            focusStyle,addNewTask,toggleModalCompletedHover,modalCompleteHover,
-            clickModalTextArea}
+            focusStyle,addNewTask,toggleModalCompletedHover,
+            modalCompleteHover,clickModalTextArea}
 }
  export default useModal

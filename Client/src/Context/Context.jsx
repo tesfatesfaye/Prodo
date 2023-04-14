@@ -52,7 +52,7 @@ const Context=createContext()
                 let objectHolder=structuredClone(tempHolder)
                 let objectHolder2=structuredClone(tempHolder)
                 objectHolder.subtasks.push({id:uuid4(),value:objectHolder.subtask,
-                    complete:false})
+                    completed:false})
                 objectHolder.subtask=""
                 setTempHolder(objectHolder)
                
@@ -70,7 +70,8 @@ const Context=createContext()
                   })
                           
             }
-            const deleteSubtask=(id,subtaskId)=>{
+            const deleteSubtask=(event,id,subtaskId)=>{
+                event.stopPropagation()
                let objectHolder=structuredClone(tempHolder)
                let filteredSubtask=objectHolder.subtasks.filter(subtask=>subtask.id!==subtaskId)
                 objectHolder.subtasks=filteredSubtask
@@ -89,7 +90,26 @@ const Context=createContext()
                     })})
 
             }
+            const completeSubtask=(event,id,subtaskId,value)=>{
+                event.stopPropagation()
+                let objectHolder=structuredClone(tempHolder)
+                objectHolder.subtasks=objectHolder.subtasks.map(subtask=>{
+                    return subtask.id===subtaskId ? {...subtask,completed:value} : subtask})
+                    setTempHolder(objectHolder)
+                    let objectHolder2=structuredClone(objectHolder)
+                    for(let key in objectHolder){
+                        if(key.toString()!=="comment" && key.toString()!=="tag"){
+                            if(key.toString()!=="subtask"){
+                                objectHolder2[key]=objectHolder[key]
+                            }
+                              }
+                        }
+                        setTasks(prev=>{
+                        return prev.map(task=>{
+                            return (task.id ===id ? objectHolder2 : task)
+                        })})
 
+            }
      const updateTask= (event,id)=>{
            
             let objectHolder={}
@@ -174,7 +194,7 @@ const Context=createContext()
         <Context.Provider value={{formState,updateForm,changePage,
         theme,sideBar,toggleSideBar,tasks,modal,toggleModal,toggleTasksList,
         toggleTempHolder,updateTemp,tempHolder,deleteTask,updateTask,
-        completedTasks,completeTask,overDue,dueToday,openEditModal,toggleCompletedTasksList,addSubtask,deleteSubtask}}>
+        completedTasks,completeTask,overDue,dueToday,openEditModal,toggleCompletedTasksList,addSubtask,deleteSubtask,completeSubtask}}>
             {children}
         </Context.Provider>
     )}

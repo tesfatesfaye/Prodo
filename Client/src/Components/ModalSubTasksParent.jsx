@@ -4,13 +4,15 @@ import TextareaAutosize from 'react-textarea-autosize';
 import ModalButtons from "./ModalButtons";
 import { Context } from "../Context/Context";
 import ModalSubsTasksList from "./ModalSubsTasksList";
+
 const ModalSubsTasks=({focusStyle,selectedValue,toggleSelected,toggleModalCompletedHover,modalCompleteHover})=>{
 
 const {tempHolder,updateTemp,addSubtask}=useContext(Context)
-let completedSubtasks=0
-let comp=(<span style={{fontWeight:"300"}}>{`${tempHolder.subtasks.length}/${completedSubtasks}`}</span>)
+
+let comp=(<span style={{fontWeight:"300"}}>{`${tempHolder.subtasks.filter(x=>x.completed===true).length}/${tempHolder.subtasks.length}`}</span>)
 const subtasks=tempHolder.subtasks.map((item)=>{
-   if(item.completed){ completedSubtasks++}
+   console.log("rerendering")
+ 
    return( 
       <ModalSubsTasksList
          key={item.id}

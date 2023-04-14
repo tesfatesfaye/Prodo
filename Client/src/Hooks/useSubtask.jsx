@@ -3,6 +3,7 @@ import React,{useState} from "react";
 const useSubtask = () => {
 const [hoveredSubtask,setHoveredSubtask]=useState(false)
 const [hoveredSubtaskComplete,setHoveredSubtaskComplete]=useState(false)
+const [completedSubtasksCount,setCompletedSubtasksCount]=useState(0)
 const toggleHoveredSubtask=(value)=>{
     setHoveredSubtask(value)
 }

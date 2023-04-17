@@ -41,7 +41,8 @@ const Tasks=({tasks,pageTitle,currentDay})=>{
                 toggleModal('TaskModal')
                 
                }}
-            onMouseLeave={()=>toggleTaskHoverId('')} {...prov.draggableProps} {...prov.dragHandleProps} ref={prov.innerRef} >
+            onMouseLeave={()=>toggleTaskHoverId('')} {...prov.draggableProps}
+             {...prov.dragHandleProps} ref={prov.innerRef} >
             <RxHamburgerMenu color="white" size="0.9em"style={{visibility: taskHoverId=== task.id ? 'visible' : 'hidden'}}
             onMouseEnter={()=>toggleDraggable(true)} onMouseLeave={()=>toggleDraggable(false)}/>
                 

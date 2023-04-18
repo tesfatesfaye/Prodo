@@ -5,7 +5,7 @@ import {BsFillTrashFill}from 'react-icons/bs'
 import{RiCheckboxBlankLine as CheckBoxIcon,
 RiCheckboxLine as CheckBoxIconHover} from 'react-icons/ri'
 
-const ModalSubsTasksList=({value,id,completed})=>{
+const ModalSubsTasksList=({value,id,completed,showSubTask})=>{
 const {deleteSubtask,tempHolder,completeSubtask}=useContext(Context)
 const {hoveredSubtask,toggleHoveredSubtask,hoveredSubtaskComplete,
   toggleHoveredSubtaskComplete}=useSubtask()
@@ -13,7 +13,7 @@ const {hoveredSubtask,toggleHoveredSubtask,hoveredSubtaskComplete,
 
 
 return(
-    <div className="subtask-list" 
+    <div className="subtask-list" style={{display: showSubTask ? "flex" : "none"}} 
     onMouseEnter={()=>toggleHoveredSubtask(id)}
 
     onMouseLeave={()=>toggleHoveredSubtask(false)} >

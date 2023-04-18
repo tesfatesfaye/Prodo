@@ -51,7 +51,8 @@ return(
     }
        
 <div className="modal-add" style={{display: showSubTask ? "flex" : "none"}}>
-      <VscAdd style={{marginTop:"2px"}}color="white" size={'1em'}/>
+      <VscAdd style={{marginTop:"2px",visibility: selectedValue==="Subtask" && tempHolder.subtasks.length > 0 ? "hidden" :"visible" }}
+      color="white" size={'1em'}/>
 
     <TextareaAutosize
  placeholder="Add sub-task" name="subtask"

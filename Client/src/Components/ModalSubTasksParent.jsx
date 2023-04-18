@@ -1,7 +1,7 @@
 import React,{useContext}from "react"
 import {VscAdd} from 'react-icons/vsc'
 import {AiOutlineArrowDown as DownArrow,AiOutlineArrowUp as UpArrow} from 'react-icons/ai'
-
+import '../dashboard.css'
 import TextareaAutosize from 'react-textarea-autosize';
 import ModalButtons from "./ModalButtons";
 import { Context } from "../Context/Context";
@@ -34,9 +34,7 @@ return(
        
     { tempHolder.subtasks.length > 0 ? 
      <div className="subtasks">
-  <span style={{ display:'flex',marginLeft:'0px', width:'100%',
-   fontWeight:'400',paddingBottom:'3px',
-   borderBottom: '1px solid rgba(255, 255, 255,0.3)'}}>Sub-tasks {comp} </span>
+  <span className="subtasktitle">Sub-tasks {comp} </span>
    
    {subtasks}
    </div>

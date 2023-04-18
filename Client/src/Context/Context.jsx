@@ -1,5 +1,5 @@
 import React,{useState,useEffect,createContext} from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate,redirect} from "react-router-dom";
 import { uuid4 } from 'uuid4';
 import { tempHolderModel } from "../utils/utilities";
 import { dateCreated } from "../utils/dateHandler";
@@ -35,9 +35,7 @@ const Context=createContext()
         subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:true}])
         const [overDue,setOverDueTasks]=useState([])
         const [dueToday,setDueToday]=useState([])
-        useEffect(()=>{
-               console.log(tempHolder.subtasks)
-        },)
+      
         const completeTask=(event,id,closeModal)=>{
             event.stopPropagation()
             const [filteredTask]=tasks.filter(task=>task.id===id)

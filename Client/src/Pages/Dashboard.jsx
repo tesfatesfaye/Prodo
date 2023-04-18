@@ -1,14 +1,17 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import '../dashboard.css'
 import NavBar from "../Components/NavBar";
 import SideBar from "../Components/SideBar";
-import { Outlet, Route,Routes } from "react-router";
+import { Outlet, Route,Routes,redirect } from "react-router";
 import AddTaskModal from "../Modals/AddTaskModal";
 import useDashboardHook from "../Hooks/useDashboardHook";
 
 
 const DashBoard=()=>{
     const{sideBar,toggleDash,dashRef}=useDashboardHook()
+    useEffect(()=>{
+        redirect('/general')
+ },[])
 
     return(
         <div className="dashboard-parent" ref={dashRef}>

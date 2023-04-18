@@ -377,6 +377,19 @@ padding-right: 10px;
    
 }
 
+.subtasktitle{
+display:flex;
+box-sizing:border-box;
+gap:5px;
+padding-bottom: 5px;
+width: calc(100% - 15px);
+margin-left:15px;
+font-weight:400;
+box-sizing:border-box;
+border-bottom: 1px solid rgba(255, 255, 255,0.3);
+padding-right:15px;
+
+}
 
 .subtasks{
     display: flex;
@@ -392,6 +405,7 @@ padding-right: 10px;
     /* width: 100%; */
     border-bottom: gray 1px solid;
     align-items: center;
+    
     padding-right: 10px;
     box-sizing: border-box;
     font-weight: 300;

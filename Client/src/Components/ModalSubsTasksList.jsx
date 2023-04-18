@@ -23,7 +23,7 @@ return(
      onMouseLeave={()=>toggleHoveredSubtaskComplete(false)}>
        {hoveredSubtaskComplete===id || completed===true ?  <CheckBoxIconHover color={completed===true && "green"} /> : <CheckBoxIcon/> }
         </span> 
-        <span style={{display:"flex",alignItems:'',marginRight:"auto", textDecorationLine:completed ? "line-through" : "none"}}>{value}</span>
+        <span style={{display:"flex",alignItems:'center',marginRight:"auto", textDecorationLine:completed ? "line-through" : "none"}}>{value}</span>
        {hoveredSubtask===id && <BsFillTrashFill size='0.9em' color="grey"
        style={{cursor:'pointer'}} onMouseDown={(event)=>deleteSubtask(event,tempHolder.id,id)}/>}
     </div>

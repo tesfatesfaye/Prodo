@@ -377,17 +377,28 @@ padding-right: 10px;
    
 }
 
-.subtasktitle{
+.subtask-title-parent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+   
+}
+.subtask-title{
 display:flex;
-box-sizing:border-box;
-gap:5px;
+gap:2px;
+align-items: center;
 padding-bottom: 5px;
-width: calc(100% - 15px);
-margin-left:15px;
+width: calc(100% - 10px);
+margin-left:5px;
+margin-right: auto;
 font-weight:400;
-box-sizing:border-box;
 border-bottom: 1px solid rgba(255, 255, 255,0.3);
-padding-right:15px;
+
 
 }
 
@@ -402,15 +413,15 @@ padding-right:15px;
 .subtask-list{
     display:flex;
     cursor: pointer;
-    /* width: 100%; */
+    width: calc(100% - 20px);
+    margin-left: 20px;
     border-bottom: gray 1px solid;
     align-items: center;
     
-    padding-right: 10px;
-    box-sizing: border-box;
+     box-sizing: border-box;
     font-weight: 300;
-      gap: 5px;
-      height: 35px;
+    gap: 5px;
+    height: 35px;
 }
 .modal-buttons{
     display: flex;

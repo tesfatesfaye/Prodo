@@ -13,7 +13,7 @@ import ModalSubsTasks from "./ModalSubTasksParent";
 const ModalMain=()=>{
       const titleRef=useRef(null)
     const {selectedValue,toggleSelected,focusStyle,
-      toggleModalCompletedHover,modalCompleteHover,clickModalTextArea}=useModal({titleRef})
+      toggleModalCompletedHover,modalCompleteHover,clickModalTextArea,toggleShowSubTask,showSubTask}=useModal({titleRef})
       const {tempHolder,updateTemp,updateTask,completeTask,toggleModal,openEditModal}=useContext(Context)
     return(
         <div className="modal-main" >
@@ -78,6 +78,8 @@ const ModalMain=()=>{
    toggleSelected={toggleSelected}/> }
   </div>
       <ModalSubsTasks toggleSelected={toggleSelected}
+        toggleShowSubTask={toggleShowSubTask}
+        showSubTask={showSubTask}
       modalCompleteHover={modalCompleteHover}
        selectedValue={selectedValue}
         focusStyle={focusStyle} toggleModalCompletedHover={toggleModalCompletedHover}

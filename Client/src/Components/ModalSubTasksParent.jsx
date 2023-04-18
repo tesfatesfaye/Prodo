@@ -1,13 +1,14 @@
 import React,{useContext}from "react"
 import {VscAdd} from 'react-icons/vsc'
-import {AiOutlineArrowDown as DownArrow,AiOutlineArrowUp as UpArrow} from 'react-icons/ai'
+import {AiOutlineArrowDown as DownArrow,AiOutlineArrowRight as RightArrow} from 'react-icons/ai'
 import '../dashboard.css'
 import TextareaAutosize from 'react-textarea-autosize';
 import ModalButtons from "./ModalButtons";
 import { Context } from "../Context/Context";
 import ModalSubsTasksList from "./ModalSubsTasksList";
 
-const ModalSubsTasks=({focusStyle,selectedValue,toggleSelected,toggleModalCompletedHover,modalCompleteHover})=>{
+const ModalSubsTasks=({focusStyle,selectedValue,toggleSelected,
+   toggleModalCompletedHover,modalCompleteHover,showSubTask,toggleShowSubTask})=>{
 
 const {tempHolder,updateTemp,addSubtask}=useContext(Context)
 
@@ -23,6 +24,8 @@ const subtasks=tempHolder.subtasks.map((item)=>{
          completed={item.completed}
          toggleModalCompletedHover={toggleModalCompletedHover}
          modalCompleteHover={modalCompleteHover}
+         showSubTask={showSubTask}
+
       />
    )
 
@@ -34,14 +37,20 @@ return(
        
     { tempHolder.subtasks.length > 0 ? 
      <div className="subtasks">
-  <span className="subtasktitle">Sub-tasks {comp} </span>
+      <span className="subtask-title-parent">
+         {showSubTask ? <DownArrow onMouseDown={toggleShowSubTask} color="white" size={'1em'} style={{paddingBottom:"3px"}}/> 
+         : <RightArrow onMouseDown={toggleShowSubTask}  color="white" size={'1em'} style={{paddingBottom:"3px"}}/> }
+      <span className="subtask-title"> 
+         Sub-tasks {comp} </span>
    
+         </span>
+ 
    {subtasks}
    </div>
       : ''
     }
        
-<div className="modal-add" >
+<div className="modal-add" style={{display: showSubTask ? "flex" : "none"}}>
       <VscAdd style={{marginTop:"2px"}}color="white" size={'1em'}/>
 
     <TextareaAutosize

@@ -13,7 +13,7 @@ const {hoveredSubtask,toggleHoveredSubtask,hoveredSubtaskComplete,
 
 
 return(
-    <div className="subtask-list" style={{display: showSubTask ? "flex" : "none"}} 
+    <div className="subtask-list"style={{display: showSubTask ? "flex" : "none"}} 
     onMouseEnter={()=>toggleHoveredSubtask(id)}
 
     onMouseLeave={()=>toggleHoveredSubtask(false)} >
@@ -21,7 +21,7 @@ return(
       onMouseDown={(event)=>completeSubtask(event,tempHolder.id,id,!completed)} 
      onMouseEnter={()=>toggleHoveredSubtaskComplete(id)}
      onMouseLeave={()=>toggleHoveredSubtaskComplete(false)}>
-       {hoveredSubtaskComplete===id || completed===true ?  <CheckBoxIconHover color={completed===true && "green"} /> : <CheckBoxIcon/> }
+       {hoveredSubtaskComplete===id || completed===true ?  <CheckBoxIconHover  title="Complete subtask" color={completed===true && "green"} /> : <CheckBoxIcon  title="Complete subtask"/> }
         </span> 
         <span style={{display:"flex",alignItems:'center',marginRight:"auto", textDecorationLine:completed ? "line-through" : "none"}}>{value}</span>
        {hoveredSubtask===id && <BsFillTrashFill size='0.9em' color="grey"

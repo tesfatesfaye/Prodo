@@ -394,7 +394,7 @@ gap:2px;
 align-items: center;
 padding-bottom: 5px;
 width: calc(100% - 10px);
-margin-left:5px;
+margin-left:10px;
 margin-right: auto;
 font-weight:400;
 border-bottom: 1px solid rgba(255, 255, 255,0.3);
@@ -604,8 +604,8 @@ color: grey
     width:100%;
 }
 .comments-div-focused{
-    margin-left: 20px;
-    width: 550px;
+    margin-left: 50px;
+    width: calc(100% - 80px);
 }
 
 

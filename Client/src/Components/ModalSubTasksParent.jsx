@@ -38,8 +38,8 @@ return(
     { tempHolder.subtasks.length > 0 ? 
      <div className="subtasks">
       <span className="subtask-title-parent">
-         {showSubTask ? <DownArrow onMouseDown={toggleShowSubTask} color="white" size={'1em'} style={{paddingBottom:"3px"}}/> 
-         : <RightArrow onMouseDown={toggleShowSubTask}  color="white" size={'1em'} style={{paddingBottom:"3px"}}/> }
+         {showSubTask ? <DownArrow onMouseDown={toggleShowSubTask} color="white" size={'1em'} style={{paddingBottom:"3px",cursor:"pointer"}}/> 
+         : <RightArrow onMouseDown={toggleShowSubTask}  color="white" size={'1em'} style={{paddingBottom:"3px",cursor:"pointer"}}/> }
       <span className="subtask-title"> 
          Sub-tasks {comp} </span>
    

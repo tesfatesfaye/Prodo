@@ -9,7 +9,7 @@ import ModalSubsTasksList from "./ModalSubsTasksList";
 import { startAtEndTextArea } from "../utils/utilities";
 
 const ModalSubsTasks=({focusStyle,selectedValue,toggleSelected,
-   toggleModalCompletedHover,modalCompleteHover,showSubTask,toggleShowSubTask})=>{
+   toggleModalCompletedHover,modalCompleteHover,showSubTask,toggleShowSubTask,clickModalTextArea})=>{
 
 const {tempHolder,updateTemp,addSubtask,cancelSubtask,openEditModal}=useContext(Context)
 
@@ -26,6 +26,9 @@ const subtasks=tempHolder.subtasks.map((item)=>{
          toggleModalCompletedHover={toggleModalCompletedHover}
          modalCompleteHover={modalCompleteHover}
          showSubTask={showSubTask}
+         selectedValue={selectedValue}
+         toggleSelected={toggleSelected}
+         clickModalTextArea={clickModalTextArea}
 
       />
    )
@@ -51,7 +54,8 @@ return(
       : ''
     }
        
-<div className="modal-add" style={{display: showSubTask ? "flex" : "none", marginLeft:tempHolder.subtasks.length > 0 ? "20px" :"" }}>
+{ !tempHolder.subtasks.some(x=>x.id===selectedValue) &&
+   <div className="modal-add" style={{display: showSubTask ? "flex" : "none", marginLeft:tempHolder.subtasks.length > 0 ? "30px" :"" }}>
       <VscAdd style={{marginTop:"2px",display: selectedValue==="Subtask" && tempHolder.subtasks.length > 0 ? "none" :"" }}
       color="white" size={'0.9em'}/>
 
@@ -69,10 +73,10 @@ onChange={(event)=>updateTemp(event)}
 value={tempHolder.subtask}
 onBlur={()=>{(selectedValue!=="Title" && selectedValue!=="Description") ? toggleSelected(''): ''}}
 
- /> 
+ />
 
-</div>
-{selectedValue==="Subtask" && <ModalButtons textOne="Add subtask" openModal={openEditModal} addSubtask={addSubtask} cancel={cancelSubtask} toggleSelected={toggleSelected}/>}
+</div>}
+{selectedValue==="Subtask" && <ModalButtons textOne="Add subtask" openModal={openEditModal} addSubtask={addSubtask}  toggleSelected={toggleSelected}/>}
 </div>
 )
 

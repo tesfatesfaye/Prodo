@@ -77,6 +77,7 @@ const ModalMain=()=>{
    toggleSelected={toggleSelected}/> }
   </div>
       <ModalSubsTasks toggleSelected={toggleSelected}
+      clickModalTextArea={clickModalTextArea}
         toggleShowSubTask={toggleShowSubTask}
         showSubTask={showSubTask}
       modalCompleteHover={modalCompleteHover}

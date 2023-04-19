@@ -29,6 +29,11 @@ const ModalButtons=(props)=>{
           <button className="save-cancel"style={{background:"rgba(128, 0, 32,0.9)"}}
             onMouseDown={()=>{
              props.toggleSelected('')
+            //  if(props.cancel){
+            //     console.log('cancel')
+            //     props.cancel()
+                
+            //  }
               if(props.openModal){
                 props.openModal(tempHolder.id,"General")
               }

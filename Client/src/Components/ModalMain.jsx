@@ -5,7 +5,6 @@ import '../dashboard.css'
 import useModal from "../Hooks/useModal";
 import ModalButtons from "./ModalButtons";
 import {MdSort} from "react-icons/md"
-import {VscAdd} from 'react-icons/vsc'
 import{RiCheckboxBlankLine as CheckBoxIcon,RiCheckboxLine as CheckBoxIconHover} from 'react-icons/ri';
 import TextareaAutosize from 'react-textarea-autosize';
 import { startAtEndTextArea } from "../utils/utilities";

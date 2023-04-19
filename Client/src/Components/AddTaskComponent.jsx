@@ -6,6 +6,7 @@ import {FaTasks as General} from 'react-icons/fa'
 import {AiTwotoneCalendar as Today} from 'react-icons/ai'
 import ModalButtons from "../Components/ModalButtons";
 import TextareaAutosize from 'react-textarea-autosize';
+import { startAtEndTextArea } from "../utils/utilities";
 import "../dashboard.css";
  const AddTaskComponent=()=>{
     const{tempHolder,modal,toggleModal,updateTemp}=useContext(Context)
@@ -24,7 +25,9 @@ import "../dashboard.css";
        style={{opacity: tempHolder.title ? "1" : ''}}
        placeholder="Task title"  name="title"  
        value={tempHolder.title}
-       onFocus={()=>toggleSelected('Title')}
+       onFocus={(event)=>{
+         startAtEndTextArea(event)
+         toggleSelected('Title')}}
        onBlur={()=>toggleSelected('')}
        onChange={(event)=>updateTemp(event)}
       />
@@ -38,7 +41,9 @@ import "../dashboard.css";
              placeholder="Description" 
           value={tempHolder.description}
           onChange={(event)=>{updateTemp(event)}}
-          onFocus={()=>toggleSelected('Description')}
+          onFocus={(event)=>{
+            startAtEndTextArea(event)
+            toggleSelected('Description')}}
           onBlur={()=>{toggleSelected('')}}/>
          
   </div>

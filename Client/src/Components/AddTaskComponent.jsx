@@ -31,7 +31,7 @@ import "../dashboard.css";
 
       </div> 
   <div className="modal-description" style={{display:'flex',gap:'10px'}}>
-          <textarea type='text' name="description"
+          <TextareaAutosize type='text' name="description"
           className="modal-input-title"
           id="add-task-modal-description" rows={1}
           style={{opacity: tempHolder.description ? "1" : ''}}

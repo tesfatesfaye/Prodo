@@ -5,6 +5,7 @@ import {MdSort} from "react-icons/md";
 import {FaTasks as General} from 'react-icons/fa'
 import {AiTwotoneCalendar as Today} from 'react-icons/ai'
 import ModalButtons from "../Components/ModalButtons";
+import TextareaAutosize from 'react-textarea-autosize';
 import "../dashboard.css";
  const AddTaskComponent=()=>{
     const{tempHolder,modal,toggleModal,updateTemp}=useContext(Context)
@@ -18,7 +19,7 @@ import "../dashboard.css";
         <div className="add-task-modal">
         <div className="title-description-add-task" >
      <div className="modal-title">
-     <textarea type="text"  className="modal-input-title"
+     <TextareaAutosize type="text"  className="modal-input-title"
        id="add-task-modal-title" autoFocus={true}
        style={{opacity: tempHolder.title ? "1" : ''}}
        placeholder="Task title"  name="title"  

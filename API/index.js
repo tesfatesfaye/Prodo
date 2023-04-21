@@ -8,7 +8,7 @@ const PORT=process.env.PORT ?? 3005
  app.use(express.json());
  app.use(cors());
  mongoose.set('strictQuery',false)
- mongoose.connect('mongodb://127.0.0.1:27017/NotesApp', {
+ mongoose.connect('mongodb://127.0.0.1:27017/tasks', {
     useNewUrlParser: true, 
 	useUnifiedTopology: true 
 

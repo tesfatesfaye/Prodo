@@ -17,7 +17,7 @@ const Context=createContext()
         {id:uuid4(), title:"Test 2", subtasks:[],
         comments:['This is the second'],description:'none',dueDate:"",tags:[],dateCreated:dateCreated(),completed:false},
         {id:uuid4(), title:"Test 3", 
-        subtasks:[],comments:['This is the third'],description:'kanye was right',
+        subtasks:[],comments:['This is the third'],description:'',
         dueDate:"",tags:[],dateCreated:dateCreated(),completed:false},
         {id:uuid4(), title:"Test 4", 
         subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:dateCreated(),completed:false}
@@ -25,14 +25,14 @@ const Context=createContext()
     ])
 
         const [completedTasks, setCompletedTasks]=useState([{id:uuid4(), title:"Test 5", 
-        subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:true},
+        subtasks:[],comments:['This is the third'],description:'',dueDate:"",tags:[],dateCreated:"",completed:true},
         {id:uuid4(), title:"Test 6", 
-        subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:true},
+        subtasks:[],comments:['This is the third'],description:'',dueDate:"",tags:[],dateCreated:"",completed:true},
         {id:uuid4(), title:"Test 7", 
         subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:true},
         {id:uuid4(), title:"Test 8", 
         subtasks:[],comments:['This is the fourth'],description:'none',dueDate:"",tags:[],dateCreated:"",completed:true},{id:uuid4(), title:"Test 5", 
-        subtasks:[],comments:['This is the third'],description:'kanye was right',dueDate:"",tags:[],dateCreated:"",completed:true}])
+        subtasks:[],comments:['This is the third'],description:'',dueDate:"",tags:[],dateCreated:"",completed:true}])
         const [overDue,setOverDueTasks]=useState([])
         const [dueToday,setDueToday]=useState([])
         const cancelSubtask=()=>{

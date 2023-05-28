@@ -8,15 +8,16 @@ class DateManager{
         this.monthNameHolder=["January","February","March",
         "April","May","June","July","August",
         "September","October","November","December"];
-        this.dayNameHolder=["Monday","Tuesday","Wednesday","Thursday","Friday",
-        "Saturday","Sunday"]
+        this.dayNameHolder=["Sunday","Monday","Tuesday","Wednesday","Thursday",
+        "Friday","Saturday"]
         }
          get currentDayName(){
-           return this.dayNameHolder[this.dayNumber-1]
+           return this.dayNameHolder[this.dayNumber]
             
          }
          get currentDayAb(){
-             return this.dayNameHolder[this.dayNumber-1].substring(0,3);
+           
+             return this.currentDayName.substring(0,3);
              
          }
          get currentMonthName(){

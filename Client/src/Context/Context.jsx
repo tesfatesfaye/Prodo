@@ -194,7 +194,8 @@ const Context=createContext()
         <Context.Provider value={{formState,updateForm,changePage,
         theme,sideBar,toggleSideBar,tasks,modal,toggleModal,toggleTasksList,
         toggleTempHolder,updateTemp,tempHolder,deleteTask,updateTask,
-        completedTasks,completeTask,overDue,dueToday,openEditModal,toggleCompletedTasksList,addSubtask,deleteSubtask,completeSubtask,cancelSubtask}}>
+        completedTasks,completeTask,overDue,dueToday,openEditModal,toggleCompletedTasksList,
+        addSubtask,deleteSubtask,completeSubtask,cancelSubtask}}>
             {children}
         </Context.Provider>
     )}

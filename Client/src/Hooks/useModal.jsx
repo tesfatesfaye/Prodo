@@ -2,6 +2,7 @@ import {useContext,useEffect,useLayoutEffect,useState} from "react";
 import { Context } from "../Context/Context";
 import { uuid4 } from 'uuid4';
 import { tempHolderModel } from "../utils/utilities";
+import { dateCreated } from "../utils/dateHandler";
 const useModal=()=>{
 const {toggleTasksList,tasks,toggleModal,toggleTempHolder,tempHolder}=useContext(Context)
 const [selectedValue,setSelectedValue]=useState('')
@@ -43,7 +44,7 @@ const addNewTask=()=>{
       objectHolder[key]=tempHolder[key]
         }
         }
-        toggleTasksList([...tasks,{...objectHolder,id:uuid4()}])
+        toggleTasksList([...tasks,{...objectHolder,id:uuid4(),dateCreated:dateCreated()}])
         toggleModal('')
         toggleTempHolder(tempHolderModel)
     }

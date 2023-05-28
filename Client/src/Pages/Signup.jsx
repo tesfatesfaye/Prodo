@@ -15,7 +15,7 @@ const SignUp=()=>{
         <div id='signUpParent'className="signUp-Parent  dark">
                <h1 className="sign-Up-title" style={{color:'lightblue'}}>Register</h1>
                <FaCheckDouble color="lightblue" size='1.5em' />
-               <h4 style={{color:'lightblue'}}>Create a Take-note account</h4>
+               <h4 style={{color:'lightblue'}}>Create a Prodo account</h4>
             <form className="form-class " >
                 <section>
                 <span style={{display: selected==='FirstName'||formState.firstName ? 'flex' : 'none'}}>FirstName</span>

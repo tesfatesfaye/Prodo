@@ -14,7 +14,7 @@ const Login=()=>{
             <div className="Login-Form">
                 <h1 className="sign-In" style={{color:'lightblue'}}>Login</h1>
                 <FaCheckDouble color="lightblue" size='1.5em'/>
-                <h4 style={{color:'lightblue'}}>Welcome to Take-Note</h4>
+                <h4 style={{color:'lightblue'}}>Welcome to Prodo</h4>
                 <form className="form-class" >                                                                                                                          
                     
                 <section>

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../Context/Context";
 import useSubtask from "../Hooks/useSubtask";
 import {BsFillTrashFill}from 'react-icons/bs'
+import useModal from "../Hooks/useModal";
 import{RiCheckboxBlankLine as CheckBoxIcon,
 RiCheckboxLine as CheckBoxIconHover} from 'react-icons/ri'
 import TextareaAutosize from 'react-textarea-autosize';
@@ -10,7 +11,7 @@ import { startAtEndTextArea } from "../utils/utilities";
 const ModalSubsTasksList=({value,id,completed,showSubTask,toggleSelected,selectedValue,clickModalTextArea})=>{
 const {deleteSubtask,tempHolder,completeSubtask,updateTemp}=useContext(Context)
 const {hoveredSubtask,toggleHoveredSubtask,hoveredSubtaskComplete,
-  toggleHoveredSubtaskComplete}=useSubtask()
+  toggleHoveredSubtaskComplete,editSubtask,tempSubtask}=useSubtask()
 
 
 

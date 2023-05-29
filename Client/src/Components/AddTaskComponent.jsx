@@ -8,11 +8,11 @@ import ModalButtons from "../Components/ModalButtons";
 import TextareaAutosize from 'react-textarea-autosize';
 import { startAtEndTextArea } from "../utils/utilities";
 import "../dashboard.css";
- const AddTaskComponent=()=>{
+ const AddTaskComponent=({values})=>{
     const{tempHolder,modal,toggleModal,updateTemp}=useContext(Context)
     const {toggleSelected,addNewTask}=useModal()
     useEffect(()=>{
-      console.log('add task component')
+     
     })
     return(
         <>

@@ -1,5 +1,5 @@
 # Prodo
-Prodo is a productivity application built atop the MERN (MongoDB, Express.js, React.js, Node.js) stack, a plethora of auxiliary libraries and third-party APIs services. It's aimed at offering the premium paid features of applications like Todist and Evernote, with additional features such as GPT-4 integration, absolutely free of charge. Although the application is fully functional as is, the development process is ongoing with many more features to be added.
+Prodo is a productivity application built atop the MERN (MongoDB, Express.js, React.js, Node.js) stack, a plethora of auxiliary libraries and third-party APIs services. It's aimed at offering the premium paid features of applications like Todist and Evernote,  absolutely free of charge with additional features such as GPT-4 integration, via use of personal api keys being also planned. Although the application is fully functional as is, the development process is ongoing with many more features to be added.
 
 ## Prerequisites
 
